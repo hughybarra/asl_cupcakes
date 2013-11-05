@@ -11,7 +11,7 @@ class Controller_Index extends Controller
 		$this->template->content = View::forge('index/landing', $data);*/
 	}
 
-	public function action_pDetail()
+	public function action_ProductDetail()
 	{
 		$data["subnav"] = array('pDetail'=> 'active' );
 		$this->template->title = 'Index &raquo; PDetail';
