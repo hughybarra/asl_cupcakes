@@ -1,5 +1,10 @@
-<ul class="nav nav-pills">
-	<li class='<?php echo Arr::get($subnav, "index" ); ?>'><?php echo Html::anchor('cart/index','Index');?></li>
-
-</ul>
-<p>Index</p>
+<html>
+	<head>
+		<title>Cart</title>
+	</head>
+	<body>
+		<p>
+			<?php echo $something; ?>
+		</p>
+	</body>
+</html>
