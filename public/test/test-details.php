@@ -24,7 +24,7 @@
 
 		<div class="cupcake-details">
 			<div class="cupcake-detail-img">
-				<img src="/img/cupcakes/7.png">
+				<img src="/assets/img/cupcakes/7.png">
 			</div>
 			<div class="cupcake-detail-info">
 				<h1>Cupcake Name</h1>
