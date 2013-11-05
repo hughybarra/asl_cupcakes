@@ -38,7 +38,7 @@ header{
 }
 
 #logo{
-	background: url('/img/logo.png') no-repeat;
+	background: url('/assets/img/logo.png') no-repeat;
 	display: inline-block;
 	background-position: 0 0;
 	height: 54px;

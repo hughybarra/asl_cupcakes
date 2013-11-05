@@ -32,7 +32,7 @@
 				<?php for($i = 1; $i < 9; $i++):?>
 					<div class="cart-item">
 						<div class="cupcake-thumb">
-							<img src="/img/cupcakes/7.png">
+							<img src="/assets/img/cupcakes/7.png">
 						</div>
 						<div class="cupcake-cart-info">
 							<span class="cupcake-name">Cupcake Name</span>

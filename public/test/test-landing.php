@@ -24,7 +24,7 @@
 		<?php for($i = 1; $i < 9; $i++):?>
 			<div class="cupcake">
 				<div class="cupcake-thumb">
-					<img src="/img/cupcakes/<?php echo($i)?>.png">
+					<img src="/assets/img/cupcakes/<?php echo($i)?>.png">
 				</div>
 				<div class="cupcake-info">
 					<span class="cupcake-name">Cupcake Name</span>
