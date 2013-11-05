@@ -3,7 +3,7 @@
 		<title>ASL Project</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="initial-scale=1.0, width=device-width" />
-		<link rel="stylesheet" href="/css/main.css">
+		<link rel="stylesheet" href="/assets/css/main.css">
 		<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
