@@ -1,6 +1,6 @@
 <?php
 
-class Controller_Index extends Controller_Template
+class Controller_Index extends Controller
 {
 
 	public function action_index()
