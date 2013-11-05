@@ -11,7 +11,8 @@ class Controller_Index extends Controller
 
 }
 
-/*
+
+/* 
 
 / (products)
 
@@ -32,7 +33,5 @@ class Controller_Index extends Controller
 /action/submit_order
 
 */
-
-
 
 
