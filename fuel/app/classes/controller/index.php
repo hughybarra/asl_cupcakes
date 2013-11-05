@@ -11,6 +11,8 @@ class Controller_Index extends Controller
 
 }
 
+/*
+
 / (products)
 
 /details/:id
@@ -28,6 +30,8 @@ class Controller_Index extends Controller
 /action/add_quantity
 /action/reduce_quantity
 /action/submit_order
+
+*/
 
 
 
