@@ -7,3 +7,5 @@ ERROR - 2013-11-05 15:29:42 --> Error - Could not find asset: bootstrap.css in /
 ERROR - 2013-11-05 15:29:51 --> Error - Could not find asset: bootstrap.css in /Applications/MAMP/htdocs/asl_cupcakes/fuel/core/classes/asset/instance.php on line 256
 ERROR - 2013-11-05 15:31:02 --> Error - Could not find asset: bootstrap.css in /Applications/MAMP/htdocs/asl_cupcakes/fuel/core/classes/asset/instance.php on line 256
 ERROR - 2013-11-05 15:32:01 --> Error - Could not find asset: bootstrap.css in /Applications/MAMP/htdocs/asl_cupcakes/fuel/core/classes/asset/instance.php on line 256
+ERROR - 2013-11-05 15:36:55 --> Error - Could not find asset: bootstrap.css in /Applications/MAMP/htdocs/asl_cupcakes/fuel/core/classes/asset/instance.php on line 256
+ERROR - 2013-11-05 15:37:32 --> Error - Could not find asset: bootstrap.css in /Applications/MAMP/htdocs/asl_cupcakes/fuel/core/classes/asset/instance.php on line 256
