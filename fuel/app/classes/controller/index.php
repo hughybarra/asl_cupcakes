@@ -1,13 +1,14 @@
 <?php
 
-class Controller_Index extends Controller_Template
+class Controller_Index extends Controller
 {
 
 	public function action_landing()
 	{
-		$data["subnav"] = array('landing'=> 'active' );
+		echo "test";
+		/*$data["subnav"] = array('landing'=> 'active' );
 		$this->template->title = 'Index &raquo; Landing';
-		$this->template->content = View::forge('index/landing', $data);
+		$this->template->content = View::forge('index/landing', $data);*/
 	}
 
 	public function action_productDetail()
