@@ -1,27 +1,21 @@
 <?php
 
-class Controller_Index extends Controller_Template
+class Controller_Index extends Controller
 {
 
 	public function action_landing()
 	{
-		$data["subnav"] = array('landing'=> 'active' );
+		echo "test";
+		/*$data["subnav"] = array('landing'=> 'active' );
 		$this->template->title = 'Index &raquo; Landing';
-		$this->template->content = View::forge('index/landing', $data);
+		$this->template->content = View::forge('index/landing', $data);*/
 	}
 
-	public function action_productDetail()
+	public function action_pDetail()
 	{
-		$data["subnav"] = array('productDetail'=> 'active' );
-		$this->template->title = 'Index &raquo; ProductDetail';
-		$this->template->content = View::forge('index/productDetail', $data);
-	}
-
-	public function action_shopping()
-	{
-		$data["subnav"] = array('shopping'=> 'active' );
-		$this->template->title = 'Index &raquo; Shopping';
-		$this->template->content = View::forge('index/shopping', $data);
+		$data["subnav"] = array('pDetail'=> 'active' );
+		$this->template->title = 'Index &raquo; PDetail';
+		$this->template->content = View::forge('index/pDetail', $data);
 	}
 
 	public function action_cart()

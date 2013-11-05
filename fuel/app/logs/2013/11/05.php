@@ -20,3 +20,8 @@ ERROR - 2013-11-05 15:29:51 --> Error - Could not find asset: bootstrap.css in /
 ERROR - 2013-11-05 15:31:02 --> Error - Could not find asset: bootstrap.css in /Applications/MAMP/htdocs/asl_cupcakes/fuel/core/classes/asset/instance.php on line 256
 ERROR - 2013-11-05 15:32:01 --> Error - Could not find asset: bootstrap.css in /Applications/MAMP/htdocs/asl_cupcakes/fuel/core/classes/asset/instance.php on line 256
 >>>>>>> 1f7a1417cddd1f1eb1d22e30ce0701f09a232f26
+ERROR - 2013-11-05 15:45:04 --> Error - Could not find asset: bootstrap.css in /Applications/MAMP/htdocs/ASSL/cupcake/fuel/core/classes/asset/instance.php on line 256
+ERROR - 2013-11-05 15:45:08 --> Error - Could not find asset: bootstrap.css in /Applications/MAMP/htdocs/ASSL/cupcake/fuel/core/classes/asset/instance.php on line 256
+ERROR - 2013-11-05 15:45:33 --> Error - Could not find asset: bootstrap.css in /Applications/MAMP/htdocs/ASSL/cupcake/fuel/core/classes/asset/instance.php on line 256
+ERROR - 2013-11-05 15:45:34 --> Error - Could not find asset: bootstrap.css in /Applications/MAMP/htdocs/ASSL/cupcake/fuel/core/classes/asset/instance.php on line 256
+ERROR - 2013-11-05 15:45:34 --> Error - Could not find asset: bootstrap.css in /Applications/MAMP/htdocs/ASSL/cupcake/fuel/core/classes/asset/instance.php on line 256
