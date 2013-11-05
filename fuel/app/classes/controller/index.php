@@ -7,6 +7,15 @@ class Controller_Index extends Controller
 	{
 		// products will be listed here
 		echo "(products will be listed here)";
+		
+		
+		// db testing 
+		// prepare a select statement
+		$query = DB::select('*')->from('products_2');
+		
+		foreach($query as $q){
+			var_dump($q);
+		}
 	}
 
 }
