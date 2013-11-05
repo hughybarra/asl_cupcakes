@@ -29,7 +29,7 @@
 				<div class="cupcake-info">
 					<span class="cupcake-name">Cupcake Name</span>
 					<span>$2.50</span>
-					<span>Short description of the cupcake will go here.</span>
+					<span>Powder cake toffee gummies I love cake.</span>
 				</div>
 			</div>
 		<?php endfor; ?>
