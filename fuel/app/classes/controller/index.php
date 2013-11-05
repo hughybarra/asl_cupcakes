@@ -3,7 +3,7 @@
 class Controller_Index extends Controller
 {
 
-	public function action_landing()
+	public function action_index()
 	{
 		echo "test";
 		/*$data["subnav"] = array('landing'=> 'active' );

@@ -53,3 +53,33 @@ ERROR - 2013-11-05 15:43:29 --> Error - Could not find asset: bootstrap.css in /
 ERROR - 2013-11-05 15:43:46 --> Notice - Undefined variable: title in /Users/ajames/Workspace/Aptana/ASL/asl_cupcakes/fuel/app/views/template.php on line 5
 ERROR - 2013-11-05 15:43:47 --> Notice - Undefined variable: title in /Users/ajames/Workspace/Aptana/ASL/asl_cupcakes/fuel/app/views/template.php on line 5
 >>>>>>> 5e316f52b04f8df5f63f3e03fcaa8868a55e5367
+ERROR - 2013-11-05 15:47:02 --> Error - Could not find asset: bootstrap.css in /Applications/MAMP/htdocs/ASSL/cupcake/fuel/core/classes/asset/instance.php on line 256
+ERROR - 2013-11-05 15:47:29 --> Error - Could not find asset: bootstrap.css in /Applications/MAMP/htdocs/ASSL/cupcake/fuel/core/classes/asset/instance.php on line 256
+ERROR - 2013-11-05 15:47:29 --> Error - Could not find asset: bootstrap.css in /Applications/MAMP/htdocs/ASSL/cupcake/fuel/core/classes/asset/instance.php on line 256
+ERROR - 2013-11-05 15:47:29 --> Error - Could not find asset: bootstrap.css in /Applications/MAMP/htdocs/ASSL/cupcake/fuel/core/classes/asset/instance.php on line 256
+ERROR - 2013-11-05 15:47:30 --> Error - Could not find asset: bootstrap.css in /Applications/MAMP/htdocs/ASSL/cupcake/fuel/core/classes/asset/instance.php on line 256
+ERROR - 2013-11-05 15:47:30 --> Error - Could not find asset: bootstrap.css in /Applications/MAMP/htdocs/ASSL/cupcake/fuel/core/classes/asset/instance.php on line 256
+ERROR - 2013-11-05 15:47:30 --> Error - Could not find asset: bootstrap.css in /Applications/MAMP/htdocs/ASSL/cupcake/fuel/core/classes/asset/instance.php on line 256
+ERROR - 2013-11-05 15:47:58 --> Error - Could not find asset: bootstrap.css in /Applications/MAMP/htdocs/ASSL/cupcake/fuel/core/classes/asset/instance.php on line 256
+ERROR - 2013-11-05 15:47:58 --> Error - Could not find asset: bootstrap.css in /Applications/MAMP/htdocs/ASSL/cupcake/fuel/core/classes/asset/instance.php on line 256
+ERROR - 2013-11-05 15:47:59 --> Error - Could not find asset: bootstrap.css in /Applications/MAMP/htdocs/ASSL/cupcake/fuel/core/classes/asset/instance.php on line 256
+ERROR - 2013-11-05 15:47:59 --> Error - Could not find asset: bootstrap.css in /Applications/MAMP/htdocs/ASSL/cupcake/fuel/core/classes/asset/instance.php on line 256
+ERROR - 2013-11-05 15:48:00 --> Error - Could not find asset: bootstrap.css in /Applications/MAMP/htdocs/ASSL/cupcake/fuel/core/classes/asset/instance.php on line 256
+ERROR - 2013-11-05 15:48:00 --> Error - Could not find asset: bootstrap.css in /Applications/MAMP/htdocs/ASSL/cupcake/fuel/core/classes/asset/instance.php on line 256
+ERROR - 2013-11-05 15:48:14 --> Error - Could not find asset: bootstrap.css in /Applications/MAMP/htdocs/ASSL/cupcake/fuel/core/classes/asset/instance.php on line 256
+ERROR - 2013-11-05 15:49:16 --> Error - Could not find asset: bootstrap.css in /Applications/MAMP/htdocs/ASSL/cupcake/fuel/core/classes/asset/instance.php on line 256
+ERROR - 2013-11-05 15:49:17 --> Error - Could not find asset: bootstrap.css in /Applications/MAMP/htdocs/ASSL/cupcake/fuel/core/classes/asset/instance.php on line 256
+ERROR - 2013-11-05 15:49:17 --> Error - Could not find asset: bootstrap.css in /Applications/MAMP/htdocs/ASSL/cupcake/fuel/core/classes/asset/instance.php on line 256
+ERROR - 2013-11-05 15:49:18 --> Error - Could not find asset: bootstrap.css in /Applications/MAMP/htdocs/ASSL/cupcake/fuel/core/classes/asset/instance.php on line 256
+ERROR - 2013-11-05 15:49:18 --> Error - Could not find asset: bootstrap.css in /Applications/MAMP/htdocs/ASSL/cupcake/fuel/core/classes/asset/instance.php on line 256
+ERROR - 2013-11-05 15:49:18 --> Error - Could not find asset: bootstrap.css in /Applications/MAMP/htdocs/ASSL/cupcake/fuel/core/classes/asset/instance.php on line 256
+ERROR - 2013-11-05 15:49:18 --> Error - Could not find asset: bootstrap.css in /Applications/MAMP/htdocs/ASSL/cupcake/fuel/core/classes/asset/instance.php on line 256
+ERROR - 2013-11-05 15:49:19 --> Error - Could not find asset: bootstrap.css in /Applications/MAMP/htdocs/ASSL/cupcake/fuel/core/classes/asset/instance.php on line 256
+ERROR - 2013-11-05 15:49:19 --> Error - Could not find asset: bootstrap.css in /Applications/MAMP/htdocs/ASSL/cupcake/fuel/core/classes/asset/instance.php on line 256
+ERROR - 2013-11-05 15:49:19 --> Error - Could not find asset: bootstrap.css in /Applications/MAMP/htdocs/ASSL/cupcake/fuel/core/classes/asset/instance.php on line 256
+ERROR - 2013-11-05 15:49:24 --> Error - Could not find asset: bootstrap.css in /Applications/MAMP/htdocs/ASSL/cupcake/fuel/core/classes/asset/instance.php on line 256
+ERROR - 2013-11-05 15:49:24 --> Error - Could not find asset: bootstrap.css in /Applications/MAMP/htdocs/ASSL/cupcake/fuel/core/classes/asset/instance.php on line 256
+ERROR - 2013-11-05 15:49:58 --> Error - Could not find asset: bootstrap.css in /Applications/MAMP/htdocs/ASSL/cupcake/fuel/core/classes/asset/instance.php on line 256
+ERROR - 2013-11-05 15:50:01 --> Error - Could not find asset: bootstrap.css in /Applications/MAMP/htdocs/ASSL/cupcake/fuel/core/classes/asset/instance.php on line 256
+ERROR - 2013-11-05 15:50:19 --> Error - Could not find asset: bootstrap.css in /Applications/MAMP/htdocs/ASSL/cupcake/fuel/core/classes/asset/instance.php on line 256
+ERROR - 2013-11-05 15:50:51 --> Error - Could not find asset: bootstrap.css in /Applications/MAMP/htdocs/ASSL/cupcake/fuel/core/classes/asset/instance.php on line 256
