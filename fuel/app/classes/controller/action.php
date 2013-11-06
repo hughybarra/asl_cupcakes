@@ -7,7 +7,8 @@ class Controller_Action extends Controller_Rest
 
 	public function action_logout()
 	{
-		echo "logged out";
+		Auth::logout();
+		Session::set_flash('success', 'Logged out.');
 	}
 
 	public function action_signup()
@@ -39,7 +40,16 @@ class Controller_Action extends Controller_Rest
 
 	public function action_login()
 	{
-		echo "login";
+    	if(Input::post()){
+
+    		if(Auth::login(Input::post('username'), Auth::hash_password(Input::post('password')))){
+
+    			Session::set_flash('success', 'Successfully logged in! Welcome back');
+    		}else{
+
+    			Session::set_flash('error', 'Username or password incorrect.');
+    		}
+    	}
 	}
 
 	public function action_addToCart()
