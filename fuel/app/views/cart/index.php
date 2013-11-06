@@ -1,26 +1,32 @@
-<div class="main">
-	<h1>Shopping Cart</h1>
-	<div class="shopping-cart">
-		<div>
-			<span>Total</span>
-			<span>$23.54</span>
-			<a href="#" class="button-submit">Checkout</a>
-		</div>
-	</div>
-	<div class="cart-items">
-		<?php for($i = 1; $i < 9; $i++):?>
-			<div class="cart-item">
-				<div class="cupcake-thumb">
-					<img src="/img/cupcakes/7.png">
-				</div>
-				<div class="cupcake-cart-info">
-					<span class="cupcake-name">Cupcake Name</span>
-					<span>Price</span>
-					<span>$2.50</span>
-					<span>Quantity</span>
-					<span>2</span>
-				</div>
-			</div>
-		<?php endfor; ?>
+<h1>Shopping Cart</h1>
+<div class="shopping-cart">
+	<div>
+		<span>Total</span>
+		<span>$23.54</span>
+		<a href="#" class="button-submit">Checkout</a>
 	</div>
 </div>
+<div class="cart-items">
+	
+	<?php foreach ($cart as $item): ?>
+		
+	<div class="cart-item">
+		<div class="cupcake-thumb">
+			<img src="/assets/img/cupcakes/<?php echo $item['image_path']; ?>.png">
+		</div>
+		<div class="cupcake-cart-info">
+			<span class="cupcake-name"><?php echo $item['name']; ?></span>
+			<span>Price</span>
+			<span>$<?php echo $item['price']; ?></span>
+			<span>Quantity</span>
+			<span><?php echo $item['quantity']; ?></span>
+		</div>
+	</div>
+<<<<<<< HEAD
+</div>
+=======
+	
+	<?php endforeach; ?>
+	
+</div>
+>>>>>>> 399b041317a12448757b461ac18ad4432b610c8b
