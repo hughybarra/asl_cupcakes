@@ -23,5 +23,4 @@
 			</div>
 		<?php endfor; ?>
 	</div>
-	
 </div>
