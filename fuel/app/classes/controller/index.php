@@ -1,14 +1,10 @@
 <?php
 
-class Controller_Index extends Controller
+class Controller_Index extends Controller_Template
 {
 
 	public function action_index()
 	{
-		// products will be listed here
-		echo "(products will be listed here)";
-		
-		
 		// db testing 
 		// prepare a select statement
 		$query = DB::select('*')->from('products_2');
