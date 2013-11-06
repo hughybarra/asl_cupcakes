@@ -1,7 +1,9 @@
 <?php
 
-class Controller_Action extends Controller
+class Controller_Action extends Controller_Rest
 {
+	
+	protected $format = 'json';
 
 	public function action_logout()
 	{
@@ -11,16 +13,28 @@ class Controller_Action extends Controller
 	public function action_signup()
 	{
 	    if(Input::post()){
+	    	
 			$users = Model_User::forge(array(
-				'username'=>Input::post('username'),
-				'password'=>Auth::hash_password(Input::post('password')),
-				'email'=>Input::post('email')
+				'username' => Input::post('username'),
+				'password' => Auth::hash_password(Input::post('password')),
+				'email' => Input::post('email')
 			));
 
 			if($users and $users->save()){
+	    		
 	    		Session::set_flash('success', 'User created.');
+				
+				return $this -> response(array(
+		            'success' => 'User created.'
+		        ));
+				
 	    	}
+			
 	    }
+		
+		return $this -> response(array(
+            'success' => 'User created.'
+        ));
 	}
 
 	public function action_login()
