@@ -5,7 +5,7 @@
 		
 	</div>
 	<div class="cupcake-info">
-		<span class="cupcake-name"><?php echo $item -> name ?> Cupcake Name</span>
+		<span class="cupcake-name"><?php echo $item -> name ?> </span>
 		<span>$2.50</span>
 		<span>Powder cake toffee gummies I love cake.</span>
 	</div>
