@@ -5,13 +5,12 @@ class Controller_Index extends Controller_Template
 
 	public function action_index()
 	{
-		// db testing 
-		// prepare a select statement
-		$query = DB::select('*')->from('products_2');
+		// products will be listed here
 		
-		foreach($query as $q){
-			var_dump($q);
-		}
+		$data['products'] = Model_Product::find("all");
+	
+		$this -> template -> content = View::forge('index/index', $data);
+		
 	}
 
 }
