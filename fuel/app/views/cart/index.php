@@ -22,11 +22,7 @@
 			<span><?php echo $item['quantity']; ?></span>
 		</div>
 	</div>
-<<<<<<< HEAD
-</div>
-=======
 	
 	<?php endforeach; ?>
 	
 </div>
->>>>>>> 399b041317a12448757b461ac18ad4432b610c8b
