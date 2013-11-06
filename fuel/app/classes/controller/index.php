@@ -1,21 +1,14 @@
 <?php
 
-class Controller_Index extends Controller
+class Controller_Index extends Controller_Template
 {
 
 	public function action_index()
 	{
-		// products will be listed here
-		echo "(products will be listed here) <hr>";
-		
-		// products will be passed to the views for parsing. 
-		$products = Model_Product::find("all");
+		// products will be listed here		
+		$data['products'] = Model_Product::find("all");
 	
-		// loop through all products 
-		foreach($products as $p){
-			echo $p->name;
-			echo "<hr>";
-		}
+		$this -> template -> content = View::forge('index/index', $data);
 	}
 
 }
@@ -24,13 +17,10 @@ class Controller_Index extends Controller
 /* 
 
 / (products)
-
-/details/:id
 /cart/
-
-/users (signup/login)
-
-
+/details/:id
+/favorites/
+/users/ (signup/login)
 
 /action/logout
 /action/signup/

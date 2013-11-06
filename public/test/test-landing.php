@@ -19,7 +19,7 @@
 		</header>	
 		<div class="main">
 		
-		<div id="ad_slot"><span>Ad space</span></div>		
+		<div id="ad_slot"><span>Ad space</span></div>
 		
 		<?php for($i = 1; $i < 9; $i++):?>
 			<div class="cupcake">
