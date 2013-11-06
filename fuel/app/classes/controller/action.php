@@ -10,7 +10,17 @@ class Controller_Action extends Controller
 
 	public function action_signup()
 	{
-		echo "signUP";
+	    if(Input::post()){
+			$users = Model_User::forge(array(
+				'username'=>Input::post('username'),
+				'password'=>Auth::hash_password(Input::post('password')),
+				'email'=>Input::post('email')
+			));
+
+			if($users and $users->save()){
+	    		Session::set_flash('success', 'User created.');
+	    	}
+	    }
 	}
 
 	public function action_login()
