@@ -6,15 +6,13 @@ class Controller_Index extends Controller
 	public function action_index()
 	{
 		// products will be listed here
-		echo "(products will be listed here)";
-		
-		
-		// db testing 
-		// prepare a select statement
-		$query = DB::select('*')->from('products_2');
-		
-		foreach($query as $q){
-			var_dump($q);
+		echo "(products will be listed here) <hr>";
+		$posts = Model_Product::find("all");
+	
+		// loop through all products 
+		foreach($posts as $p){
+			echo $p->name;
+			echo "<hr>";
 		}
 	}
 

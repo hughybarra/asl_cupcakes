@@ -3,6 +3,7 @@ class Controller_Products extends Controller_Template{
 
 	public function action_index()
 	{
+		echo "action index is running";
 		$data['products'] = Model_Product::find('all');
 		$this->template->title = "Products";
 		$this->template->content = View::forge('products/index', $data);
