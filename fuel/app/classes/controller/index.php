@@ -7,10 +7,12 @@ class Controller_Index extends Controller
 	{
 		// products will be listed here
 		echo "(products will be listed here) <hr>";
-		$posts = Model_Product::find("all");
+		
+		// products will be passed to the views for parsing. 
+		$products = Model_Product::find("all");
 	
 		// loop through all products 
-		foreach($posts as $p){
+		foreach($products as $p){
 			echo $p->name;
 			echo "<hr>";
 		}
