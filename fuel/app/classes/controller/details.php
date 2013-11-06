@@ -1,6 +1,6 @@
 <?php
 
-class Controller_Details extends Controller
+class Controller_Details extends Controller_Template
 {
 
 	public function action_index($product_id)
