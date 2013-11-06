@@ -4,9 +4,6 @@ class Controller_Favorites extends Controller_Template{
 
 	public function action_index()
 	{
-		// $data['favorites'] = Model_Favorite::find('all');
-		// $this->template->title = "Favorites";
-		// $this->template->content = View::forge('favorites/index', $data);
 
 	}
 
