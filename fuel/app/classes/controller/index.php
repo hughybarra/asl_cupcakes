@@ -7,7 +7,7 @@ class Controller_Index extends Controller_Template
 	{
 		// products will be listed here		
 		$data['products'] = Model_Product::find('all');
-	
+		
 		$this -> template -> content = View::forge('index/index', $data);
 	}
 

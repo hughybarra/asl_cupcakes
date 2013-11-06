@@ -1,7 +1,7 @@
 <?php foreach($products as $item):?>
 <div class="cupcake">
 	<div class="cupcake-thumb">
-		<a href="/details/index/<?php echo $item -> id; ?>">
+		<a href="/details/<?php echo $item -> id; ?>">
 			<img src="/assets/img/cupcakes/<?php echo $item -> image_path; ?>.png">
 		</a>
 	</div>
