@@ -1,57 +1,31 @@
-<!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<title><?php echo $title; ?></title>
-	<?php echo Asset::css('bootstrap.css'); ?>
-	<style>
-		body { margin: 40px; }
-	</style>
-</head>
-<body>
-	<div class="container">
-		<div class="col-md-12">
-			<h1><?php echo $title; ?></h1>
-			<hr>
-			<?php
-                if (isset($user_info)){
-                        echo $user_info;
-                }else{
-                	if(Auth::instance()->check()){
-						$link = array('Logged in as: '.Auth::instance()->get_screen_name(), Html::anchor('users/logout', 'Logout'));
-                	}else{
-	                    $link = array(Html::anchor('users/login', 'Login'), Html::anchor('users/register', 'Register'));
-	                } 
-                    echo Html::ul($link);
-                }
-            ?>
-<?php if (Session::get_flash('success')): ?>
-			<div class="alert alert-success">
-				<strong>Success</strong>
-				<p>
-				<?php echo implode('</p><p>', e((array) Session::get_flash('success'))); ?>
-				</p>
-			</div>
-<?php endif; ?>
-<?php if (Session::get_flash('error')): ?>
-			<div class="alert alert-error">
-				<strong>Error</strong>
-				<p>
-				<?php echo implode('</p><p>', e((array) Session::get_flash('error'))); ?>
-				</p>
-			</div>
-<?php endif; ?>
+	<head>
+		<title>ASL Project</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+		<link rel="stylesheet" href="/assets/css/main.css">
+		<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+	</head>
+	<body>
+		
+		<div id="header_placeholder"></div>
+		
+		<header>
+			<a id="logo" href="#">The Cupcake Factory</a>
+			<a class="header-cart" href="#">View Cart</a>
+			<a class="header-favorites" href="#">Favorites</a>
+			<span>New here? Sign up!</span>
+			<a class="header-logout" href="#">Log In</a>
+		</header>	
+		
+		<div class="main">
+		<div id="ad_slot"><span>Ad space</span></div>
+		
+		<?php echo $content; ?>
+		
 		</div>
-		<div class="col-md-12">
-<?php echo $content; ?>
-		</div>
-		<footer>
-			<p class="pull-right">Page rendered in {exec_time}s using {mem_usage}mb of memory.</p>
-			<p>
-				<a href="http://fuelphp.com">FuelPHP</a> is released under the MIT license.<br>
-				<small>Version: <?php echo e(Fuel::VERSION); ?></small>
-			</p>
-		</footer>
-	</div>
-</body>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+		<script src="/js/main.js"></script>
+	</body>
 </html>
