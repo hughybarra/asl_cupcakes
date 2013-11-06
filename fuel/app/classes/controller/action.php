@@ -12,29 +12,36 @@ class Controller_Action extends Controller_Rest
 
 	public function action_signup()
 	{
-	    if(Input::post()){
-	    	
-			$users = Model_User::forge(array(
-				'username' => Input::post('username'),
-				'password' => Auth::hash_password(Input::post('password')),
-				'email' => Input::post('email')
-			));
+		// validate
+	    if(
+	    	!Input::post('username') ||
+	    	!Input::post('password') ||
+			!Input::post('email')
+		){
+	    	return $this -> response(array(
+	            'error' => 'variables not set'
+	        ));
+		}
+    	
+		// create new model
+		$users = Model_User::forge(array(
+			'username' => Input::post('username'),
+			'password' => Auth::hash_password(Input::post('password')),
+			'email' => Input::post('email')
+		));
 
-			if($users and $users->save()){
-	    		
-	    		Session::set_flash('success', 'User created.');
-				
-				return $this -> response(array(
-		            'success' => 'User created.'
-		        ));
-				
-	    	}
+		// save model
+		if($users and $users->save()){
+    		
+    		Session::set_flash('success', 'User created.');
 			
-	    }
-		
-		return $this -> response(array(
-            'success' => 'User created.'
-        ));
+			// output success
+			return $this -> response(array(
+	            'success' => 'User created.'
+	        ));
+			
+    	}
+			
 	}
 
 	public function action_login()
