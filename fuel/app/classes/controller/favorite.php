@@ -1,27 +1,26 @@
 <?php
-
-class Controller_Favorites extends Controller_Template{
+class Controller_Favorite extends Controller_Template{
 
 	public function action_index()
 	{
-		// $data['favorites'] = Model_Favorite::find('all');
-		// $this->template->title = "Favorites";
-		// $this->template->content = View::forge('favorites/index', $data);
+		$data['favorites'] = Model_Favorite::find('all');
+		$this->template->title = "Favorites";
+		$this->template->content = View::forge('favorite/index', $data);
 
 	}
 
 	public function action_view($id = null)
 	{
-		is_null($id) and Response::redirect('favorites');
+		is_null($id) and Response::redirect('favorite');
 
 		if ( ! $data['favorite'] = Model_Favorite::find($id))
 		{
 			Session::set_flash('error', 'Could not find favorite #'.$id);
-			Response::redirect('favorites');
+			Response::redirect('favorite');
 		}
 
 		$this->template->title = "Favorite";
-		$this->template->content = View::forge('favorites/view', $data);
+		$this->template->content = View::forge('favorite/view', $data);
 
 	}
 
@@ -42,7 +41,7 @@ class Controller_Favorites extends Controller_Template{
 				{
 					Session::set_flash('success', 'Added favorite #'.$favorite->id.'.');
 
-					Response::redirect('favorites');
+					Response::redirect('favorite');
 				}
 
 				else
@@ -57,18 +56,18 @@ class Controller_Favorites extends Controller_Template{
 		}
 
 		$this->template->title = "Favorites";
-		$this->template->content = View::forge('favorites/create');
+		$this->template->content = View::forge('favorite/create');
 
 	}
 
 	public function action_edit($id = null)
 	{
-		is_null($id) and Response::redirect('favorites');
+		is_null($id) and Response::redirect('favorite');
 
 		if ( ! $favorite = Model_Favorite::find($id))
 		{
 			Session::set_flash('error', 'Could not find favorite #'.$id);
-			Response::redirect('favorites');
+			Response::redirect('favorite');
 		}
 
 		$val = Model_Favorite::validate('edit');
@@ -82,7 +81,7 @@ class Controller_Favorites extends Controller_Template{
 			{
 				Session::set_flash('success', 'Updated favorite #' . $id);
 
-				Response::redirect('favorites');
+				Response::redirect('favorite');
 			}
 
 			else
@@ -105,13 +104,13 @@ class Controller_Favorites extends Controller_Template{
 		}
 
 		$this->template->title = "Favorites";
-		$this->template->content = View::forge('favorites/edit');
+		$this->template->content = View::forge('favorite/edit');
 
 	}
 
 	public function action_delete($id = null)
 	{
-		is_null($id) and Response::redirect('favorites');
+		is_null($id) and Response::redirect('favorite');
 
 		if ($favorite = Model_Favorite::find($id))
 		{
@@ -125,7 +124,7 @@ class Controller_Favorites extends Controller_Template{
 			Session::set_flash('error', 'Could not delete favorite #'.$id);
 		}
 
-		Response::redirect('favorites');
+		Response::redirect('favorite');
 
 	}
 

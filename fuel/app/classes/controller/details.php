@@ -1,14 +1,20 @@
 <?php
 
-class Controller_Details extends Controller_Template
+class Controller_Details extends Controller
 {
 
-	public function action_index($product_id)
+	public function action_index()
 	{
-		// prepare a select statement to find product by passed Id
-		$data['product'] = Model_Product::find_by_id($product_id);
+		echo "product details displays all information on one product";
 		
-		$this -> template -> content = View::forge('details/index', $data);
+		// manually setting product Id. javascript should pass that data. 
+		$product_id = 1;
+		
+		// prepare a select statement to find product by passed Id
+		$query = Model_Product::find_by_id($product_id);
+		
+		// db working here
+		echo $query->name;
 	}
 
 }
