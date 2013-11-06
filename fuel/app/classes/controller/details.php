@@ -5,19 +5,11 @@ class Controller_Details extends Controller_Template
 
 	public function action_index()
 	{
-		$data['cart'] = array(
-			'id' => '7',
-			'name' => 'Whatever',
-			'product_type' => 'something',
-			'product_description' => 'Something',
-			'price' => '2.50',
-			'image_path' => '7',
-			'quantity' => '2',
-			'product_reviews' => '',
-			'product_likes' => '',
-			'created_at' => '',
-			'updated_at' => ''
-		);
+		// manually setting product Id. javascript should pass that data. 	
+		$product_id = 1;
+		
+		// prepare a select statement to find product by passed Id
+		$query = Model_Product::find_by_id($product_id);
 		
 		$this -> template -> content = View::forge('details/index', $data);
 	}

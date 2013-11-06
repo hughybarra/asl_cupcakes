@@ -5,12 +5,10 @@ class Controller_Index extends Controller_Template
 
 	public function action_index()
 	{
-		// products will be listed here
-		
+		// products will be listed here		
 		$data['products'] = Model_Product::find("all");
 	
 		$this -> template -> content = View::forge('index/index', $data);
-		
 	}
 
 }
