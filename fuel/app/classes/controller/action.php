@@ -84,4 +84,14 @@ class Controller_Action extends Controller_Rest
 		echo "submitOrder";
 	}
 
+	public function action_addFavorite()
+	{
+		echo "addFavorite";
+	}
+
+	public function action_removeFavorite()
+	{
+		echo "removeFavorite";
+	}
+
 }
