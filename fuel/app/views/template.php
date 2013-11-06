@@ -11,9 +11,9 @@
 		<div id="header_placeholder"></div>
 		
 		<header>
-			<a id="logo" href="#">The Cupcake Factory</a>
-			<a class="header-cart" href="#">View Cart</a>
-			<a class="header-favorites" href="#">Favorites</a>
+			<a id="logo" href="/">The Cupcake Factory</a>
+			<a class="header-cart" href="/cart">View Cart</a>
+			<a class="header-favorites" href="/favorites">Favorites</a>
 			<span>New here? Sign up!</span>
 			<a class="header-logout" href="#">Log In</a>
 		</header>	
