@@ -3,10 +3,6 @@ class Controller_Favorite extends Controller_Template{
 
 	public function action_index()
 	{
-		$data['favorites'] = Model_Favorite::find('all');
-		$this->template->title = "Favorites";
-		$this->template->content = View::forge('favorite/index', $data);
-
 	}
 
 	public function action_view($id = null)
