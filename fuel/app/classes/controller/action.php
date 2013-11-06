@@ -44,14 +44,38 @@ class Controller_Action extends Controller_Rest {
 	}
 
 	public function action_login() {
-		if (Input::post()) {
-
-			if (Auth::login(Input::post('username'), Auth::hash_password(Input::post('password')))) {
-				Session::set_flash('success', 'Successfully logged in! Welcome back');
-			} else {
-				Session::set_flash('error', 'Username or password incorrect.');
-			}
+		
+		// validate
+	    if(
+	    	!Input::post('username') ||
+	    	!Input::post('password')
+		){
+	    	return $this -> response(array(
+	            'error' => 'variables not set'
+	        ));
 		}
+    	
+		// create new model
+		$user = Model_User::find_by_username(Input::post('username'));
+		
+		if($user){
+			
+			if(Auth::hash_password(Input::post('password')) == $user -> password){
+			
+				Session::set('user', array(
+					'id' => $user -> id,
+					
+					// more stuff here
+				));
+				
+				return $this -> response(array(
+		            'success' => 'logged in'
+		        ));
+				
+			}
+			
+		}
+	
 	}
 
 	public function action_addToCart() {
