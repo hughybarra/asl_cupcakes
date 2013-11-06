@@ -17,13 +17,10 @@ class Controller_Index extends Controller_Template
 /* 
 
 / (products)
-
-/details/:id
 /cart/
-
-/users (signup/login)
-
-
+/details/:id
+/favorites/
+/users/ (signup/login)
 
 /action/logout
 /action/signup/
