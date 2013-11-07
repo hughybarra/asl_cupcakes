@@ -76,6 +76,10 @@ class Controller_Action extends Controller_Rest {
 	public function action_logout() {
 		Session::set_flash('success', 'Logged out.');
 		Session::delete('user');
+		
+		return $this -> response(array(
+            'success' => 'logged out'
+        ));
 	}
 
 	public function action_addToCart() {
@@ -101,6 +105,9 @@ class Controller_Action extends Controller_Rest {
 	public function action_addFavorite()
 	{
 
+		echo Input::post('user_id');
+		exit;
+
 		// validate
 	    if(
 	    	!Input::post('user_id') ||
@@ -110,7 +117,7 @@ class Controller_Action extends Controller_Rest {
 	            'error' => 'variables not set'
 	        ));
 		}
-
+		
 		// create new model
 		$favorites = Model_Favorite::forge(array(
 			'user_id' => Input::post('user_id'),
@@ -155,6 +162,7 @@ class Controller_Action extends Controller_Rest {
 	            'success' => 'Favorite removed.'
 	    	));
 		}
+		
 	}
 
 }
