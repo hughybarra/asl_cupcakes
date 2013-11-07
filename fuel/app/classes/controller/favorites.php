@@ -4,7 +4,7 @@ class Controller_Favorites extends Controller_Template {
 	public function action_index() {
 
 		// FAKE
-		$data['cart'] = array(
+		$data['favorite'] = array(
 			array(
 				'id' => '7',
 				'name' => 'Whatever',

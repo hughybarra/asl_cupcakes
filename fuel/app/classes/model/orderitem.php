@@ -1,6 +1,8 @@
 <?php
 
-class Model_Orderitem extends \Orm\Model
+use Orm\Model;
+
+class Model_Orderitem extends Model
 {
 	protected static $_properties = array(
 		'id',
