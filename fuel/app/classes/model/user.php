@@ -1,4 +1,5 @@
 <?php
+
 use Orm\Model;
 
 class Model_User extends Model

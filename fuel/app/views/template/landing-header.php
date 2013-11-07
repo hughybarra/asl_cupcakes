@@ -12,10 +12,14 @@
 		
 		<header>
 			<a id="logo" href="#">The Cupcake Factory</a>
-			<a class="header-cart" href="#">View Cart</a>
-			<a class="header-favorites" href="#">Favorites</a>
-			<span>New here? Sign up!</span>
-			<a class="header-logout" href="#">Log In</a>
+			<div class="header-controls">
+				<a class="header-cart" href="#"><img src="/assets/img/fave-icon.png">View Cart</a>
+				<a class="header-favorites" href="#"><img src="/assets/img/fave-icon.png">Favorites</a>
+				<div>
+					<a class="header-logout" href="#">Log In</a>
+					<span>New here? Sign up!</span>
+				</div>
+			</div>
 		</header>	
 		
 		<div class="main">
