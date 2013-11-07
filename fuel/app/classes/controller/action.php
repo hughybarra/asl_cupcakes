@@ -5,8 +5,8 @@ class Controller_Action extends Controller_Rest {
 	protected $format = 'json';
 
 	public function action_logout() {
-		Auth::logout();
 		Session::set_flash('success', 'Logged out.');
+		Session::destroy();
 	}
 
 	public function action_signup() {
@@ -100,12 +100,59 @@ class Controller_Action extends Controller_Rest {
 
 	public function action_addFavorite()
 	{
-		echo "addFavorite";
+
+		// validate
+	    if(
+	    	!Input::post('user_id') ||
+	    	!Input::post('product_id')
+		){
+	    	return $this -> response(array(
+	            'error' => 'variables not set'
+	        ));
+		}
+
+		// create new model
+		$favorites = Model_Favorite::forge(array(
+			'user_id' => Input::post('user_id'),
+			'product_id' => Input::post('product_id')
+		));
+
+		// save model
+		if($favorites and $favorites->save()){
+    		
+    		Session::set_flash('success', 'Added to favorites.');
+			
+			// output success
+			return $this -> response(array(
+	            'success' => 'Favorite added.'
+	    ));
 	}
 
 	public function action_removeFavorite()
 	{
-		echo "removeFavorite";
+
+		// validate
+	    if(
+	    	!Input::post('user_id') ||
+	    	!Input::post('product_id')
+		){
+	    	return $this -> response(array(
+	            'error' => 'variables not set'
+	        ));
+		}
+
+		// create new model
+		$favorite = Model_Favorite::find_by_user_id_and_product_id(Input::post('user_id'), Input::post('product_id'));
+
+		// save model
+		if($favorite and $favorite->delete()){
+    		
+    		Session::set_flash('success', 'Removed from favorites.');
+			
+			// output success
+			return $this -> response(array(
+	            'success' => 'Favorite removed.'
+	    ));
 	}
 
 }
