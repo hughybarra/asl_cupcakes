@@ -153,7 +153,8 @@ class Controller_Action extends Controller_Rest {
 			// output success
 			return $this -> response(array(
 	            'success' => 'Favorite removed.'
-	    ));
+	    	));
+		}
 	}
 
 }
