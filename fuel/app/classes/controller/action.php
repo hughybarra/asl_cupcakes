@@ -4,11 +4,6 @@ class Controller_Action extends Controller_Rest {
 
 	protected $format = 'json';
 
-	public function action_logout() {
-		Auth::logout();
-		Session::set_flash('success', 'Logged out.');
-	}
-
 	public function action_signup() {
 		
 		// validate
@@ -23,20 +18,20 @@ class Controller_Action extends Controller_Rest {
 		}
     	
 		// create new model
-		$users = Model_User::forge(array(
+		$user = Model_User::forge(array(
 			'username' => Input::post('username'),
 			'password' => Auth::hash_password(Input::post('password')),
 			'email' => Input::post('email')
 		));
-
+		
 		// save model
-		if($users and $users->save()){
+		if($user and $user->save()){
     		
-    		Session::set_flash('success', 'User created.');
+    		Session::set_flash('success', 'user created');
 			
 			// output success
 			return $this -> response(array(
-	            'success' => 'User created.'
+	            'success' => 'user created'
 	        ));
 			
     	}
@@ -58,24 +53,39 @@ class Controller_Action extends Controller_Rest {
 		// create new model
 		$user = Model_User::find_by_username(Input::post('username'));
 		
-		if($user){
+		if(!$user){
+			return $this -> response(array(
+	            'error' => 'user not found'
+	        ));
+		}
 			
-			if(Auth::hash_password(Input::post('password')) == $user -> password){
+		if(Auth::hash_password(Input::post('password')) == $user -> password){
+		
+			Session::set('user', array(
+				'id' => $user -> id,
+				// TODO
+				// more stuff here
+			));
 			
-				Session::set('user', array(
-					'id' => $user -> id,
-					
-					// more stuff here
-				));
-				
-				return $this -> response(array(
-		            'success' => 'logged in'
-		        ));
-				
-			}
+			Session::set_flash('success', 'logged in');
+			
+			return $this -> response(array(
+	            'success' => 'logged in'
+	        ));
 			
 		}
 	
+	}
+	
+	public function action_logout() {
+		
+		Session::delete('user');
+		
+		Session::set_flash('success', 'logged out');
+		
+		return $this -> response(array(
+            'success' => 'logged out'
+        ));
 	}
 
 	public function action_addToCart() {
@@ -96,6 +106,72 @@ class Controller_Action extends Controller_Rest {
 
 	public function action_submitOrder() {
 		echo "submitOrder";
+	}
+
+	public function action_addFavorite()
+	{
+
+		// validate
+	    if(
+	    	!Input::post('user_id') ||
+	    	!Input::post('product_id')
+		){
+	    	return $this -> response(array(
+	            'error' => 'variables not set'
+	        ));
+		}
+		
+		// create new model
+		$favorite = Model_Favorite::forge(array(
+			'user_id' => Input::post('user_id'),
+			'product_id' => Input::post('product_id')
+		));
+
+		// save model
+		if($favorite and $favorite->save()){
+    		
+    		Session::set_flash('success', 'added to favorites');
+			
+			// output success
+			return $this -> response(array(
+	            'success' => 'added to favorites'
+   			));
+		}
+	}
+
+	public function action_removeFavorite()
+	{
+
+		// validate
+	    if(
+	    	!Input::post('user_id') ||
+	    	!Input::post('product_id')
+		){
+	    	return $this -> response(array(
+	            'error' => 'variables not set'
+	        ));
+		}
+
+		// create new model
+		$favorite = Model_Favorite::find_by_user_id_and_product_id(Input::post('user_id'), Input::post('product_id'));
+
+		if(!$favorite){
+			return $this -> response(array(
+	            'error' => 'favorite not found'
+	        ));
+		}
+
+		// save model
+		if($favorite->delete()){
+    		
+    		Session::set_flash('success', 'removed from favorites');
+			
+			// output success
+			return $this -> response(array(
+	            'success' => 'removed from favorites'
+	    	));
+		}
+		
 	}
 
 }
