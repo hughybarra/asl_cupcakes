@@ -50,3 +50,4 @@
 		</button>
 	</form>
 </div>
+<img id="login-graphic" src="/assets/img/cupcakes/login-graphic.png">
