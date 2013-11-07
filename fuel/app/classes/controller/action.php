@@ -125,7 +125,8 @@ class Controller_Action extends Controller_Rest {
 			// output success
 			return $this -> response(array(
 	            'success' => 'Favorite added.'
-	    ));
+   			));
+		}
 	}
 
 	public function action_removeFavorite()
