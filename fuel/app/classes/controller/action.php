@@ -4,11 +4,6 @@ class Controller_Action extends Controller_Rest {
 
 	protected $format = 'json';
 
-	public function action_logout() {
-		Auth::logout();
-		Session::set_flash('success', 'Logged out.');
-	}
-
 	public function action_signup() {
 		
 		// validate
@@ -76,6 +71,10 @@ class Controller_Action extends Controller_Rest {
 			
 		}
 	
+	}
+	
+	public function action_logout() {
+		Session::delete('user');
 	}
 
 	public function action_addToCart() {
