@@ -2,7 +2,7 @@
 
 use Orm\Model;
 
-class Model_Orderitem extends Model
+class Model_OrderItem extends Model
 {
 	protected static $_properties = array(
 		'id',
@@ -11,6 +11,6 @@ class Model_Orderitem extends Model
 		'quantity',
 	);
 
-	protected static $_table_name = 'orderitems';
+	protected static $_table_name = 'orderItems';
 
 }

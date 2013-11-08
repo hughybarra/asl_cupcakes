@@ -195,7 +195,7 @@ class Controller_Action extends Controller_Rest {
 		$order->save();
 		
 		foreach ($cart as $item) {
-			$order_item = Model_Orderitem::forge(array(
+			$order_item = Model_OrderItem::forge(array(
 				'order_id' => $order->id,
 				'product_id' => $item['item_id'],
 				'quantity' => 1
