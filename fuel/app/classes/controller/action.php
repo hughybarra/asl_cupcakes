@@ -175,7 +175,10 @@ class Controller_Action extends Controller_Rest {
 
 	public function action_submitOrder() {
 		
-		//$user_id = Session::get('user');
+		// $user_id = Session::get('user');
+
+		$user_id = 1;
+
 		$price = 0;
 		
 		$cart = Session::get('cart');
@@ -184,7 +187,10 @@ class Controller_Action extends Controller_Rest {
 			$price += $item['price'];
 		}
 		
-		
+		$order = Model_Order::forge(array(
+			'user_id' => $user_id,
+			'order_total' => $price
+		));
 		
 		
 	}
