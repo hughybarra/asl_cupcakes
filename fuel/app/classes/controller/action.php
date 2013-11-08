@@ -191,8 +191,17 @@ class Controller_Action extends Controller_Rest {
 			'user_id' => $user_id,
 			'order_total' => $price
 		));
+
+		$order->save();
 		
-		
+		foreach ($cart as $item) {
+			$orderItem = Model_Orderitem::forge(array(
+			'order_id' => $order->id,
+			'product_id' => $item['item_id'],
+			'quantity' => 1
+		))
+			
+		}
 	}
 
 	public function action_addFavorite($product_id)
