@@ -3,15 +3,15 @@
 	<span>Great! Sign in here.</span>
 	<form>
 		<div>
-			<label for="email">Email Address</label>
-			<input name="email" id="email" type="email" placeholder="ex: jdoe@domain.com">
+			<label for="users-login-email">Username</label>
+			<input name="users-login-email" id="users-login-email" type="email" placeholder="ex: jdoe@domain.com">
 		</div>
 		<div>
-			<label for="password">Password</label>
-			<input type="password" name="password" id="password" type="text">
+			<label for="users-login-password">Password</label>
+			<input type="password" name="users-login-password" id="users-login-password" type="text">
 		</div>
-		<button "sign_up" class="button-submit">
-			Sign Up
+		<button "sign_up" id="users-login-submit" class="button-submit">
+			Log In
 		</button>
 		
 	</form>
@@ -22,30 +22,26 @@
 	<p>An account with The Cupcake Factory will allow you to add items to a favorites list and allow you to place online orders. Best of all, it's free!</p>
 	<form>
 		<div>
-			<label for="firstname">First Name</label>
-			<input name="firstname" id="firstName" type="text" placeholder="ex: John">
+			<label for="users-signup-username">Username</label>
+			<input name="users-signup-username" id="users-signup-username" type="text" placeholder="ex: John">
 		</div>
 		<div>
-			<label for="lastname">Last Name</label>
-			<input name="lastname" id="lastName" type="text" placeholder="ex: Doe">
+			<label for="users-signup-email">Email Address</label>
+			<input name="users-signup-email" id="users-signup-email" type="email" placeholder="ex: jdoe@domain.com">
 		</div>
 		<div>
-			<label for="email">Email Address</label>
-			<input name="email" id="email" type="email" placeholder="ex: jdoe@domain.com">
+			<label for="users-signup-password">Password</label>
+			<input type="password" name="users-signup-password" id="users-signup-password" type="text">
 		</div>
 		<div>
-			<label for="password">Password</label>
-			<input type="password" name="password" id="password" type="text">
+			<label for="users-signup-confirm-password">Confirm Password</label>
+			<input type="password" name="users-signup-confirm-password" id="users-signup-confirm-password" type="text">
 		</div>
 		<div>
-			<label for="confirmPassword">Confirm Password</label>
-			<input type="password" name="confirmPassword" id="confirmPassword" type="text">
+			<input id="users-signup-terms" name="users-signup-confirm-terms" value="I agree to the terms and conditions." type="checkbox">
+			<label for="users-signup-confirm-terms">I agree to the terms and conditions.</label>
 		</div>
-		<div>
-			<input id="terms" name="terms" value="I agree to the terms and conditions." type="checkbox">
-			<label for="terms">I agree to the terms and conditions.</label>
-		</div>
-		<button "sign_up" class="button-submit">
+		<button "sign_up" id="users-signup-submit" class="button-submit">
 			Sign Up
 		</button>
 	</form>
