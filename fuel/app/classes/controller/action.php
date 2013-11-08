@@ -89,7 +89,15 @@ class Controller_Action extends Controller_Rest {
 	}
 
 	public function action_addToCart() {
-		echo "addToCart";
+		
+		$cart = Session::get('cart');
+
+		if(!$cart)
+		{
+		   $cart = Session::set('cart', array(
+			'item_id' => $cart -> item_id
+			));
+		}
 	}
 
 	public function action_removeFromCart() {
@@ -126,7 +134,7 @@ class Controller_Action extends Controller_Rest {
 		
 		// create new model
 		$favorite = Model_Favorite::forge(array(
-			'user_id' => Session::get("user_id"),
+			'user_id' => Session::get("user") -> id,
 			'product_id' => $product_id
 		));
 
