@@ -19,9 +19,9 @@ class Controller_Action extends Controller_Rest {
     	
 		// create new model
 		$user = Model_User::forge(array(
-			'username' => Input::post('username'),
-			'password' => Auth::hash_password(Input::post('password')),
-			'email' => Input::post('email')
+			'user_name' => Input::post('username'),
+			'user_pass' => Auth::hash_password(Input::post('password')),
+			'user_email' => Input::post('email')
 		));
 		
 		// save model
@@ -51,7 +51,7 @@ class Controller_Action extends Controller_Rest {
 		}
     	
 		// create new model
-		$user = Model_User::find_by_username(Input::post('username'));
+		$user = Model_User::find_by_user_name(Input::post('username'));
 		
 		if(!$user){
 			return $this -> response(array(
@@ -59,7 +59,7 @@ class Controller_Action extends Controller_Rest {
 	        ));
 		}
 			
-		if(Auth::hash_password(Input::post('password')) == $user -> password){
+		if(Auth::hash_password(Input::post('password')) == $user -> user_pass){
 		
 			Session::set('user', array(
 				'id' => $user -> id,
