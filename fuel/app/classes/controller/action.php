@@ -90,14 +90,42 @@ class Controller_Action extends Controller_Rest {
 
 	public function action_addToCart() {
 		
+		// validate
+	    if(
+	    	!Input::post('item_id')
+		){
+	    	return $this -> response(array(
+	            'error' => 'variables not set'
+	        ));
+		}
+		
+		// validate the cart exists
 		$cart = Session::get('cart');
-
+		
 		if(!$cart)
 		{
-		   $cart = Session::set('cart', array(
-			'item_id' => $cart -> item_id
-			));
+			Session::set('cart', array());
+			$cart = Session::get('cart');
 		}
+		
+		// get product from database
+		$product = Model_Product::find_by_id(Input::post('item_id'));
+		
+		if(!$product){
+			return $this -> response(array(
+	            'error' => 'product not found'
+	        ));
+		}
+		
+		// push new product into cart
+		array_push($cart, array(
+			'item_id' => $product -> id,
+			'quantity' => 1,
+			'name' => $product -> name,
+			'price' => $product -> price
+		));
+		
+		Session::set('cart', $cart);
 	}
 
 	public function action_removeFromCart() {
