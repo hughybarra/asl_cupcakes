@@ -183,6 +183,12 @@ class Controller_Action extends Controller_Rest {
 		
 		$cart = Session::get('cart');
 		
+		if(!$cart){
+			return $this -> response(array(
+	            'error' => 'cart not set'
+	        ));
+		}
+		
 		foreach ($cart as $item) {
 			$price += $item['price'];
 		}
@@ -202,6 +208,8 @@ class Controller_Action extends Controller_Rest {
 			));
 			$order_item->save();
 		}
+		
+		Session::set('cart', array());
 		
 	}
 
