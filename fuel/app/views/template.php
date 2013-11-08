@@ -15,8 +15,8 @@
 			<div class="header-controls">
 				<a class="header-cart" href="/cart"><img src="/assets/img/cart-icon.png">View Cart</a>
 				<a class="header-favorites" href="/favorites"><img src="/assets/img/fave-icon.png">Favorites</a>
-				<a class="header-login" href="/users">Log In</a>
-				<span>New here? Sign up!</span>
+				<a id="header-login" href="/users">Log In</a>
+				<a id="header-signup">New here? Sign up!</a>
 			</div>
 		</header>	
 		

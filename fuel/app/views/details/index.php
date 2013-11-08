@@ -10,7 +10,7 @@
 	<span><?php echo $product -> product_description?></span>
 	
 
-	<a href="/action/addFavorite/<?php echo $product -> id ?>">Add to favorites</a>
+	<a class="button-submit" href="/action/addFavorite/<?php echo $product -> id ?>">Add to favorites</a>
 
-	<a href="#">Add to cart</a>
+	<a class="button-submit" href="#">Add to cart</a>
 </div>

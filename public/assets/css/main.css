@@ -66,7 +66,7 @@ header a img{
 	margin-left: 1%;
 }
 
-.button-submit, .header-logout, .header-login{
+.button-submit, .header-logout, #header-login{
 	background: #b8faff; /* Old browsers */
 	background: -moz-linear-gradient(top, #b8faff 0%, #65c8d0 47%, #65c8d0 77%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b8faff), color-stop(47%,#65c8d0), color-stop(77%,#65c8d0)); /* Chrome,Safari4+ */
@@ -74,7 +74,7 @@ header a img{
 	background: -o-linear-gradient(top, #b8faff 0%,#65c8d0 47%,#65c8d0 77%); /* Opera 11.10+ */
 	background: -ms-linear-gradient(top, #b8faff 0%,#65c8d0 47%,#65c8d0 77%); /* IE10+ */
 	background: linear-gradient(to bottom, #b8faff 0%,#65c8d0 47%,#65c8d0 77%); /* W3C */
-	width: 60px;
+	min-width: 60px;
 	color: #111;
 	padding: 5px;
 	display: inline-block;
@@ -84,14 +84,16 @@ header a img{
 	text-decoration: none;
 }
 
-.header-logout, .header-login{
+.header-logout, #header-login{
 	height: 20px;
 	line-height: 20px;
 	float: right;
+	margin-top: 10px;
 }
 .main{
 	width: 960px;
 	margin: 0 auto;
+	margin-bottom: 20px;
 }
 
 .cart-item{
@@ -196,6 +198,7 @@ header a img{
 	display: inline-block;
 	width: 450px;
 }
+
 .signup input, .login input{
 	width: 100%;
 	padding: 5px;
