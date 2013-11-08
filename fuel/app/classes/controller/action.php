@@ -193,6 +193,7 @@ class Controller_Action extends Controller_Rest {
 		));
 		
 		
+		
 	}
 
 	public function action_addFavorite($product_id)
