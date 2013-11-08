@@ -14,7 +14,6 @@ class Controller_Details extends Controller_Template {
 		}
 
 		$this -> template -> content = View::forge('details/index', $data);
-
 	}
 
 }

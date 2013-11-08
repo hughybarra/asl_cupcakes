@@ -8,6 +8,9 @@
 	<span>$<?php echo $product -> price?></span>
 	<span><?php echo $product -> product_type?></span>
 	<span><?php echo $product -> product_description?></span>
-	<a href="#">Add to favorites</a>
+	
+
+	<a href="/action/addFavorite/<?php echo $product -> id ?>">Add to favorites</a>
+
 	<a href="#">Add to cart</a>
 </div>
