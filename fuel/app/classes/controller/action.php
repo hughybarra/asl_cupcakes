@@ -64,7 +64,7 @@ class Controller_Action extends Controller_Rest {
 			Session::set('user', array(
 				'id' => $user -> id,
 				'user_name' => $user -> user_name,
-				'user_email' = > $user -> user_pass
+				'user_email' => $user -> user_pass
 			));
 			
 			Session::set_flash('success', 'logged in');
