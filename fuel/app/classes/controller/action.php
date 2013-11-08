@@ -126,7 +126,7 @@ class Controller_Action extends Controller_Rest {
 		
 		// create new model
 		$favorite = Model_Favorite::forge(array(
-			'user_id' => Session::get("user_id"),
+			'user_id' => Session::get("user") -> id,
 			'product_id' => $product_id
 		));
 
