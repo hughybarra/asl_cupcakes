@@ -2,7 +2,7 @@
 
 <div class="favorite-items">
 	
-	<?php foreach ($favorite as $item): ?>
+	<?php foreach ($favorites as $item): ?>
 		
 	<div class="favorite-item">
 		<div class="cupcake-thumb">
