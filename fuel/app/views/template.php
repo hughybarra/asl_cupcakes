@@ -11,11 +11,11 @@
 		<div id="header_placeholder"></div>
 		
 		<header>
-			<a id="logo" href="#">The Cupcake Factory</a>
+			<a id="logo" href="/">The Cupcake Factory</a>
 			<div class="header-controls">
-				<a class="header-cart" href="#"><img src="/assets/img/cart-icon.png">View Cart</a>
-				<a class="header-favorites" href="#"><img src="/assets/img/fave-icon.png">Favorites</a>
-				<a class="header-login" href="#">Log In</a>
+				<a class="header-cart" href="/cart"><img src="/assets/img/cart-icon.png">View Cart</a>
+				<a class="header-favorites" href="/favorites"><img src="/assets/img/fave-icon.png">Favorites</a>
+				<a class="header-login" href="/users">Log In</a>
 				<span>New here? Sign up!</span>
 			</div>
 		</header>	

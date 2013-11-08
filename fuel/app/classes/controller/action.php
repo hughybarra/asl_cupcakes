@@ -89,7 +89,43 @@ class Controller_Action extends Controller_Rest {
 	}
 
 	public function action_addToCart() {
-		echo "addToCart";
+		
+		// validate
+	    if(
+	    	!Input::post('item_id')
+		){
+	    	return $this -> response(array(
+	            'error' => 'variables not set'
+	        ));
+		}
+		
+		// validate the cart exists
+		$cart = Session::get('cart');
+		
+		if(!$cart)
+		{
+			Session::set('cart', array());
+			$cart = Session::get('cart');
+		}
+		
+		// get product from database
+		$product = Model_Product::find_by_id(Input::post('item_id'));
+		
+		if(!$product){
+			return $this -> response(array(
+	            'error' => 'product not found'
+	        ));
+		}
+		
+		// push new product into cart
+		array_push($cart, array(
+			'item_id' => $product -> id,
+			'quantity' => 1,
+			'name' => $product -> name,
+			'price' => $product -> price
+		));
+		
+		Session::set('cart', $cart);
 	}
 
 	public function action_removeFromCart() {
@@ -126,7 +162,7 @@ class Controller_Action extends Controller_Rest {
 		
 		// create new model
 		$favorite = Model_Favorite::forge(array(
-			'user_id' => Session::get("user_id"),
+			'user_id' => Session::get("user") -> id,
 			'product_id' => $product_id
 		));
 
