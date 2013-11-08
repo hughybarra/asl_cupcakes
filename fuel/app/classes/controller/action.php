@@ -91,6 +91,48 @@ class Controller_Action extends Controller_Rest {
 	public function action_addToCart() {
 		
 		// validate
+	    /*if(
+	    	!Input::post('item_id')
+		){
+	    	return $this -> response(array(
+	            'error' => 'variables not set'
+	        ));
+		}*/
+		
+		// validate the cart exists
+		$cart = Session::get('cart');
+		
+		if(!$cart)
+		{
+			Session::set('cart', array());
+			$cart = Session::get('cart');
+		}
+		
+		// get product from database
+		$product = Model_Product::find_by_id(Input::get('item_id'));
+		
+		if(!$product){
+			return $this -> response(array(
+	            'error' => 'product not found'
+	        ));
+		}
+		
+		// push new product into cart
+		array_push($cart, array(
+			'item_id' => $product -> id,
+			'name' => $product -> name,
+			'price' => $product -> price
+		));
+		
+		Session::set('cart', $cart);
+		
+		return $this -> response($cart);
+		
+	}
+
+	public function action_removeFromCart() {
+		
+		// validate
 	    if(
 	    	!Input::post('item_id')
 		){
@@ -106,30 +148,21 @@ class Controller_Action extends Controller_Rest {
 		{
 			Session::set('cart', array());
 			$cart = Session::get('cart');
+			
+			return $this -> response($cart);
 		}
-		
-		// get product from database
-		$product = Model_Product::find_by_id(Input::post('item_id'));
-		
-		if(!$product){
-			return $this -> response(array(
-	            'error' => 'product not found'
-	        ));
+
+		foreach ($cart as $key => $item) {
+			if($item['item_id'] == Input::get('item_id')){
+				unset($cart[$key]);
+				break;
+			}
 		}
-		
-		// push new product into cart
-		array_push($cart, array(
-			'item_id' => $product -> id,
-			'quantity' => 1,
-			'name' => $product -> name,
-			'price' => $product -> price
-		));
 		
 		Session::set('cart', $cart);
-	}
-
-	public function action_removeFromCart() {
-		echo "removeFromCart";
+		
+		return $this -> response($cart);
+		
 	}
 
 	public function action_addQuantity() {
@@ -141,7 +174,19 @@ class Controller_Action extends Controller_Rest {
 	}
 
 	public function action_submitOrder() {
-		echo "submitOrder";
+		
+		//$user_id = Session::get('user');
+		$price = 0;
+		
+		$cart = Session::get('cart');
+		
+		foreach ($cart as $item) {
+			$price += $item['price'];
+		}
+		
+		
+		
+		
 	}
 
 	public function action_addFavorite($product_id)
