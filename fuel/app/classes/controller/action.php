@@ -231,12 +231,12 @@ class Controller_Action extends Controller_Rest {
 		
 	}
 
-	public function action_addFavorite($product_id)
+	public function action_addFavorite()
 	{
 		
 		// validate
 	    if(
-	    	!$product_id
+	    	!Input::post('product_id')
 		){
 	    	return $this -> response(array(
 	            'error' => 'variables not set'
@@ -250,7 +250,7 @@ class Controller_Action extends Controller_Rest {
 		// create new model
 		$favorite = Model_Favorite::forge(array(
 			'user_id' => Session::get("user") -> id,
-			'product_id' => $product_id
+			'product_id' => Input::post('product_id')
 		));
 
 		// save model
@@ -265,26 +265,20 @@ class Controller_Action extends Controller_Rest {
 		}
 	}
 
-	public function action_removeFavorite($product_id)
+	public function action_removeFavorite()
 	{
 
 		// validate
 	    if(
-			!$product_id
+			!Input::post('product_id')
 		){
 	    	return $this -> response(array(
 	            'error' => 'variables not set'
 	        ));
 		}
 		
-		// making fake session variable 
-		Session::create("user_id");
-		Session::set("user_id", 1);
-		
-		echo Session::get("user_id");
-		echo $product_id;
 		// create new model
-		$favorite = Model_Favorite::find_by_user_id_and_product_id(Session::get("user_id"), $product_id);
+		$favorite = Model_Favorite::find_by_user_id_and_product_id(Session::get("user") -> id, Input::post('product_id'));
 
 		if(!$favorite){
 			return $this -> response(array(
