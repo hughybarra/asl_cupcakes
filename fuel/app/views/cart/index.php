@@ -20,6 +20,7 @@
 			<span>$<?php echo $item['price']; ?></span>
 			<span>Quantity</span>
 			<span><?php echo $item['quantity']; ?></span>
+			<a id="cart-remove" href="#">Remove From Cart</a>
 		</div>
 	</div>
 	
