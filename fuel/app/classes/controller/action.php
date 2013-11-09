@@ -27,9 +27,9 @@ class Controller_Action extends Controller_Rest {
 		}
 		
 		// setting function vars
-		$user_review 	= !Input::post("user_review");
+		$user_review 	= Input::post("user_review");
 		$user_id 		= Session::get("user")->id;
-		$product_id 	= !Input::post("product_id");
+		$product_id 	= Input::post("product_id");
 		
 
 		// Inserting review into Db
@@ -54,10 +54,6 @@ class Controller_Action extends Controller_Rest {
 		
 		// validate
 		
-		// ATTENTION
-		// it says we are validating vars here but I dont think 
-		// the passwords are being compared...
-		
 	    if(
 	    	!Input::post('username') ||
 	    	!Input::post('password') ||
@@ -75,7 +71,7 @@ class Controller_Action extends Controller_Rest {
 		// create new model
 		$user = Model_User::forge(array(
 			'user_name' => $username,
-			'user_pass' => Auth::hash_password(Input::post('users-signup-password')),
+			'user_pass' => Auth::hash_password(Input::post('password')),
 			'user_email' => $email
 		));
 		
