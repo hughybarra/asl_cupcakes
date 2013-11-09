@@ -7,21 +7,31 @@ class Controller_Action extends Controller_Rest {
 	public function action_signup() {
 		
 		// validate
+		
+		// ATTENTION
+		// it says we are validating vars here but I dont think 
+		// the passwords are being compared...
+		
+		
 	    if(
-	    	!Input::post('username') ||
-	    	!Input::post('password') ||
-			!Input::post('email')
+	    	// fixed the var names. They were targeting wrong post items. 
+	    	!Input::post('users-signup-username') ||
+	    	!Input::post('users-signup-password') ||
+			!Input::post('users-signup-email')
 		){
+			
 	    	return $this -> response(array(
 	            'error' => 'variables not set'
 	        ));
 		}
     	
+		
+		
 		// create new model
 		$user = Model_User::forge(array(
-			'user_name' => Input::post('username'),
-			'user_pass' => Auth::hash_password(Input::post('password')),
-			'user_email' => Input::post('email')
+			'user_name' => Input::post('users-signup-username'),
+			'user_pass' => Auth::hash_password(Input::post('users-signup-password"')),
+			'user_email' => Input::post('users-signup-email')
 		));
 		
 		// save model
@@ -42,8 +52,8 @@ class Controller_Action extends Controller_Rest {
 		
 		// validate
 	    if(
-	    	!Input::post('username') ||
-	    	!Input::post('password')
+	    	!Input::post('users-login-name') ||
+	    	!Input::post('users-login-password')
 		){
 	    	return $this -> response(array(
 	            'error' => 'variables not set'
@@ -51,15 +61,16 @@ class Controller_Action extends Controller_Rest {
 		}
     	
 		// create new model
-		$user = Model_User::find_by_user_name(Input::post('username'));
-		
+		$user = Model_User::find_by_user_name(Input::post('users-login-name'));
+
 		if(!$user){
 			return $this -> response(array(
 	            'error' => 'user not found'
 	        ));
 		}
-			
-		if(Auth::hash_password(Input::post('password')) == $user -> user_pass){
+		
+		// for some reason this is not running. 
+		if(Auth::hash_password(Input::post('users-login-password')) == $user -> user_pass){
 		
 			Session::set('user', array(
 				'id' => $user -> id,
@@ -73,6 +84,10 @@ class Controller_Action extends Controller_Rest {
 	            'success' => 'logged in'
 	        ));
 			
+		}else{
+			echo Auth::hash_password(Input::post("users-login=password"));
+			return $this -> response(array(
+			"success" => "not logged in"));
 		}
 	
 	}
