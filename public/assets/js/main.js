@@ -3,8 +3,8 @@ $('#users-login-submit').click(function(){
 	var username = $('#users-login-username').val();
 	var password = $('#users-login-password').val();
 
-	ajax({
-		url : "",
+	$.ajax({
+		url : "/action/login",
 		type : "post",
 		dataType : "json",
 		data : {
@@ -16,7 +16,6 @@ $('#users-login-submit').click(function(){
 			console.log(response);
 			if (response) {
 				console.log(response);
-				loadApplication();
 			} else {
 				//show an error
 			}

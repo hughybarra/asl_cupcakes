@@ -100,7 +100,7 @@ class Controller_Action extends Controller_Rest {
 		
 		// validate
 	    if(
-	    	!Input::post('email') ||
+	    	!Input::post('username') ||
 	    	!Input::post('password')
 		){
 	    	return $this -> response(array(
@@ -108,7 +108,7 @@ class Controller_Action extends Controller_Rest {
 	        ));
 		}
 		
-		$username = strtolower(Input::post('email'));
+		$username = strtolower(Input::post('username'));
 		
 		// create new model
 		$user = Model_User::find_by_user_name($username);
@@ -118,8 +118,6 @@ class Controller_Action extends Controller_Rest {
 	            'error' => 'user not found'
 	        ));
 		}
-		echo $user->user_pass;
-		echo "   ";
 		
 		// for some reason this is not running. 
 		if(Auth::hash_password(Input::post('password')) == $user -> user_pass){

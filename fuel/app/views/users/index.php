@@ -27,15 +27,15 @@
 	action="action/signup">
 		<div>
 			<label for="users-signup-username">Username</label>
-			<input name="users-signup-username" id="users-signup-username" type="text" placeholder="ex: John">
+			<input name="username" id="users-signup-username" type="text" placeholder="ex: John">
 		</div>
 		<div>
 			<label for="users-signup-email">Email Address</label>
-			<input name="users-signup-email" id="users-signup-email" type="email" placeholder="ex: jdoe@domain.com">
+			<input name="email" id="users-signup-email" type="email" placeholder="ex: jdoe@domain.com">
 		</div>
 		<div>
 			<label for="users-signup-password">Password</label>
-			<input type="password" name="users-signup-password" id="users-signup-password" type="text">
+			<input type="password" name="password" id="users-signup-password" type="text">
 		</div>
 		<div>
 			<label for="users-signup-confirm-password">Confirm Password</label>
