@@ -42,7 +42,7 @@ $('#users-signup-submit').click(function(){
 		
 	});
 	
-})
+});
 
 
 
