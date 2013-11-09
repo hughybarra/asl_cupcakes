@@ -12,8 +12,6 @@ $('#users-login-submit').click(function(){
 			'password' : password
 		},
 		success : function(response) {
-
-			console.log(response);
 			if (response) {
 				console.log(response);
 			} else {
