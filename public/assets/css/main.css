@@ -101,11 +101,12 @@ header a img{
 .cart-item{
 	width: 600px;
 	float: left;
+	margin: 10px 0;
 }
 
 .cupcake-cart-info{
 	float: right;
-	width: 300px;
+	width: 350px;
 	display: inline-block;
 }
 

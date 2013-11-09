@@ -21,7 +21,7 @@
 			<span>$<?php echo $item['price']; ?></span>
 			<br />
 			<span>Quantity</span>
-			<span><?php echo $item['quantity']; ?></span>
+			<input type="number" name="quantity" min="1" max="36" value="<?php echo $item['quantity']; ?>">
 			<br />
 			<a id="cart-remove" href="#">Remove From Cart</a>
 		</div>
