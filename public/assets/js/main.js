@@ -16,7 +16,6 @@ $('#users-login-submit').click(function(){
 			console.log(response);
 			if (response) {
 				console.log(response);
-				loadApplication();
 			} else {
 				//show an error
 			}
