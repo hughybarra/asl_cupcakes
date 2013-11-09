@@ -93,7 +93,7 @@ class Controller_Action extends Controller_Rest {
 		
 		// validate
 	    if(
-	    	!Input::post('email') ||
+	    	!Input::post('username') ||
 	    	!Input::post('password')
 		){
 	    	return $this -> response(array(
@@ -101,7 +101,7 @@ class Controller_Action extends Controller_Rest {
 	        ));
 		}
 		
-		$username = strtolower(Input::post('email'));
+		$username = strtolower(Input::post('username'));
 		
 		// create new model
 		$user = Model_User::find_by_user_name($username);

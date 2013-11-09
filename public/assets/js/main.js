@@ -4,7 +4,7 @@ $('#users-login-submit').click(function(){
 	var password = $('#users-login-password').val();
 
 	ajax({
-		url : "",
+		url : "/action/login",
 		type : "post",
 		dataType : "json",
 		data : {
