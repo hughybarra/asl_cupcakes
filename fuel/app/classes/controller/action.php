@@ -244,10 +244,7 @@ class Controller_Action extends Controller_Rest {
 	            'error' => 'variables not set'
 	        ));
 		}
-		
-		// making a fake session variable
-		// Session::create("user_id");
-		// Session::set("user_id", 1) ;
+
 		
 		// create new model
 		$favorite = Model_Favorite::forge(array(
