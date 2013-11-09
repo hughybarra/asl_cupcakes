@@ -44,6 +44,24 @@ $('#users-signup-submit').click(function(){
 
 
 
+$('#details-add-to-cart').click(function(){
+	
+	var item_id = $('').val();
+	
+	$.ajax({
+		url : "/action/addToCart",
+		type : "post",
+		dataType : "json",
+		data : {
+			'item_id' : item_id
+		},
+		success : function(response) {
+			console.log(response);
+		}
+	})
+	
+})
+
 
 /*
 $('').click(function(){
