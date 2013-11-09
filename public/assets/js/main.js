@@ -14,11 +14,6 @@ $('#users-login-submit').click(function(){
 		success : function(response) {
 
 			console.log(response);
-			if (response) {
-				console.log(response);
-			} else {
-				//show an error
-			}
 
 		}
 		
