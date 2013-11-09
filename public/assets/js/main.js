@@ -1,4 +1,4 @@
-$('#header-login').click(function(){
+$('#users-login-submit').click(function(){
 	ajax({
 		url : "",
 		type : "post",
