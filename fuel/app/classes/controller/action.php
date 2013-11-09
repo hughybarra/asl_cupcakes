@@ -24,8 +24,6 @@ class Controller_Action extends Controller_Rest {
 	            'error' => 'variables not set'
 	        ));
 		}
-    	
-		
 		
 		// create new model
 		$user = Model_User::forge(array(
