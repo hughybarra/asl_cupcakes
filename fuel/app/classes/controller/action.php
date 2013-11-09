@@ -306,12 +306,12 @@ class Controller_Action extends Controller_Rest {
 		}
 	}
 
-	public function action_removeFavorite($product_id)
+	public function action_removeFavorite()
 	{
 
 		// validate
 	    if(
-			!$product_id
+			!Input::post('product_id')
 		){
 	    	return $this -> response(array(
 	            'error' => 'variables not set'

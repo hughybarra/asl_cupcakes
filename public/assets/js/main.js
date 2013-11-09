@@ -1,6 +1,8 @@
 $('#users-login-submit').click(function(){
+
 	var username = $('#users-login-username').val();
 	var password = $('#users-login-password').val();
+
 	ajax({
 		url : "",
 		type : "post",
