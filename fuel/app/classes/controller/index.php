@@ -6,7 +6,7 @@ class Controller_Index extends Controller_Template
 	public function action_index()
 	{
 		// delete when done 
-		echo Session::get("user");
+/* 		echo Session::get("user"); */
 		
 		// products will be listed here		
 		$data['products'] = Model_Product::find('all');
