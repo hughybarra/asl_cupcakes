@@ -15,7 +15,7 @@
 			<label for="users-login-password">Password</label>
 			<input type="password" name="users-login-password" id="users-login-password" type="text">
 		</div>
-		<button "sign_up" id="users-login-submit" class="button-submit">
+		<button id="users-login-submit" class="button-submit">
 			Log In
 		</button>
 		
@@ -50,7 +50,7 @@
 			<input id="users-signup-terms" name="users-signup-confirm-terms" value="I agree to the terms and conditions." type="checkbox">
 			<label for="users-signup-confirm-terms">I agree to the terms and conditions.</label>
 		</div>
-		<button "sign_up" id="users-signup-submit" class="button-submit">
+		<button id="users-signup-submit" class="button-submit">
 			Sign Up
 		</button>
 	</form>
