@@ -17,7 +17,9 @@
 				<a class="header-favorites" href="#"><img src="/assets/img/fave-icon.png">Favorites</a>
 				<div>
 					<a class="header-logout" href="#">Log In</a>
-					<span>New here? Sign up!</span>
+					
+					
+					<span id="signIn">New here? Sign up!</span>
 				</div>
 			</div>
 		</header>	

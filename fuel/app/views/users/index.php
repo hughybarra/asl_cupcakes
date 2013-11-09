@@ -1,7 +1,12 @@
+<!-- LOGIN FORM -->
+<!-- ======================================== -->
+<!-- ======================================== -->
 <div class="login">
 	<h1>Already a member?</h1>
 	<span>Great! Sign in here.</span>
-	<form>
+	<form
+	method="post"
+	action="action/login">
 		<div>
 			<label for="users-login-email">Username</label>
 			<input name="users-login-email" id="users-login-email" type="text" placeholder="ex: John">
@@ -16,11 +21,15 @@
 		
 	</form>
 </div>
-
+<!-- SIGN UP FORM -->
+<!-- ======================================== -->
+<!-- ======================================== -->
 <div class="signup">
 	<h1>Sign up with The Cupcake Factory.</h1>
 	<p>An account with The Cupcake Factory will allow you to add items to a favorites list and allow you to place online orders. Best of all, it's free!</p>
-	<form>
+	<form
+	method="post"
+	action="action/signup">
 		<div>
 			<label for="users-signup-username">Username</label>
 			<input name="users-signup-username" id="users-signup-username" type="text" placeholder="ex: John">
