@@ -111,8 +111,6 @@ class Controller_Action extends Controller_Rest {
 	            'error' => 'user not found'
 	        ));
 		}
-		echo $user->user_pass;
-		echo "   ";
 		
 		// for some reason this is not running. 
 		if(Auth::hash_password(Input::post('password')) == $user -> user_pass){
