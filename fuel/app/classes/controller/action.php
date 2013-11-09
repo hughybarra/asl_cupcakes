@@ -7,13 +7,11 @@ class Controller_Action extends Controller_Rest {
 	public function action_addReview() {
 		
 		/* 
-		 	add a new review to a product / Must be signed in
 		 
 		 	post vars:
 				user_review 
 		 		product_id
 		 	
-		 	user id is pulled from session variable. 
 		*/
 		
 		// validate 
@@ -52,6 +50,11 @@ class Controller_Action extends Controller_Rest {
 
 	public function action_signup() {
 		
+		/*	post vars:
+		 	username
+		 	password
+		 	email
+		*/
 		// validate
 		
 	    if(
@@ -90,6 +93,10 @@ class Controller_Action extends Controller_Rest {
 	}
 
 	public function action_login() {
+		/* post vars :
+		 email
+		 password
+		*/
 		
 		// validate
 	    if(
@@ -146,6 +153,11 @@ class Controller_Action extends Controller_Rest {
 
 	public function action_addToCart() {
 		
+		/*
+		 *	post vars: 
+		 *	item_id
+		 */
+		
 		// validate
 	    if(
 	    	!Input::post('item_id')
@@ -187,6 +199,12 @@ class Controller_Action extends Controller_Rest {
 	}
 
 	public function action_removeFromCart() {
+		
+		/*
+		 * post vars:
+		 * item_id
+		 * 
+		 */
 		
 		// validate
 	    if(
@@ -269,7 +287,11 @@ class Controller_Action extends Controller_Rest {
 
 	public function action_addFavorite()
 	{
-		
+		/* 
+		 * post vars :
+		 * product_id
+		 * 
+		 */	
 		// validate
 	    if(
 			!Input::post('product_id')
@@ -305,7 +327,10 @@ class Controller_Action extends Controller_Rest {
 
 	public function action_removeFavorite()
 	{
-
+		/*
+		 * post vars:
+		 * product_id
+		 */
 		// validate
 	    if(
 			!Input::post('product_id')
