@@ -5,7 +5,7 @@ class Controller_Action extends Controller_Rest {
 	protected $format = 'json';
 	
 	public function action_addReview() {
-		
+		// done
 		/* 
 		 
 		 	post vars:
@@ -23,11 +23,11 @@ class Controller_Action extends Controller_Rest {
 				'error' => 'variables not set'
 			));
 		}
-		
+
 		// setting function vars
-		$user_review 	= Input::post('user_review');
-		$user_id 		= Session::get('user')->id;
-		$product_id 	= Input::post('product_id');
+		// $user_review 	= Input::post('user_review');
+		$user_id 		= Session::get('user_id');
+		// $product_id 	= Input::post('product_id');
 		
 
 		// Inserting review into Db
@@ -49,7 +49,7 @@ class Controller_Action extends Controller_Rest {
 	}
 
 	public function action_signup() {
-		
+		// done
 		/*	post vars:
 		 	username
 		 	password
@@ -102,6 +102,7 @@ class Controller_Action extends Controller_Rest {
 	}
 
 	public function action_login() {
+		// done
 		/* post vars :
 		 username
 		 password
@@ -309,12 +310,13 @@ class Controller_Action extends Controller_Rest {
 
 	public function action_addFavorite()
 	{
+		// done
 		/* 
 		 * post vars :
 		 * product_id
 		 * 
 		 */	
-		// validate
+		//validate
 	    if(
 			!Input::post('product_id')
 		){
@@ -324,10 +326,9 @@ class Controller_Action extends Controller_Rest {
 		}
 		$product_id = Input::post('product_id');
 
-		
 		// create new model
 		$favorite = Model_Favorite::forge(array(
-			'user_id' => Session::get('user') -> id,
+			'user_id' => Session::get('user_id') ,
 			'product_id' => $product_id
 		));
 
