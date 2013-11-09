@@ -23,11 +23,13 @@ class Controller_Action extends Controller_Rest {
 				'error' => 'variables not set'
 			));
 		}
+		
+		$user = Session::get("user");
+		$user_id = $user['id'];
 
 		// setting function vars
-		// $user_review 	= Input::post('user_review');
-		$user_id 		= Session::get('user_id');
-		// $product_id 	= Input::post('product_id');
+		$user_review 	= Input::post('user_review');
+		$product_id 	= Input::post('product_id');
 		
 
 		// Inserting review into Db
@@ -143,8 +145,6 @@ class Controller_Action extends Controller_Rest {
 			'user_email' => $user -> user_email
 			
 		));
-		// this works but we can change it later
-		Session::set("user_id", $user->id);		
 		Session::set_flash('success', 'logged in');
 		
 		return $this -> response(array(
@@ -271,8 +271,8 @@ class Controller_Action extends Controller_Rest {
 
 
 	public function action_submitOrder() {
-		
-		$user_id = Session::get('user');
+		$user = Session::get("user");
+		$user_id = $user['id'];
 
 		$price = 0;
 		
@@ -325,10 +325,13 @@ class Controller_Action extends Controller_Rest {
 	        ));
 		}
 		$product_id = Input::post('product_id');
-
+		
+		$user = Session::get("user");
+		$user_id = $user['id'];
+		
 		// create new model
 		$favorite = Model_Favorite::forge(array(
-			'user_id' => Session::get('user_id') ,
+			'user_id' => $user_id ,
 			'product_id' => $product_id
 		));
 
@@ -365,8 +368,11 @@ class Controller_Action extends Controller_Rest {
 
 		$product_id = Input::post('product_id');
 		
+		$user = Session::get("user");
+		$user_id = $user['id'];
+		
 		// create new model
-		$favorite = Model_Favorite::find_by_user_id_and_product_id(Session::get('user') -> id, $product_id);
+		$favorite = Model_Favorite::find_by_user_id_and_product_id($user_id, $product_id);
 
 		if(!$favorite){
 			return $this -> response(array(
