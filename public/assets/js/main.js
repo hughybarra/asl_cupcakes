@@ -46,10 +46,57 @@ $('#users-signup-submit').click(function(){
 
 $('#details-add-to-cart').click(function(){
 	
+	console.log('add to cart');
+	return;
+	
 	var item_id = $('').val();
 	
 	$.ajax({
 		url : "/action/addToCart",
+		type : "post",
+		dataType : "json",
+		data : {
+			'item_id' : item_id
+		},
+		success : function(response) {
+			console.log(response);
+		}
+	})
+	
+})
+
+
+$('#details-add-to-favorites').click(function(){
+	
+	console.log('add to faves');
+	return;
+	
+	var item_id = $('').val();
+	
+	$.ajax({
+		url : "/action/addFavorite",
+		type : "post",
+		dataType : "json",
+		data : {
+			'item_id' : item_id
+		},
+		success : function(response) {
+			console.log(response);
+		}
+	})
+	
+})
+
+
+$('#header-logout').click(function(){
+	
+	console.log('log out');
+	return;
+	
+	var item_id = $('').val();
+	
+	$.ajax({
+		url : "/action/logout",
 		type : "post",
 		dataType : "json",
 		data : {
