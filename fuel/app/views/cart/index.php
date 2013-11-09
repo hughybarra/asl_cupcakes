@@ -16,10 +16,13 @@
 		</div>
 		<div class="cupcake-cart-info">
 			<span class="cupcake-name"><?php echo $item['name']; ?></span>
+			<br />
 			<span>Price</span>
 			<span>$<?php echo $item['price']; ?></span>
+			<br />
 			<span>Quantity</span>
 			<span><?php echo $item['quantity']; ?></span>
+			<br />
 			<a id="cart-remove" href="#">Remove From Cart</a>
 		</div>
 	</div>
