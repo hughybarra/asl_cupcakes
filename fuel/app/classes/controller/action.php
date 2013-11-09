@@ -261,6 +261,10 @@ class Controller_Action extends Controller_Rest {
 			return $this -> response(array(
 	            'success' => 'added to favorites'
    			));
+		}else{
+			return $this -> response(array(
+				'success' => 'not added to favorites'
+			));
 		}
 	}
 
@@ -276,14 +280,8 @@ class Controller_Action extends Controller_Rest {
 	        ));
 		}
 		
-		// making fake session variable 
-		Session::create("user_id");
-		Session::set("user_id", 1);
-		
-		echo Session::get("user_id");
-		echo $product_id;
 		// create new model
-		$favorite = Model_Favorite::find_by_user_id_and_product_id(Session::get("user_id"), $product_id);
+		$favorite = Model_Favorite::find_by_user_id_and_product_id(Session::get("user") -> id, $product_id);
 
 		if(!$favorite){
 			return $this -> response(array(
