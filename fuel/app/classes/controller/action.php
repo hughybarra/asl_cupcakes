@@ -72,10 +72,6 @@ class Controller_Action extends Controller_Rest {
 	        ));
 		}
 		
-		echo Auth::hash_password(Input::post('users-login-password'));
-		// echo $user -> user_pass;
-		exit;
-		
 		// for some reason this is not running. 
 		if(Auth::hash_password(Input::post('users-login-password')) == $user -> user_pass){
 		
