@@ -3,6 +3,52 @@
 class Controller_Action extends Controller_Rest {
 
 	protected $format = 'json';
+	
+	public function action_addReview() {
+		
+		/* 
+		 	add a new review to a product / Must be signed in
+		 
+		 	post vars:
+				user_review 
+		 		product_id
+		 	
+		 	user id is pulled from session variable. 
+		*/
+		
+		// validate 
+		if(
+			!Input::post("uesr_review") ||
+			!Input::post('product_id')
+		){
+			return $this -> response(array(
+				"error" => "variables not set"
+			));
+		}
+		
+		// setting function vars
+		$user_review 	= !Input::post("user_review");
+		$user_id 		= Session::get("user")->id;
+		$product_id 	= !Input::post("product_id");
+		
+
+		// Inserting review into Db
+		$new_review = Model_Review::forge(array(
+			"user_id" 		=> $user_id,
+			"product_id" 	=> $product_id,
+			"user_review" 	=> $user_review
+		));
+		
+		// save model
+		if($new_review && $new_review->save()){
+			Session::set_flash('success', 'review added');
+			
+			//output success
+			return $this -> response(array(
+				'success' => 'review added'
+			));
+		}
+	}
 
 	public function action_signup() {
 		
@@ -13,7 +59,6 @@ class Controller_Action extends Controller_Rest {
 		// the passwords are being compared...
 		
 	    if(
-	    	// fixed the var names. They were targeting wrong post items. 
 	    	!Input::post('username') ||
 	    	!Input::post('password') ||
 			!Input::post('email')
@@ -24,8 +69,8 @@ class Controller_Action extends Controller_Rest {
 	        ));
 		}
 		
-		$username = strtolower(Input::post('users-signup-username'));
-		$email = strtolower(Input::post('users-signup-email'));
+		$username = strtolower(Input::post('username'));
+		$email = strtolower(Input::post('email'));
 		
 		// create new model
 		$user = Model_User::forge(array(
@@ -110,13 +155,13 @@ class Controller_Action extends Controller_Rest {
 	public function action_addToCart() {
 		
 		// validate
-	    /*if(
+	    if(
 	    	!Input::post('item_id')
 		){
 	    	return $this -> response(array(
 	            'error' => 'variables not set'
 	        ));
-		}*/
+		}
 		
 		// validate the cart exists
 		$cart = Session::get('cart');
@@ -194,9 +239,7 @@ class Controller_Action extends Controller_Rest {
 
 	public function action_submitOrder() {
 		
-		// $user_id = Session::get('user');
-
-		$user_id = 1;
+		$user_id = Session::get('user');
 
 		$price = 0;
 		
