@@ -21,4 +21,8 @@
 
 <div id="reviews">
 	<h2>Reviews</h2>
+	<?php foreach($reviews as $review){
+		echo "<h1>test</h1>"; // DELETE WHEN READY
+	}
+	?>
 </div>

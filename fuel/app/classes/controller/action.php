@@ -12,7 +12,6 @@ class Controller_Action extends Controller_Rest {
 		// it says we are validating vars here but I dont think 
 		// the passwords are being compared...
 		
-		
 	    if(
 	    	// fixed the var names. They were targeting wrong post items. 
 	    	!Input::post('username') ||
@@ -72,7 +71,7 @@ class Controller_Action extends Controller_Rest {
 	        ));
 		}
 		echo $user->user_pass;
-		echo '   ';
+		echo "   ";
 		
 		// for some reason this is not running. 
 		if(Auth::hash_password(Input::post('password')) == $user -> user_pass){
@@ -90,9 +89,9 @@ class Controller_Action extends Controller_Rest {
 	        ));
 			
 		}else{
-			echo Auth::hash_password(Input::post('password'));
+			echo Auth::hash_password(Input::post("password"));
 			return $this -> response(array(
-			'success' => 'not logged in'));
+			"success" => "not logged in"));
 		}
 	
 	}
@@ -111,13 +110,13 @@ class Controller_Action extends Controller_Rest {
 	public function action_addToCart() {
 		
 		// validate
-	    if(
+	    /*if(
 	    	!Input::post('item_id')
 		){
 	    	return $this -> response(array(
 	            'error' => 'variables not set'
 	        ));
-		}
+		}*/
 		
 		// validate the cart exists
 		$cart = Session::get('cart');
@@ -186,16 +185,18 @@ class Controller_Action extends Controller_Rest {
 	}
 
 	public function action_addQuantity() {
-		echo 'addQuantity';
+		echo "addQuantity";
 	}
 
 	public function action_reduceQuantity() {
-		echo 'reduceQuantity';
+		echo "reduceQuantity";
 	}
 
 	public function action_submitOrder() {
 		
-		$user_id = Session::get('user');
+		// $user_id = Session::get('user');
+
+		$user_id = 1;
 
 		$price = 0;
 		
@@ -231,12 +232,12 @@ class Controller_Action extends Controller_Rest {
 		
 	}
 
-	public function action_addFavorite()
+	public function action_addFavorite($product_id)
 	{
 		
 		// validate
 	    if(
-	    	!Input::post('product_id')
+	    	!$product_id
 		){
 	    	return $this -> response(array(
 	            'error' => 'variables not set'
@@ -246,8 +247,8 @@ class Controller_Action extends Controller_Rest {
 		
 		// create new model
 		$favorite = Model_Favorite::forge(array(
-			'user_id' => Session::get('user') -> id,
-			'product_id' => Input::post('product_id')
+			'user_id' => Session::get("user") -> id,
+			'product_id' => $product_id
 		));
 
 		// save model
@@ -266,12 +267,12 @@ class Controller_Action extends Controller_Rest {
 		}
 	}
 
-	public function action_removeFavorite()
+	public function action_removeFavorite($product_id)
 	{
 
 		// validate
 	    if(
-			!Input::post('product_id')
+			!$product_id
 		){
 	    	return $this -> response(array(
 	            'error' => 'variables not set'
@@ -279,7 +280,7 @@ class Controller_Action extends Controller_Rest {
 		}
 		
 		// create new model
-		$favorite = Model_Favorite::find_by_user_id_and_product_id(Session::get('user') -> id, Input::post('product_id'));
+		$favorite = Model_Favorite::find_by_user_id_and_product_id(Session::get("user") -> id, $product_id);
 
 		if(!$favorite){
 			return $this -> response(array(
