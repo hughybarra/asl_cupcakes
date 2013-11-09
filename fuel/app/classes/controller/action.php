@@ -93,7 +93,7 @@ class Controller_Action extends Controller_Rest {
 		
 		// validate
 	    if(
-	    	!Input::post('email') ||
+	    	!Input::post('username') ||
 	    	!Input::post('password')
 		){
 	    	return $this -> response(array(
@@ -101,7 +101,7 @@ class Controller_Action extends Controller_Rest {
 	        ));
 		}
 		
-		$username = strtolower(Input::post('email'));
+		$username = strtolower(Input::post('username'));
 		
 		// create new model
 		$user = Model_User::find_by_user_name($username);
@@ -271,17 +271,18 @@ class Controller_Action extends Controller_Rest {
 		
 	}
 
-	public function action_addFavorite($product_id)
+	public function action_addFavorite()
 	{
 		
 		// validate
 	    if(
-	    	!$product_id
+			!Input::post("product_id")
 		){
 	    	return $this -> response(array(
 	            'error' => 'variables not set'
 	        ));
 		}
+		$product_id = Input::post("product_id");
 
 		
 		// create new model
@@ -317,6 +318,8 @@ class Controller_Action extends Controller_Rest {
 	            'error' => 'variables not set'
 	        ));
 		}
+
+		$product_id = Input::post("product_id");
 		
 		// create new model
 		$favorite = Model_Favorite::find_by_user_id_and_product_id(Session::get("user") -> id, $product_id);
