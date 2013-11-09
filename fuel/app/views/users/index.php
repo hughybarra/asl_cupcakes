@@ -4,22 +4,17 @@
 <div class="login">
 	<h1>Already a member?</h1>
 	<span>Great! Sign in here.</span>
-	<form
-	method="post"
-	action="action/login">
-		<div>
-			<label for="users-login-email">Username</label>
-			<input name="users-login-email" id="users-login-email" type="text" placeholder="ex: John">
-		</div>
-		<div>
-			<label for="users-login-password">Password</label>
-			<input type="password" name="users-login-password" id="users-login-password" type="text">
-		</div>
-		<button id="users-login-submit" class="button-submit">
-			Log In
-		</button>
-		
-	</form>
+	<div>
+		<label for="users-login-email">Username</label>
+		<input name="users-login-email" id="users-login-email" type="text" placeholder="ex: John">
+	</div>
+	<div>
+		<label for="users-login-password">Password</label>
+		<input type="password" name="users-login-password" id="users-login-password" type="text">
+	</div>
+	<button id="users-login-submit" class="button-submit">
+		Log In
+	</button>
 </div>
 <!-- SIGN UP FORM -->
 <!-- ======================================== -->

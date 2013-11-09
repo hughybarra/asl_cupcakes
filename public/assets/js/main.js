@@ -1,4 +1,5 @@
 $('#header-login').click(function(){
+	
 	ajax({
 		url : "",
 		type : "post",
@@ -21,7 +22,7 @@ $('#header-login').click(function(){
 		
 	});
 	
-})
+});
 
 
 
