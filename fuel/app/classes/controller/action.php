@@ -67,6 +67,15 @@ class Controller_Action extends Controller_Rest {
 	            'error' => 'variables not set'
 	        ));
 		}
+
+		// check the database for existing user name
+		$check_user = Model_User::find_by_user_name(Input::post("username"));
+		
+		if($check_user){
+			return $this-> response(array(
+				'error' => "username already exists"
+			));
+		}
 		
 		$username = strtolower(Input::post('username'));
 		$email = strtolower(Input::post('email'));
@@ -94,7 +103,7 @@ class Controller_Action extends Controller_Rest {
 
 	public function action_login() {
 		/* post vars :
-		 email
+		 username
 		 password
 		*/
 		
@@ -127,11 +136,14 @@ class Controller_Action extends Controller_Rest {
 		
 		// for some reason this is not running. 
 		Session::set('user', array(
+		
 			'id' => $user -> id,
 			'user_name' => $user -> user_name,
-			'user_email' => $user -> user_pass
+			'user_email' => $user -> user_email
+			
 		));
-		
+		// this works but we can change it later
+		Session::set("user_id", $user->id);		
 		Session::set_flash('success', 'logged in');
 		
 		return $this -> response(array(
@@ -239,13 +251,23 @@ class Controller_Action extends Controller_Rest {
 		
 	}
 
-	public function action_addQuantity() {
-		echo 'addQuantity';
+	public function action_quantity() {
+		
+		/* 
+		 *	post vars: 
+		 * quantity 
+		 */
+		// validate
+		
+		if (!Input::post("quantity")){
+			return $this -> response(array(
+				'error' => 'variables not set'
+			));
+		}
+		
+		Session::set("cart")->quantity = Input::post('quantity');
 	}
 
-	public function action_reduceQuantity() {
-		echo 'reduceQuantity';
-	}
 
 	public function action_submitOrder() {
 		
