@@ -155,13 +155,13 @@ class Controller_Action extends Controller_Rest {
 	public function action_addToCart() {
 		
 		// validate
-	    /*if(
+	    if(
 	    	!Input::post('item_id')
 		){
 	    	return $this -> response(array(
 	            'error' => 'variables not set'
 	        ));
-		}*/
+		}
 		
 		// validate the cart exists
 		$cart = Session::get('cart');
@@ -239,9 +239,7 @@ class Controller_Action extends Controller_Rest {
 
 	public function action_submitOrder() {
 		
-		// $user_id = Session::get('user');
-
-		$user_id = 1;
+		$user_id = Session::get('user');
 
 		$price = 0;
 		

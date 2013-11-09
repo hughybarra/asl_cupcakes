@@ -3,7 +3,7 @@
 		<title>ASL Project</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="initial-scale=1.0, width=device-width" />
-		<link rel="stylesheet" href="/assets/css/main.css">
+		<?php echo Asset::css('main.css'); ?>
 		<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
@@ -34,7 +34,8 @@
 		
 		<!-- main.js -->
 		<!-- ======================================== -->
-		<script type="text/javascript" src="assets/js/main.js"></script>
+		<?php echo Asset::js('main.js'); ?>
+		<?php echo Asset::js('users.js'); ?>
 		<!-- ======================================== -->
 	</body>
 </html>
