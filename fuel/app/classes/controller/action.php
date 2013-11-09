@@ -72,7 +72,7 @@ class Controller_Action extends Controller_Rest {
 	        ));
 		}
 		echo $user->user_pass;
-		echo "   ";
+		echo '   ';
 		
 		// for some reason this is not running. 
 		if(Auth::hash_password(Input::post('password')) == $user -> user_pass){
@@ -90,9 +90,9 @@ class Controller_Action extends Controller_Rest {
 	        ));
 			
 		}else{
-			echo Auth::hash_password(Input::post("password"));
+			echo Auth::hash_password(Input::post('password'));
 			return $this -> response(array(
-			"success" => "not logged in"));
+			'success' => 'not logged in'));
 		}
 	
 	}
@@ -186,11 +186,11 @@ class Controller_Action extends Controller_Rest {
 	}
 
 	public function action_addQuantity() {
-		echo "addQuantity";
+		echo 'addQuantity';
 	}
 
 	public function action_reduceQuantity() {
-		echo "reduceQuantity";
+		echo 'reduceQuantity';
 	}
 
 	public function action_submitOrder() {
@@ -242,14 +242,11 @@ class Controller_Action extends Controller_Rest {
 	            'error' => 'variables not set'
 	        ));
 		}
-		
-		// making a fake session variable
-		// Session::create("user_id");
-		// Session::set("user_id", 1) ;
+
 		
 		// create new model
 		$favorite = Model_Favorite::forge(array(
-			'user_id' => Session::get("user") -> id,
+			'user_id' => Session::get('user') -> id,
 			'product_id' => Input::post('product_id')
 		));
 
@@ -262,6 +259,10 @@ class Controller_Action extends Controller_Rest {
 			return $this -> response(array(
 	            'success' => 'added to favorites'
    			));
+		}else{
+			return $this -> response(array(
+				'success' => 'not added to favorites'
+			));
 		}
 	}
 
@@ -278,7 +279,7 @@ class Controller_Action extends Controller_Rest {
 		}
 		
 		// create new model
-		$favorite = Model_Favorite::find_by_user_id_and_product_id(Session::get("user") -> id, Input::post('product_id'));
+		$favorite = Model_Favorite::find_by_user_id_and_product_id(Session::get('user') -> id, Input::post('product_id'));
 
 		if(!$favorite){
 			return $this -> response(array(
