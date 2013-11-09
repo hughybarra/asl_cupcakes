@@ -1,6 +1,7 @@
 $('#users-login-submit').click(function(){
 
-	var username = $('#users-login-email').val();
+	var username = $('#users-login-username').val();
+	var password = $('#users-login-password').val();
 
 	ajax({
 		url : "",
@@ -8,7 +9,7 @@ $('#users-login-submit').click(function(){
 		dataType : "json",
 		data : {
 			'username' : username,
-			'password' : md5(password)
+			'password' : password
 		},
 		success : function(response) {
 
