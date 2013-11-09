@@ -6,7 +6,7 @@ class Model_Review extends \Orm\Model
 		'id',
 		'user_id',
 		'product_id',
-		'comment',
+		'user_review',
 	);
 
 	protected static $_table_name = 'reviews';

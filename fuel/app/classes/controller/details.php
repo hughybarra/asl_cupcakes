@@ -12,7 +12,10 @@ class Controller_Details extends Controller_Template {
 			$this -> template -> content = Response::forge(View::forge('error/404'), 404);
 			return;
 		}
-
+		
+		// pull in all product reviews 
+		$data['reviews'] = Model_Review::find_all_by_product_id($product_id);
+		
 		$this -> template -> content = View::forge('details/index', $data);
 	}
 
