@@ -1,13 +1,13 @@
 $('#users-login-submit').click(function(){
-	console.log('shit');
-	return;
+	var username = $('#users-login-username').val();
+	var password = $('#users-login-password').val();
 	ajax({
 		url : "",
 		type : "post",
 		dataType : "json",
 		data : {
 			'username' : username,
-			'password' : md5(password)
+			'password' : password
 		},
 		success : function(response) {
 
