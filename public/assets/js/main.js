@@ -1,5 +1,6 @@
 $('#users-login-submit').click(function(){
-
+	console.log('shit');
+	return;
 	ajax({
 		url : "",
 		type : "post",

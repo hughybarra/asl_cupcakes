@@ -5,8 +5,8 @@
 	<h1>Already a member?</h1>
 	<span>Great! Sign in here.</span>
 	<div>
-		<label for="users-login-email">Username</label>
-		<input name="users-login-email" id="users-login-email" type="text" placeholder="ex: John">
+		<label for="users-login-username">Username</label>
+		<input name="users-login-username" id="users-login-username" type="text" placeholder="ex: John">
 	</div>
 	<div>
 		<label for="users-login-password">Password</label>
