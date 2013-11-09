@@ -22,9 +22,6 @@
 <div class="signup">
 	<h1>Sign up with The Cupcake Factory.</h1>
 	<p>An account with The Cupcake Factory will allow you to add items to a favorites list and allow you to place online orders. Best of all, it's free!</p>
-	<form
-	method="post"
-	action="action/signup">
 		<div>
 			<label for="users-signup-username">Username</label>
 			<input name="username" id="users-signup-username" type="text" placeholder="ex: John">
@@ -43,11 +40,10 @@
 		</div>
 		<div>
 			<input id="users-signup-terms" name="users-signup-confirm-terms" value="I agree to the terms and conditions." type="checkbox">
-			<label for="users-signup-confirm-terms">I agree to the terms and conditions.</label>
+			<label for="users-signup-terms">I agree to the terms and conditions.</label>
 		</div>
 		<button id="users-signup-submit" class="button-submit">
 			Sign Up
 		</button>
-	</form>
 </div>
 <img id="login-graphic" src="/assets/img/cupcakes/login-graphic.png">
