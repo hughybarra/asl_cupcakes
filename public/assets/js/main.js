@@ -110,6 +110,29 @@ $('#header-logout').click(function(){
 })
 
 
+
+$('#cart-remove').click(function(){
+	
+	console.log('log out');
+	return;
+	
+	var item_id = $('').val();
+	
+	$.ajax({
+		url : "/action/removeFromCart",
+		type : "post",
+		dataType : "json",
+		data : {
+			'item_id' : item_id
+		},
+		success : function(response) {
+			console.log(response);
+		}
+	})
+	
+})
+
+
 /*
 $('').click(function(){
 	
