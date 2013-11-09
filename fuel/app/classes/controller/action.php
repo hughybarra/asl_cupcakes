@@ -15,9 +15,9 @@ class Controller_Action extends Controller_Rest {
 		
 	    if(
 	    	// fixed the var names. They were targeting wrong post items. 
-	    	!Input::post('users-signup-username') ||
-	    	!Input::post('users-signup-password') ||
-			!Input::post('users-signup-email')
+	    	!Input::post('username') ||
+	    	!Input::post('password') ||
+			!Input::post('email')
 		){
 			
 	    	return $this -> response(array(
@@ -53,15 +53,15 @@ class Controller_Action extends Controller_Rest {
 		
 		// validate
 	    if(
-	    	!Input::post('users-login-email') ||
-	    	!Input::post('users-login-password')
+	    	!Input::post('email') ||
+	    	!Input::post('password')
 		){
 	    	return $this -> response(array(
 	            'error' => 'variables not set'
 	        ));
 		}
 		
-		$username = strtolower(Input::post('users-login-email'));
+		$username = strtolower(Input::post('email'));
 		
 		// create new model
 		$user = Model_User::find_by_user_name($username);
@@ -75,7 +75,7 @@ class Controller_Action extends Controller_Rest {
 		echo "   ";
 		
 		// for some reason this is not running. 
-		if(Auth::hash_password(Input::post('users-login-password')) == $user -> user_pass){
+		if(Auth::hash_password(Input::post('password')) == $user -> user_pass){
 		
 			Session::set('user', array(
 				'id' => $user -> id,
@@ -90,7 +90,7 @@ class Controller_Action extends Controller_Rest {
 	        ));
 			
 		}else{
-			echo Auth::hash_password(Input::post("users-login=password"));
+			echo Auth::hash_password(Input::post("password"));
 			return $this -> response(array(
 			"success" => "not logged in"));
 		}
