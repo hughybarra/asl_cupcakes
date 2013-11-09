@@ -8,5 +8,6 @@
 		<span>$2.50</span>
 		<span>Quantity</span>
 		<span>2</span>
+		<a>Remove From Cart</a>
 	</div>
 </div>
