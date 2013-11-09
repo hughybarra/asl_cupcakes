@@ -9,7 +9,7 @@
 	action="action/login">
 		<div>
 			<label for="users-login-email">Username</label>
-			<input name="users-login-name" id="users-login-email" type="text" placeholder="ex: jdoe@domain.com">
+			<input name="users-login-email" id="users-login-email" type="text" placeholder="ex: John">
 		</div>
 		<div>
 			<label for="users-login-password">Password</label>

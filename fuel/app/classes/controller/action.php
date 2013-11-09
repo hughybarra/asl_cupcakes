@@ -24,14 +24,15 @@ class Controller_Action extends Controller_Rest {
 	            'error' => 'variables not set'
 	        ));
 		}
-    	
 		
+		$username = strtolower(Input::post('users-signup-username'));
+		$email = strtolower(Input::post('users-signup-email'));
 		
 		// create new model
 		$user = Model_User::forge(array(
-			'user_name' => Input::post('users-signup-username'),
-			'user_pass' => Auth::hash_password(Input::post('users-signup-password"')),
-			'user_email' => Input::post('users-signup-email')
+			'user_name' => $username,
+			'user_pass' => Auth::hash_password(Input::post('users-signup-password')),
+			'user_email' => $email
 		));
 		
 		// save model
@@ -52,16 +53,18 @@ class Controller_Action extends Controller_Rest {
 		
 		// validate
 	    if(
-	    	!Input::post('users-login-name') ||
+	    	!Input::post('users-login-email') ||
 	    	!Input::post('users-login-password')
 		){
 	    	return $this -> response(array(
 	            'error' => 'variables not set'
 	        ));
 		}
-    	
+		
+		$username = strtolower(Input::post('users-login-email'));
+		
 		// create new model
-		$user = Model_User::find_by_user_name(Input::post('users-login-name'));
+		$user = Model_User::find_by_user_name($username);
 
 		if(!$user){
 			return $this -> response(array(
