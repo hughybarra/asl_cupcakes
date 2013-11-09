@@ -239,13 +239,23 @@ class Controller_Action extends Controller_Rest {
 		
 	}
 
-	public function action_addQuantity() {
-		echo 'addQuantity';
+	public function action_quantity() {
+		
+		/* 
+		 *	post vars: 
+		 * quantity 
+		 */
+		// validate
+		
+		if (!Input::post("quantity")){
+			return $this -> response(array(
+				'error' => 'variables not set'
+			));
+		}
+		
+		Session::set("cart")->quantity = Input::post('quantity');
 	}
 
-	public function action_reduceQuantity() {
-		echo 'reduceQuantity';
-	}
 
 	public function action_submitOrder() {
 		
