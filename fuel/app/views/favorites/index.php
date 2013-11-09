@@ -14,7 +14,7 @@
 			<span>$<?php echo $item['price']; ?></span>
 			<span>Type</span>
 			<span><?php echo $item['quantity']; ?></span>
-			<a href="/action/removeFavorite/<? echo $item["id"] ?>">remove favorite</a>
+			<a id="favorite-remove" href="/action/removeFavorite/<? echo $item["id"] ?>">remove favorite</a>
 		</div>
 	
 	</div>
