@@ -195,9 +195,7 @@ class Controller_Action extends Controller_Rest {
 
 	public function action_submitOrder() {
 		
-		// $user_id = Session::get('user');
-
-		$user_id = 1;
+		$user_id = Session::get('user');
 
 		$price = 0;
 		
