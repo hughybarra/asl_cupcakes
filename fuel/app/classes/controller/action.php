@@ -18,25 +18,25 @@ class Controller_Action extends Controller_Rest {
 		
 		// validate 
 		if(
-			!Input::post("uesr_review") ||
+			!Input::post('uesr_review') ||
 			!Input::post('product_id')
 		){
 			return $this -> response(array(
-				"error" => "variables not set"
+				'error' => 'variables not set'
 			));
 		}
 		
 		// setting function vars
-		$user_review 	= Input::post("user_review");
-		$user_id 		= Session::get("user")->id;
-		$product_id 	= Input::post("product_id");
+		$user_review 	= Input::post('user_review');
+		$user_id 		= Session::get('user')->id;
+		$product_id 	= Input::post('product_id');
 		
 
 		// Inserting review into Db
 		$new_review = Model_Review::forge(array(
-			"user_id" 		=> $user_id,
-			"product_id" 	=> $product_id,
-			"user_review" 	=> $user_review
+			'user_id' 		=> $user_id,
+			'product_id' 	=> $product_id,
+			'user_review' 	=> $user_review
 		));
 		
 		// save model
@@ -112,26 +112,24 @@ class Controller_Action extends Controller_Rest {
 	        ));
 		}
 		
-		// for some reason this is not running. 
-		if(Auth::hash_password(Input::post('password')) == $user -> user_pass){
-		
-			Session::set('user', array(
-				'id' => $user -> id,
-				'user_name' => $user -> user_name,
-				'user_email' => $user -> user_pass
+		if(Auth::hash_password(Input::post('password')) != $user -> user_pass){
+			return $this -> response(array(
+				'error' => 'not logged in'
 			));
-			
-			Session::set_flash('success', 'logged in');
-			
-			return $this -> response(array(
-	            'success' => 'logged in'
-	        ));
-			
-		}else{
-			echo Auth::hash_password(Input::post("password"));
-			return $this -> response(array(
-			"success" => "not logged in"));
 		}
+		
+		// for some reason this is not running. 
+		Session::set('user', array(
+			'id' => $user -> id,
+			'user_name' => $user -> user_name,
+			'user_email' => $user -> user_pass
+		));
+		
+		Session::set_flash('success', 'logged in');
+		
+		return $this -> response(array(
+            'success' => 'logged in'
+        ));
 	
 	}
 	
@@ -224,11 +222,11 @@ class Controller_Action extends Controller_Rest {
 	}
 
 	public function action_addQuantity() {
-		echo "addQuantity";
+		echo 'addQuantity';
 	}
 
 	public function action_reduceQuantity() {
-		echo "reduceQuantity";
+		echo 'reduceQuantity';
 	}
 
 	public function action_submitOrder() {
@@ -274,18 +272,18 @@ class Controller_Action extends Controller_Rest {
 		
 		// validate
 	    if(
-			!Input::post("product_id")
+			!Input::post('product_id')
 		){
 	    	return $this -> response(array(
 	            'error' => 'variables not set'
 	        ));
 		}
-		$product_id = Input::post("product_id");
+		$product_id = Input::post('product_id');
 
 		
 		// create new model
 		$favorite = Model_Favorite::forge(array(
-			'user_id' => Session::get("user") -> id,
+			'user_id' => Session::get('user') -> id,
 			'product_id' => $product_id
 		));
 
@@ -317,10 +315,10 @@ class Controller_Action extends Controller_Rest {
 	        ));
 		}
 
-		$product_id = Input::post("product_id");
+		$product_id = Input::post('product_id');
 		
 		// create new model
-		$favorite = Model_Favorite::find_by_user_id_and_product_id(Session::get("user") -> id, $product_id);
+		$favorite = Model_Favorite::find_by_user_id_and_product_id(Session::get('user') -> id, $product_id);
 
 		if(!$favorite){
 			return $this -> response(array(
