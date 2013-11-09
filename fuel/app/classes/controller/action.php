@@ -19,9 +19,9 @@ class Controller_Action extends Controller_Rest {
     	
 		// create new model
 		$user = Model_User::forge(array(
-			'username' => Input::post('username'),
-			'password' => Auth::hash_password(Input::post('password')),
-			'email' => Input::post('email')
+			'user_name' => Input::post('username'),
+			'user_pass' => Auth::hash_password(Input::post('password')),
+			'user_email' => Input::post('email')
 		));
 		
 		// save model
@@ -51,7 +51,7 @@ class Controller_Action extends Controller_Rest {
 		}
     	
 		// create new model
-		$user = Model_User::find_by_username(Input::post('username'));
+		$user = Model_User::find_by_user_name(Input::post('username'));
 		
 		if(!$user){
 			return $this -> response(array(
@@ -59,12 +59,12 @@ class Controller_Action extends Controller_Rest {
 	        ));
 		}
 			
-		if(Auth::hash_password(Input::post('password')) == $user -> password){
+		if(Auth::hash_password(Input::post('password')) == $user -> user_pass){
 		
 			Session::set('user', array(
 				'id' => $user -> id,
-				// TODO
-				// more stuff here
+				'user_name' => $user -> user_name,
+				'user_email' => $user -> user_pass
 			));
 			
 			Session::set_flash('success', 'logged in');
@@ -91,6 +91,48 @@ class Controller_Action extends Controller_Rest {
 	public function action_addToCart() {
 		
 		// validate
+	    /*if(
+	    	!Input::post('item_id')
+		){
+	    	return $this -> response(array(
+	            'error' => 'variables not set'
+	        ));
+		}*/
+		
+		// validate the cart exists
+		$cart = Session::get('cart');
+		
+		if(!$cart)
+		{
+			Session::set('cart', array());
+			$cart = Session::get('cart');
+		}
+		
+		// get product from database
+		$product = Model_Product::find_by_id(Input::get('item_id'));
+		
+		if(!$product){
+			return $this -> response(array(
+	            'error' => 'product not found'
+	        ));
+		}
+		
+		// push new product into cart
+		array_push($cart, array(
+			'item_id' => $product -> id,
+			'name' => $product -> name,
+			'price' => $product -> price
+		));
+		
+		Session::set('cart', $cart);
+		
+		return $this -> response($cart);
+		
+	}
+
+	public function action_removeFromCart() {
+		
+		// validate
 	    if(
 	    	!Input::post('item_id')
 		){
@@ -106,30 +148,21 @@ class Controller_Action extends Controller_Rest {
 		{
 			Session::set('cart', array());
 			$cart = Session::get('cart');
+			
+			return $this -> response($cart);
 		}
-		
-		// get product from database
-		$product = Model_Product::find_by_id(Input::post('item_id'));
-		
-		if(!$product){
-			return $this -> response(array(
-	            'error' => 'product not found'
-	        ));
+
+		foreach ($cart as $key => $item) {
+			if($item['item_id'] == Input::get('item_id')){
+				unset($cart[$key]);
+				break;
+			}
 		}
-		
-		// push new product into cart
-		array_push($cart, array(
-			'item_id' => $product -> id,
-			'quantity' => 1,
-			'name' => $product -> name,
-			'price' => $product -> price
-		));
 		
 		Session::set('cart', $cart);
-	}
-
-	public function action_removeFromCart() {
-		echo "removeFromCart";
+		
+		return $this -> response($cart);
+		
 	}
 
 	public function action_addQuantity() {
@@ -141,7 +174,43 @@ class Controller_Action extends Controller_Rest {
 	}
 
 	public function action_submitOrder() {
-		echo "submitOrder";
+		
+		// $user_id = Session::get('user');
+
+		$user_id = 1;
+
+		$price = 0;
+		
+		$cart = Session::get('cart');
+		
+		if(!$cart){
+			return $this -> response(array(
+	            'error' => 'cart not set'
+	        ));
+		}
+		
+		foreach ($cart as $item) {
+			$price += $item['price'];
+		}
+		
+		$order = Model_Order::forge(array(
+			'user_id' => $user_id,
+			'order_total' => $price
+		));
+
+		$order->save();
+		
+		foreach ($cart as $item) {
+			$order_item = Model_OrderItem::forge(array(
+				'order_id' => $order->id,
+				'product_id' => $item['item_id'],
+				'quantity' => 1
+			));
+			$order_item->save();
+		}
+		
+		Session::set('cart', array());
+		
 	}
 
 	public function action_addFavorite($product_id)
