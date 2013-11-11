@@ -85,7 +85,7 @@ $('#details-add-to-cart').click(function() {
 $('.cart-remove').click(function(e) {
 	console.log('dick');
 	//WHAT IS THE ITEM IDs
-	var item_id = $(this).closest.val();
+	// var item_id = $(this).closest(.cart-item).val();
 
 	$.ajax({
 		url : "/action/removeFromCart",
@@ -104,21 +104,17 @@ $('.cart-remove').click(function(e) {
 });
 
 $('#cart-submit').click(function() {
-
-	console.log('log out');
-	return;
-
+	console.log('poop');
 	$.ajax({
 		url : "/action/submitOrder",
 		type : "post",
 		dataType : "json",
 		success : function(response) {
 			if(response.success){
-				
+				alert('It\'s a party');
 			}
 		}
 	});
-
 });
 
 $('#details-add-to-favorites').click(function() {

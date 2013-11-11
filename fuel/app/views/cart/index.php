@@ -3,7 +3,7 @@
 	<div>
 		<span>Total</span>
 		<span>$23.54</span>
-		<a id="cart-submit" href="#" class="button-submit">Checkout</a>
+		<a id="cart-submit" class="button-submit">Checkout</a>
 	</div>
 </div>
 <div class="cart-items">
