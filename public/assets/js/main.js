@@ -36,7 +36,7 @@ $('#users-login-submit').click(function() {
 			'password' : password
 		},
 		success : function(response) {
-			if(response.success){
+			if (response.success) {
 				window.location = document.referrer;
 			}
 		}
@@ -53,7 +53,7 @@ $('#header-logout').click(function() {
 		type : "post",
 		dataType : "json",
 		success : function(response) {
-			if(response.success){
+			if (response.success) {
 				window.location = '/users';
 			}
 		}
@@ -160,4 +160,4 @@ $('#favorite-remove').click(function() {
 		}
 	});
 
-}); 
+});
