@@ -15,6 +15,7 @@
 			<img src="/assets/img/cupcakes/<?php echo $item['image_path']; ?>.png">
 		</div>
 		<div class="cupcake-cart-info">
+			<span class="cupcake-product-id"><?php echo $item['id']; ?></span>
 			<span class="cupcake-name"><?php echo $item['name']; ?></span>
 			<br />
 			<span>Price</span>
@@ -23,7 +24,7 @@
 			<span>Quantity</span>
 			<input type="number" name="quantity" min="1" max="36" value="<?php echo $item['quantity']; ?>">
 			<br />
-			<a id="cart-remove" href="#">Remove From Cart</a>
+			<a class="cart-remove">Remove From Cart</a>
 		</div>
 	</div>
 	
