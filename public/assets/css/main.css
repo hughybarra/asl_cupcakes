@@ -1,11 +1,11 @@
-#ad_slot{
+#ad_slot {
 	width: 100%;
 	height: 100px;
 	background: #ebebeb;
 	margin: 20px 0;
 }
 
-body{
+body {
 	font-family: helvetica, 'helvetica neue', arial, sans-serif;
 	color: #222;
 	background: #FDFAEF;
@@ -13,13 +13,13 @@ body{
 	line-height: 1.5em;
 }
 
-h1{
+h1 {
 	color: #D92B3A;
 	font-family: 'Pacifico';
 	font-size: 2em;
 }
 
-header{
+header {
 	background: #D0003F;
 	color: #FDFAEF;
 	height: 60px;
@@ -34,19 +34,19 @@ header{
 	box-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
 }
 
-header a{
+header a {
 	display: inline-block;
-	color:#FDFAEF;
+	color: #FDFAEF;
 	text-decoration: none;
 	line-height: 1.5em;
 	margin-left: 15px;
 	margin-right: 15px;
 }
-header a img{
+header a img {
 	display: block;
 }
 
-.header-controls{
+.header-controls {
 	display: block;
 	float: right;
 	margin-top: 5px;
@@ -57,11 +57,11 @@ header a img{
 	width: 100%;
 }
 
-#header-signup{
+#header-signup {
 	text-decoration: underline;
 }
 
-#logo{
+#logo {
 	background: url('/assets/img/logo.png') no-repeat;
 	background-position: 0 0;
 	height: 54px;
@@ -71,7 +71,7 @@ header a img{
 	margin-left: 1%;
 }
 
-.button-submit, .header-logout, #header-login{
+.button-submit, #header-logout, #header-login {
 	background: #b8faff; /* Old browsers */
 	background: -moz-linear-gradient(top, #b8faff 0%, #65c8d0 47%, #65c8d0 77%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b8faff), color-stop(47%,#65c8d0), color-stop(77%,#65c8d0)); /* Chrome,Safari4+ */
@@ -89,28 +89,28 @@ header a img{
 	text-decoration: none;
 }
 
-.header-logout, #header-login{
+#header-logout, #header-login {
 	position: absolute;
 }
-.main{
+.main {
 	width: 960px;
 	margin: 0 auto;
 	margin-bottom: 20px;
 }
 
-.cart-item{
+.cart-item {
 	width: 600px;
 	float: left;
 	margin: 10px 0;
 }
 
-.cupcake-cart-info{
+.cupcake-cart-info {
 	float: right;
 	width: 350px;
 	display: inline-block;
 }
 
-.cupcake{
+.cupcake {
 	float: left;
 	display: block;
 	height: 345px;
@@ -118,47 +118,46 @@ header a img{
 	margin: 20px 5px;
 }
 
-.cupcake-thumb{
-	float:left;
-	background: #fff; 
+.cupcake-thumb {
+	float: left;
+	background: #fff;
 	height: 230px;
 	width: 230px;
 	box-shadow: 0 0 .5em rgba(0, 0, 0, 0.3);
 	margin-bottom: 5px;
 }
 
-.cupcake-thumb img{
-/* 	background: #fff;  */
+.cupcake-thumb img {
+	/* 	background: #fff;  */
 	height: 220px;
 	width: 178px;
 	margin-left: 30px;
 	margin-top: 5px;
-	
 }
 
-.cupcake-name{
+.cupcake-name {
 	color: #D92B3A;
 	font-family: 'Pacifico';
 }
 
-.cupcake-name{
+.cupcake-name {
 	font-size: 16px;
 }
 
-.cupcake-detail-name{
+.cupcake-detail-name {
 	font-size: 26px;
 }
 
-.cupcake-info{
+.cupcake-info {
 	margin: 5px 10px;
 }
 
-.cupcake-info span, .cupcake-detail-info span, .cupcake-detail-info a{
-	float:left;
+.cupcake-info span, .cupcake-detail-info span, .cupcake-detail-info a {
+	float: left;
 	clear: both;
 }
 
-.cupcake-detail-img{
+.cupcake-detail-img {
 	background: #fff;
 	height: 390px;
 	width: 390px;
@@ -168,32 +167,32 @@ header a img{
 	margin-right: 20px;
 }
 
-.cupcake-detail-img img{
+.cupcake-detail-img img {
 	width: 310px;
 	height: 380px;
 	margin-left: 40px;
-	margin-top: 10px; 
+	margin-top: 10px;
 }
 
-.cupcake-detail-info{
+.cupcake-detail-info {
 	float: right;
 	display: block;
 	width: 550px;
 }
 
-.login{
+.login {
 	float: right;
 	display: block;
 	width: 380px;
 }
 
-.signup{
+.signup {
 	float: left;
 	display: block;
 	width: 470px;
 }
 
-.signup, .login{
+.signup, .login {
 	background: #fff;
 	padding: 20px;
 	border-radius: 3px;
@@ -201,12 +200,12 @@ header a img{
 	margin-top: 20px;
 }
 
-.signup label{
+.signup label {
 	display: inline-block;
 	width: 450px;
 }
 
-.signup input, .login input{
+.signup input, .login input {
 	width: 100%;
 	padding: 5px;
 	border: 1px solid #e6e6e6;
@@ -214,26 +213,26 @@ header a img{
 	border-radius: 3px;
 }
 
-.signup input:focus, .login input:focus{
+.signup input:focus, .login input:focus {
 	outline: none;
 	border: 1px solid #969696;
 	border-top: 2px solid #969696;
 }
 
-#terms{
+#terms {
 	width: 20px;
 }
 
-.signup div, .login div{
+.signup div, .login div {
 	margin: 20px auto;
 }
 
-.login label{
+.login label {
 	display: block;
 	width: 350px;
 }
 
-.shopping-cart{
+.shopping-cart {
 	float: right;
 	clear: both;
 	width: 270px;
@@ -242,7 +241,7 @@ header a img{
 	box-shadow: 0 0 .5em rgba(0, 0, 0, 0.3);
 }
 
-#login-graphic{
+#login-graphic {
 	position: fixed;
 	bottom: 0;
 	left: 50%;

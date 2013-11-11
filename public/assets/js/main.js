@@ -34,7 +34,9 @@ $('#users-login-submit').click(function() {
 			'password' : password
 		},
 		success : function(response) {
-			console.log(response);
+			if(response.success){
+				window.history.go(-1);
+			}
 		}
 	});
 
