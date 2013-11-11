@@ -11,11 +11,11 @@
 	<?php foreach ($cart as $item): ?>
 		
 	<div class="cart-item">
+		<input type="hidden" class="cupcake-product-id" value="<?php echo $item['id']; ?>" />
 		<div class="cupcake-thumb">
 			<img src="/assets/img/cupcakes/<?php echo $item['image_path']; ?>.png">
 		</div>
 		<div class="cupcake-cart-info">
-			<span class="cupcake-product-id"><?php echo $item['id']; ?></span>
 			<span class="cupcake-name"><?php echo $item['name']; ?></span>
 			<br />
 			<span>Price</span>
