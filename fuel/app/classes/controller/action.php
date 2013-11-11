@@ -7,11 +7,9 @@ class Controller_Action extends Controller_Rest {
 	public function action_addReview() {
 		// done
 		/* 
-		 
 		 	post vars:
 				user_review 
 		 		product_id
-		 	
 		*/
 		
 		// validate 
@@ -23,11 +21,13 @@ class Controller_Action extends Controller_Rest {
 				'error' => 'variables not set'
 			));
 		}
+		
+		$user = Session::get('user');
+		$user_id = $user['id'];
 
 		// setting function vars
-		// $user_review 	= Input::post('user_review');
-		$user_id 		= Session::get('user_id');
-		// $product_id 	= Input::post('product_id');
+		$user_review 	= Input::post('user_review');
+		$product_id 	= Input::post('product_id');
 		
 
 		// Inserting review into Db
@@ -51,10 +51,11 @@ class Controller_Action extends Controller_Rest {
 	public function action_signup() {
 		// done
 		/*	post vars:
-		 	username
-		 	password
-		 	email
+			 	username
+			 	password
+			 	email
 		*/
+		
 		// validate
 		
 	    if(
@@ -69,11 +70,11 @@ class Controller_Action extends Controller_Rest {
 		}
 
 		// check the database for existing user name
-		$check_user = Model_User::find_by_user_name(Input::post("username"));
+		$check_user = Model_User::find_by_user_name(Input::post('username'));
 		
 		if($check_user){
 			return $this-> response(array(
-				'error' => "username already exists"
+				'error' => 'username already exists'
 			));
 		}
 		
@@ -104,8 +105,8 @@ class Controller_Action extends Controller_Rest {
 	public function action_login() {
 		// done
 		/* post vars :
-		 username
-		 password
+			username
+			password
 		*/
 		
 		// validate
@@ -143,8 +144,6 @@ class Controller_Action extends Controller_Rest {
 			'user_email' => $user -> user_email
 			
 		));
-		// this works but we can change it later
-		Session::set("user_id", $user->id);		
 		Session::set_flash('success', 'logged in');
 		
 		return $this -> response(array(
@@ -166,10 +165,9 @@ class Controller_Action extends Controller_Rest {
 
 	public function action_addToCart() {
 		
-		/*
-		 *	post vars: 
-		 *	item_id
-		 */
+		/* post vars: 
+			item_id
+		*/
 		
 		// validate
 	    if(
@@ -213,11 +211,9 @@ class Controller_Action extends Controller_Rest {
 
 	public function action_removeFromCart() {
 		
-		/*
-		 * post vars:
-		 * item_id
-		 * 
-		 */
+		/* post vars: 
+			item_id
+		*/
 		
 		// validate
 	    if(
@@ -254,25 +250,25 @@ class Controller_Action extends Controller_Rest {
 
 	public function action_quantity() {
 		
-		/* 
-		 *	post vars: 
-		 * quantity 
-		 */
+		/* post vars: 
+			quantity
+		*/
+		
 		// validate
 		
-		if (!Input::post("quantity")){
+		if (!Input::post('quantity')){
 			return $this -> response(array(
 				'error' => 'variables not set'
 			));
 		}
 		
-		Session::set("cart")->quantity = Input::post('quantity');
+		Session::set('cart')->quantity = Input::post('quantity');
 	}
 
 
 	public function action_submitOrder() {
-		
-		$user_id = Session::get('user');
+		$user = Session::get('user');
+		$user_id = $user['id'];
 
 		$price = 0;
 		
@@ -311,11 +307,11 @@ class Controller_Action extends Controller_Rest {
 	public function action_addFavorite()
 	{
 		// done
-		/* 
-		 * post vars :
-		 * product_id
-		 * 
-		 */	
+		
+		/* post vars: 
+			product_id
+		*/
+		
 		//validate
 	    if(
 			!Input::post('product_id')
@@ -325,10 +321,13 @@ class Controller_Action extends Controller_Rest {
 	        ));
 		}
 		$product_id = Input::post('product_id');
-
+		
+		$user = Session::get('user');
+		$user_id = $user['id'];
+		
 		// create new model
 		$favorite = Model_Favorite::forge(array(
-			'user_id' => Session::get('user_id') ,
+			'user_id' => $user_id ,
 			'product_id' => $product_id
 		));
 
@@ -350,10 +349,10 @@ class Controller_Action extends Controller_Rest {
 
 	public function action_removeFavorite()
 	{
-		/*
-		 * post vars:
-		 * product_id
-		 */
+		/* post vars: 
+			product_id
+		*/
+		
 		// validate
 	    if(
 			!Input::post('product_id')
@@ -365,8 +364,11 @@ class Controller_Action extends Controller_Rest {
 
 		$product_id = Input::post('product_id');
 		
+		$user = Session::get('user');
+		$user_id = $user['id'];
+		
 		// create new model
-		$favorite = Model_Favorite::find_by_user_id_and_product_id(Session::get('user') -> id, $product_id);
+		$favorite = Model_Favorite::find_by_user_id_and_product_id($user_id, $product_id);
 
 		if(!$favorite){
 			return $this -> response(array(
