@@ -18,7 +18,7 @@ class Controller_Madserv extends Controller {
 		//=======================================Edit This===================================
 		//Just replace the key and app id with the ones
 		//you received when you registered with MadServ
-		$key = '58c712713bda048ac50e20e99ed9111c';
+		$key = '28f76f49fa9a7174d217b7928b99888a';
 		$app_id = '7b2cdade';
 
 		//=============================Don't edit anything below here========================
