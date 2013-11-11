@@ -10,21 +10,29 @@
 		
 		<div id="header_placeholder"></div>
 		
-		<header>
-			<a id="logo" href="/">The Cupcake Factory</a>
-			<div class="header-controls">
-				<a class="header-cart" href="/cart"><img src="/assets/img/cart-icon.png">View Cart</a>
-				<a class="header-favorites" href="/favorites"><img src="/assets/img/fave-icon.png">Favorites</a>
-				<a id="header-login" href="/users">Log In</a>
-				<a id="header-signup" href="/users">New here? Sign up!</a>
-			</div>
-		</header>	
+		
 		
 		<?php $user = Session::get('user'); ?>
 		<?php if($user && $user['id']):?>
-			<p><?php echo $user['user_name']; ?> Logged In</p>
+			<header>
+				<a id="logo" href="/">The Cupcake Factory</a>
+				<div class="header-controls">
+					<a class="header-cart" href="/cart"><img src="/assets/img/cart-icon.png">View Cart</a>
+					<a class="header-favorites" href="/favorites"><img src="/assets/img/fave-icon.png">Favorites</a>
+					<a id="header-login" href="/users">Log Out</a>
+					<a id="header-signup" href="/users">Welcome, <?php echo $user['user_name']?></a>
+				</div>
+			</header>
 		<?php else: ?>
-			<p>User Logged Out</p>
+			<header>
+				<a id="logo" href="/">The Cupcake Factory</a>
+				<div class="header-controls">
+					<a class="header-cart" href="/cart"><img src="/assets/img/cart-icon.png">View Cart</a>
+					<a class="header-favorites" href="/favorites"><img src="/assets/img/fave-icon.png">Favorites</a>
+					<a id="header-login" href="/users">Log In</a>
+					<a id="header-signup" href="/users">New here? Sign up!</a>
+				</div>
+			</header>
 		<?php endif; ?>
 		
 		<div class="main">
