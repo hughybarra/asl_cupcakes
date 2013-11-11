@@ -109,10 +109,6 @@ class Controller_Action extends Controller_Rest {
 
 	}
 
-	public function action_madServLogin() {
-		require 'model/request.php';
-	}
-
 	public function action_logout() {
 
 		Session::delete('user');
