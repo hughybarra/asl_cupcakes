@@ -51,7 +51,9 @@ $('#header-logout').click(function() {
 		type : "post",
 		dataType : "json",
 		success : function(response) {
-			console.log(response);
+			if(response.success){
+				window.location = '/users';
+			}
 		}
 	});
 
