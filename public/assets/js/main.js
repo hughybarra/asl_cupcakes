@@ -47,20 +47,12 @@ $('#users-login-submit').click(function(){
 
 $('#header-logout').click(function(){
 	
-	console.log('log out');
-	return;
-	
-	var item_id = $('').val();
-	
 	$.ajax({
 		url : "/action/logout",
 		type : "post",
 		dataType : "json",
-		data : {
-			'item_id' : item_id
-		},
 		success : function(response) {
-			console.log(response);
+			window.location = '/';
 		}
 	});
 	
