@@ -10,8 +10,6 @@
 		
 		<div id="header_placeholder"></div>
 		
-		
-		
 		<?php $user = Session::get('user'); ?>
 		<?php if($user && $user['id']):?>
 			<header>
