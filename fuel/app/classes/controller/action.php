@@ -24,7 +24,7 @@ class Controller_Action extends Controller_Rest {
 			));
 		}
 		
-		$user = Session::get("user");
+		$user = Session::get('user');
 		$user_id = $user['id'];
 
 		// setting function vars
@@ -71,11 +71,11 @@ class Controller_Action extends Controller_Rest {
 		}
 
 		// check the database for existing user name
-		$check_user = Model_User::find_by_user_name(Input::post("username"));
+		$check_user = Model_User::find_by_user_name(Input::post('username'));
 		
 		if($check_user){
 			return $this-> response(array(
-				'error' => "username already exists"
+				'error' => 'username already exists'
 			));
 		}
 		
@@ -260,18 +260,18 @@ class Controller_Action extends Controller_Rest {
 		 */
 		// validate
 		
-		if (!Input::post("quantity")){
+		if (!Input::post('quantity')){
 			return $this -> response(array(
 				'error' => 'variables not set'
 			));
 		}
 		
-		Session::set("cart")->quantity = Input::post('quantity');
+		Session::set('cart')->quantity = Input::post('quantity');
 	}
 
 
 	public function action_submitOrder() {
-		$user = Session::get("user");
+		$user = Session::get('user');
 		$user_id = $user['id'];
 
 		$price = 0;
@@ -326,7 +326,7 @@ class Controller_Action extends Controller_Rest {
 		}
 		$product_id = Input::post('product_id');
 		
-		$user = Session::get("user");
+		$user = Session::get('user');
 		$user_id = $user['id'];
 		
 		// create new model
@@ -368,7 +368,7 @@ class Controller_Action extends Controller_Rest {
 
 		$product_id = Input::post('product_id');
 		
-		$user = Session::get("user");
+		$user = Session::get('user');
 		$user_id = $user['id'];
 		
 		// create new model
