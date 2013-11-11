@@ -1,4 +1,6 @@
 <?php
+//when you get directed to login as a user just log in as anothradam pass=password
+
 
 //©2013 MadServ
 //all rights reserved
