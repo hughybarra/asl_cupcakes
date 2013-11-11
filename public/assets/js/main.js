@@ -82,11 +82,10 @@ $('#details-add-to-cart').click(function() {
 
 });
 
-$('#cart-remove').click(function() {
-	
-	return;
+$('.cart-remove').click(function(e) {
+	console.log('dick');
 	//WHAT IS THE ITEM IDs
-	var item_id = $('').val();
+	var item_id = $(this).closest.val();
 
 	$.ajax({
 		url : "/action/removeFromCart",
@@ -99,6 +98,8 @@ $('#cart-remove').click(function() {
 			console.log(response);
 		}
 	});
+	
+	return false;
 
 });
 
@@ -113,7 +114,7 @@ $('#cart-submit').click(function() {
 		dataType : "json",
 		success : function(response) {
 			if(response.success){
-				alert 'Your order was submitted succesfully';
+				
 			}
 		}
 	});

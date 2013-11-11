@@ -11,6 +11,7 @@
 	<?php foreach ($cart as $item): ?>
 		
 	<div class="cart-item">
+		<input type="hidden" class="cupcake-product-id" value="<?php echo $item['id']; ?>" />
 		<div class="cupcake-thumb">
 			<img src="/assets/img/cupcakes/<?php echo $item['image_path']; ?>.png">
 		</div>
@@ -23,7 +24,7 @@
 			<span>Quantity</span>
 			<input type="number" name="quantity" min="1" max="36" value="<?php echo $item['quantity']; ?>">
 			<br />
-			<a id="cart-remove" href="#">Remove From Cart</a>
+			<a class="cart-remove">Remove From Cart</a>
 		</div>
 	</div>
 	
