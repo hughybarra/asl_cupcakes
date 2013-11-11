@@ -12,25 +12,22 @@ class Controller_Madserv extends Controller {
 		//This file is a model file. It handles the get requests and return data
 		//from the MadServ API for user authentication requests.
 		//
-		//You only need to edit your key, app id, and redirect_to. Everything else has been handled for you.
+		//You only need to edit your key and app id. Everything else has been handled for you.
 		//Happy Sailing!
 
 		//=======================================Edit This===================================
 		//Just replace the key and app id with the ones
 		//you received when you registered with MadServ
-		$key = '28f76f49fa9a7174d217b7928b99888a';
+		$key = '58c712713bda048ac50e20e99ed9111c';
 		$app_id = '7b2cdade';
-
-		//This is YOUR site. This is where the user will be returned to after
-		//he/she has been authenticated by MadServ. Handle this however you'd like.
-		//DO NOT USE http:// in your url. It will break the API calls.
-		$redirect_to = document . referrer;
 
 		//=============================Don't edit anything below here========================
 
 		//built url, properly formatted for API
 		$url = 'http://madserv.us/';
 		$url .= '/api_request/validate_client/';
+		$url .= $key;
+		$url .= "/";
 		$url .= $app_id;
 
 		// 1. makes a REQUEST to the API to authenticate your app
@@ -42,8 +39,6 @@ class Controller_Madserv extends Controller {
 		$apiSecret = $decoded['secret'];
 		$redirectURL = $decoded['redirect'];
 
-		// var_dump($request);
-		//----------authenticating secret------------------
 		//hashes your key & app_id to build your secret
 		//for API identification verification
 		$appSecret = md5($key);
@@ -54,7 +49,7 @@ class Controller_Madserv extends Controller {
 		if ($apiSecret == $appSecret) {
 
 			// 4. upon success, the user is redirected to the API for authentication
-			header("Location: " . $redirectURL . "/" . $app_id . "/" . $redirect_to);
+			header("Location: " . $redirectURL . "/" . $app_id);
 
 		} else {
 			if (!$decoded) {
@@ -65,7 +60,6 @@ class Controller_Madserv extends Controller {
 
 			echo "Server response: " . $r;
 		}
-
 	}
 
 	function action_userdata() {
