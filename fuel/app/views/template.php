@@ -20,6 +20,13 @@
 			</div>
 		</header>	
 		
+		<?php $user = Session::get('user'); ?>
+		<?php if($user && $user['id']):?>
+			<p><?php echo $user['user_name']; ?> Logged In</p>
+		<?php else: ?>
+			<p>User Logged Out</p>
+		<?php endif; ?>
+		
 		<div class="main">
 		<div id="ad_slot"><span>Ad space</span></div>
 		
