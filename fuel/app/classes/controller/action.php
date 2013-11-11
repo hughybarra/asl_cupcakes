@@ -7,11 +7,9 @@ class Controller_Action extends Controller_Rest {
 	public function action_addReview() {
 		// done
 		/* 
-		 
 		 	post vars:
 				user_review 
 		 		product_id
-		 	
 		*/
 		
 		// validate 
@@ -53,10 +51,11 @@ class Controller_Action extends Controller_Rest {
 	public function action_signup() {
 		// done
 		/*	post vars:
-		 	username
-		 	password
-		 	email
+			 	username
+			 	password
+			 	email
 		*/
+		
 		// validate
 		
 	    if(
@@ -106,8 +105,8 @@ class Controller_Action extends Controller_Rest {
 	public function action_login() {
 		// done
 		/* post vars :
-		 username
-		 password
+			username
+			password
 		*/
 		
 		// validate
@@ -166,10 +165,9 @@ class Controller_Action extends Controller_Rest {
 
 	public function action_addToCart() {
 		
-		/*
-		 *	post vars: 
-		 *	item_id
-		 */
+		/* post vars: 
+			item_id
+		*/
 		
 		// validate
 	    if(
@@ -213,11 +211,9 @@ class Controller_Action extends Controller_Rest {
 
 	public function action_removeFromCart() {
 		
-		/*
-		 * post vars:
-		 * item_id
-		 * 
-		 */
+		/* post vars: 
+			item_id
+		*/
 		
 		// validate
 	    if(
@@ -254,10 +250,10 @@ class Controller_Action extends Controller_Rest {
 
 	public function action_quantity() {
 		
-		/* 
-		 *	post vars: 
-		 * quantity 
-		 */
+		/* post vars: 
+			quantity
+		*/
+		
 		// validate
 		
 		if (!Input::post('quantity')){
@@ -311,11 +307,11 @@ class Controller_Action extends Controller_Rest {
 	public function action_addFavorite()
 	{
 		// done
-		/* 
-		 * post vars :
-		 * product_id
-		 * 
-		 */	
+		
+		/* post vars: 
+			product_id
+		*/
+		
 		//validate
 	    if(
 			!Input::post('product_id')
@@ -353,10 +349,10 @@ class Controller_Action extends Controller_Rest {
 
 	public function action_removeFavorite()
 	{
-		/*
-		 * post vars:
-		 * product_id
-		 */
+		/* post vars: 
+			product_id
+		*/
+		
 		// validate
 	    if(
 			!Input::post('product_id')
