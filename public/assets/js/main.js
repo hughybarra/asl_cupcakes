@@ -14,7 +14,9 @@ $('#users-signup-submit').click(function() {
 			'password' : password
 		},
 		success : function(response) {
-			console.log(response);
+			if(response.success){
+				window.location = document.referrer;
+			}
 		}
 	});
 
@@ -63,7 +65,7 @@ $('#details-add-to-cart').click(function() {
 
 	console.log('add to cart');
 	return;
-
+	//WHAT IS THE ITEM ID
 	var item_id = $('').val();
 
 	$.ajax({
@@ -81,10 +83,9 @@ $('#details-add-to-cart').click(function() {
 });
 
 $('#cart-remove').click(function() {
-
-	console.log('log out');
+	
 	return;
-
+	//WHAT IS THE ITEM IDs
 	var item_id = $('').val();
 
 	$.ajax({
@@ -106,17 +107,14 @@ $('#cart-submit').click(function() {
 	console.log('log out');
 	return;
 
-	var item_id = $('').val();
-
 	$.ajax({
 		url : "/action/submitOrder",
 		type : "post",
 		dataType : "json",
-		data : {
-			'item_id' : item_id
-		},
 		success : function(response) {
-			console.log(response);
+			if(response.success){
+				alert 'Your order was submitted succesfully';
+			}
 		}
 	});
 
@@ -126,15 +124,36 @@ $('#details-add-to-favorites').click(function() {
 
 	console.log('add to faves');
 	return;
-
-	var item_id = $('').val();
+	//WHAT IS PRODUCT ID?
+	var product_id = $('').val();
 
 	$.ajax({
 		url : "/action/addFavorite",
 		type : "post",
 		dataType : "json",
 		data : {
-			'item_id' : item_id
+			'product_id' : product_id
+		},
+		success : function(response) {
+			console.log(response);
+		}
+	});
+
+}); 
+
+$('#favorite-remove').click(function() {
+
+	console.log('removed from faves');
+	return;
+	//WHAT IS PRODUCT ID?
+	var product_id = $('').val();
+
+	$.ajax({
+		url : "/action/addFavorite",
+		type : "post",
+		dataType : "json",
+		data : {
+			'product_id' : product_id
 		},
 		success : function(response) {
 			console.log(response);

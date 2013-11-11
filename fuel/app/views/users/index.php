@@ -6,7 +6,7 @@
 	<span>Great! Sign in here.</span>
 	<div>
 		<label for="users-login-username">Username</label>
-		<input name="users-login-username" id="users-login-username" type="text" placeholder="ex: John">
+		<input name="users-login-username" id="users-login-username" type="text" placeholder="ex: JohnDoe1234">
 	</div>
 	<div>
 		<label for="users-login-password">Password</label>
@@ -17,6 +17,8 @@
 	</button>
 </div>
 <!-- SIGN UP FORM -->
+<!-- ======================================== -->
+
 <!-- ======================================== -->
 <!-- ======================================== -->
 <div class="signup">
