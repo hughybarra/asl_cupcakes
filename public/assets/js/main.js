@@ -161,11 +161,3 @@ $('#details-add-to-favorites').click(function(){
 	});
 	
 });
-
-
-/*
-$('').click(function(){
-	
-	
-});
-*/
