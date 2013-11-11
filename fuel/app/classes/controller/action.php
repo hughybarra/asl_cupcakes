@@ -6,10 +6,10 @@ class Controller_Action extends Controller_Rest {
 	
 	public function action_addReview() {
 		// done
-		/* 
-		 	post vars:
-				user_review 
-		 		product_id
+		
+		/* post vars:
+			user_review 
+			product_id
 		*/
 		
 		// validate 
