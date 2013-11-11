@@ -1,24 +1,3 @@
-$('#users-login-submit').click(function(){
-
-	var username = $('#users-login-username').val();
-	var password = $('#users-login-password').val();
-
-	$.ajax({
-		url : "/action/login",
-		type : "post",
-		dataType : "json",
-		data : {
-			'username' : username,
-			'password' : password
-		},
-		success : function(response) {
-			console.log(response);
-		}
-		
-	});
-	
-});
-
 $('#users-signup-submit').click(function(){
 	
 	var username = $('#users-signup-username').val();
@@ -42,50 +21,28 @@ $('#users-signup-submit').click(function(){
 	
 });
 
+$('#users-login-submit').click(function(){
 
+	var username = $('#users-login-username').val();
+	var password = $('#users-login-password').val();
 
-$('#details-add-to-cart').click(function(){
-	
-	console.log('add to cart');
-	return;
-	
-	var item_id = $('').val();
-	
 	$.ajax({
-		url : "/action/addToCart",
+		url : "/action/login",
 		type : "post",
 		dataType : "json",
 		data : {
-			'item_id' : item_id
+			'username' : username,
+			'password' : password
 		},
 		success : function(response) {
 			console.log(response);
 		}
-	})
+		
+	});
 	
-})
+});
 
 
-$('#details-add-to-favorites').click(function(){
-	
-	console.log('add to faves');
-	return;
-	
-	var item_id = $('').val();
-	
-	$.ajax({
-		url : "/action/addFavorite",
-		type : "post",
-		dataType : "json",
-		data : {
-			'item_id' : item_id
-		},
-		success : function(response) {
-			console.log(response);
-		}
-	})
-	
-})
 
 
 $('#header-logout').click(function(){
@@ -105,9 +62,34 @@ $('#header-logout').click(function(){
 		success : function(response) {
 			console.log(response);
 		}
-	})
+	});
 	
-})
+});
+
+
+
+
+$('#details-add-to-cart').click(function(){
+	
+	console.log('add to cart');
+	return;
+	
+	var item_id = $('').val();
+	
+	$.ajax({
+		url : "/action/addToCart",
+		type : "post",
+		dataType : "json",
+		data : {
+			'item_id' : item_id
+		},
+		success : function(response) {
+			console.log(response);
+		}
+	});
+	
+});
+
 
 
 
@@ -128,14 +110,62 @@ $('#cart-remove').click(function(){
 		success : function(response) {
 			console.log(response);
 		}
-	})
+	});
 	
-})
+});
+
+
+
+
+$('#cart-submit').click(function(){
+	
+	console.log('log out');
+	return;
+	
+	var item_id = $('').val();
+	
+	$.ajax({
+		url : "/action/submitOrder",
+		type : "post",
+		dataType : "json",
+		data : {
+			'item_id' : item_id
+		},
+		success : function(response) {
+			console.log(response);
+		}
+	});
+	
+});
+
+
+
+
+$('#details-add-to-favorites').click(function(){
+	
+	console.log('add to faves');
+	return;
+	
+	var item_id = $('').val();
+	
+	$.ajax({
+		url : "/action/addFavorite",
+		type : "post",
+		dataType : "json",
+		data : {
+			'item_id' : item_id
+		},
+		success : function(response) {
+			console.log(response);
+		}
+	});
+	
+});
 
 
 /*
 $('').click(function(){
 	
 	
-})
+});
 */
