@@ -8,7 +8,7 @@ return array(
 		'connection'  => array(
 			'dsn'        => 'mysql:host=localhost;dbname=assl_test_db',
 			'username'   => 'root',
-			'password'   => 'root',
+			'password'   => 'FSaslClass',
 		),
 	),
 );
