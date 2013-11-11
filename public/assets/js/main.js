@@ -35,7 +35,7 @@ $('#users-login-submit').click(function() {
 		},
 		success : function(response) {
 			if(response.success){
-				window.history.go(-1);
+				window.location = document.referrer;
 			}
 		}
 	});
