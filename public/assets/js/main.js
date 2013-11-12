@@ -114,11 +114,7 @@ $('#cart-submit').click(function() {
 });
 
 $('#details-add-to-favorites').click(function() {
-
-	console.log('add to faves');
-	return;
-	//WHAT IS PRODUCT ID?
-	var product_id = $('').val();
+	var product_id = $('#cupcake-details-id').val();
 
 	$.ajax({
 		url : "/action/addFavorite",
@@ -139,7 +135,7 @@ $('#favorite-remove').click(function() {
 	console.log('removed from faves');
 	return;
 	//WHAT IS PRODUCT ID?
-	var product_id = $('').val();
+	var product_id = $('#cupcake-favorite-id').val();
 
 	$.ajax({
 		url : "/action/addFavorite",
