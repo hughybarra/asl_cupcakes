@@ -19,6 +19,7 @@ class Controller_Cart extends Controller_Template {
 			array_push($data['cart'], $product);
 		}
 		
+		
 		$this -> template -> content = View::forge('cart/index', $data);
 	}
 

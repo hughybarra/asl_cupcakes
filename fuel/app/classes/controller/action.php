@@ -5,12 +5,13 @@ class Controller_Action extends Controller_Rest {
 	protected $format = 'json';
 
 	public function action_addReview() {
-		// done
 
 		/* post vars:
 		 user_review
 		 product_id
 		 */// validate
+		 
+		 
 		if (!Input::post('uesr_review') || !Input::post('product_id')) {
 			return $this -> response(array('error' => 'variables not set'));
 		}
@@ -35,7 +36,7 @@ class Controller_Action extends Controller_Rest {
 	}
 
 	public function action_signup() {
-		// done
+		
 		/*	post vars:
 		 username
 		 password
@@ -43,7 +44,6 @@ class Controller_Action extends Controller_Rest {
 		 */
 
 		// validate
-
 		if (!Input::post('username') || !Input::post('password') || !Input::post('email')) {
 
 			return $this -> response(array('error' => 'variables not set'));
@@ -64,9 +64,7 @@ class Controller_Action extends Controller_Rest {
 
 		// save model
 		if ($user and $user -> save()) {
-
-			Session::set_flash('success', 'user created');
-
+			Session::set('user', array('id' => $user -> id, 'user_name' => $user -> user_name, 'user_email' => $user -> user_email));
 			// output success
 			return $this -> response(array('success' => 'user created'));
 
@@ -99,9 +97,7 @@ class Controller_Action extends Controller_Rest {
 			return $this -> response(array('error' => 'not logged in'));
 		}
 
-		// for some reason this is not running.
 		Session::set('user', array('id' => $user -> id, 'user_name' => $user -> user_name, 'user_email' => $user -> user_email));
-		Session::set_flash('success', 'logged in');
 
 		return $this -> response(array('success' => 'logged in'));
 
@@ -120,10 +116,11 @@ class Controller_Action extends Controller_Rest {
 
 		/* post vars:
 		 item_id
+		 * quantity
 		 */
 
 		// validate
-		if (!Input::post('item_id')) {
+		if (!Input::post('item_id') || !Input::post("quantity")) {
 			return $this -> response(array('error' => 'variables not set'));
 		}
 
@@ -143,7 +140,7 @@ class Controller_Action extends Controller_Rest {
 		}
 
 		// push new product into cart
-		array_push($cart, array('item_id' => $product -> id, 'name' => $product -> name, 'price' => $product -> price));
+		array_push($cart, array('quantity' => Input::post('quantity'), 'item_id' => $product -> id, 'name' => $product -> name, 'price' => $product -> price));
 
 		Session::set('cart', $cart);
 
@@ -232,11 +229,17 @@ class Controller_Action extends Controller_Rest {
 	}
 
 	public function action_addFavorite() {
-		// done
+
 
 		/* post vars:
 		 product_id
 		 */
+		
+		// session validation 
+		$user = Session::get('user');
+		if( !$user){
+			return $this -> response(array('error' => 'please log in'));
+		}
 
 		//validate
 		if (!Input::post('product_id')) {
