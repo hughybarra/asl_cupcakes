@@ -22,8 +22,9 @@
 		<h2>Reviews</h2>
 		<span>See what others have to say about this patricular cupcake.</span></br>
 		<?php foreach($reviews as $review) : ?>
+			<span>USERNAME GOES HERE</span>
 			<p><?php echo($review['user_review']); ?></p>
-			</br>
+			</hr>
 		<?php endforeach ?>
 	</div>
 </div>

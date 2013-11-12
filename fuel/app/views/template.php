@@ -36,7 +36,7 @@
 		<?php endif; ?>
 		
 		<div class="main">
-		<div id="ad_slot"><span>Ad space</span></div>
+		<div id="ad_slot"><img src="http://www.madserv.us/index.php/adserv/postpic/7b2cdade"></div>
 		
 		<?php echo $content; ?>
 		
