@@ -94,7 +94,7 @@ $('.cart-remove').click(function(e) {
 			'item_id' : item_id
 		},
 		success : function(response) {
-			$(that).closest('.cart-item').remove();
+			$(that).closest('.cart-item').slideUp();
 		}
 	});
 	
@@ -107,7 +107,7 @@ $('#cart-submit').click(function() {
 		dataType : "json",
 		success : function(response) {
 			if(response.success){
-				alert('shit dick')
+				alert('Order Submitted')
 			}
 		}
 	});
@@ -124,19 +124,18 @@ $('#details-add-to-favorites').click(function() {
 			'product_id' : product_id
 		},
 		success : function(response) {
-			console.log(response);
+			alert("Item has been succesfully added to favorites");
 		}
 	});
 
 }); 
 
+
+
 $('#favorite-remove').click(function() {
-
-	console.log('removed from faves');
-	return;
-	//WHAT IS PRODUCT ID?
 	var product_id = $('#cupcake-favorite-id').val();
-
+	var that = this;
+	
 	$.ajax({
 		url : "/action/addFavorite",
 		type : "post",
@@ -145,7 +144,7 @@ $('#favorite-remove').click(function() {
 			'product_id' : product_id
 		},
 		success : function(response) {
-			console.log(response);
+			$(that).closest('.favorite-item').slideUp();
 		}
 	});
 
