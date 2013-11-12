@@ -16,14 +16,14 @@
 	
 
 	<span id="details-add-to-favorites" class="button-submit">Add to favorites</span>
-	<br />
 	<span id="details-add-to-cart" class="button-submit">Add to cart</span>
-</div>
-
-<div id="reviews">
-	<h2>Reviews</h2>
-	<?php foreach($reviews as $review){
-		echo "<h1>test</h1>"; // DELETE WHEN READY
-	}
-	?>
+	
+	<div id="reviews">
+		<h2>Reviews</h2>
+		<span>See what others have to say about this patricular cupcake.</span></br>
+		<?php foreach($reviews as $review) : ?>
+			<p><?php echo($review['user_review']); ?></p>
+			</br>
+		<?php endforeach ?>
+	</div>
 </div>

@@ -9,18 +9,27 @@ body {
 	font-family: helvetica, 'helvetica neue', arial, sans-serif;
 	color: #222;
 	background: #FDFAEF;
+	background-image: url('../img/sprinkles.png');
 	font-size: 14px;
 	line-height: 1.5em;
 }
 
-h1 {
-	color: #D92B3A;
+h1, h2 {
+	color: #FF4F6C;
 	font-family: 'Pacifico';
+}
+
+h1{
 	font-size: 2em;
 }
 
+h2{
+	font-size: 1.5em;
+}
+
+
 header {
-	background: #D0003F;
+	background: #FF4F6C;
 	color: #FDFAEF;
 	height: 60px;
 	line-height: 60px;
@@ -120,7 +129,13 @@ header a img {
 
 .cupcake-thumb {
 	float: left;
-	background: #fff;
+	background: #fffcfc; /* Old browsers */
+	background: -moz-radial-gradient(center, ellipse cover,  #fffcfc 38%, #fcf2e3 100%); /* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(38%,#fffcfc), color-stop(100%,#fcf2e3)); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover,  #fffcfc 38%,#fcf2e3 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover,  #fffcfc 38%,#fcf2e3 100%); /* Opera 12+ */
+	background: -ms-radial-gradient(center, ellipse cover,  #fffcfc 38%,#fcf2e3 100%); /* IE10+ */
+	background: radial-gradient(ellipse at center,  #fffcfc 38%,#fcf2e3 100%); /* W3C */
 	height: 230px;
 	width: 230px;
 	box-shadow: 0 0 .5em rgba(0, 0, 0, 0.3);
@@ -128,7 +143,6 @@ header a img {
 }
 
 .cupcake-thumb img {
-	/* 	background: #fff;  */
 	height: 220px;
 	width: 178px;
 	margin-left: 30px;
@@ -136,15 +150,12 @@ header a img {
 }
 
 .cupcake-name {
-	color: #D92B3A;
+	color: #FF4F6C;
 	font-family: 'Pacifico';
-}
-
-.cupcake-name {
 	font-size: 16px;
 }
 
-.cupcake-detail-name {
+.cupcake-detail-name,  {
 	font-size: 26px;
 }
 
@@ -158,13 +169,18 @@ header a img {
 }
 
 .cupcake-detail-img {
-	background: #fff;
+	background: #fffcfc; /* Old browsers */
+	background: -moz-radial-gradient(center, ellipse cover,  #fffcfc 38%, #fcf2e3 100%); /* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(38%,#fffcfc), color-stop(100%,#fcf2e3)); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover,  #fffcfc 38%,#fcf2e3 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover,  #fffcfc 38%,#fcf2e3 100%); /* Opera 12+ */
+	background: -ms-radial-gradient(center, ellipse cover,  #fffcfc 38%,#fcf2e3 100%); /* IE10+ */
+	background: radial-gradient(ellipse at center,  #fffcfc 38%,#fcf2e3 100%); /* W3C */
 	height: 390px;
 	width: 390px;
 	box-shadow: 0 0 .5em rgba(0, 0, 0, 0.3);
 	display: inline-block;
 	float: left;
-	margin-right: 20px;
 }
 
 .cupcake-detail-img img {
@@ -174,16 +190,39 @@ header a img {
 	margin-top: 10px;
 }
 
-.cupcake-detail-info {
+.cupcake-detail-info, .cupcake-favorite-info {
 	float: right;
 	display: block;
-	width: 550px;
+	width: 500px;
+	margin: 20px 20px;
+}
+
+#details-add-to-cart{
+	float: right;
+}
+
+#details-add-to-favorites{
+	float: left;
+}
+
+#details-add-to-cart, #details-add-to-cart{
+	clear: both;
+}
+
+.favorite-item{
+	float: left;
+	clear: both;
+	margin: 20px 0;	
 }
 
 .login {
 	float: right;
 	display: block;
 	width: 380px;
+}
+
+#reviews{
+	clear: both;
 }
 
 .signup {
