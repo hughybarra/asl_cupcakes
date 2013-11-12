@@ -199,11 +199,13 @@ $('#cart-submit').click(function() {
 });
 
 $('#details-add-to-favorites').click(function() {
-
-	$(function() {
-		$("#dialog").dialog();
-	});
-
+	
+	if(_user == undefined){
+		$(function() {
+    		$( "#dialog" ).dialog();
+  		});
+	}
+	
 	var product_id = $('#cupcake-details-id').val();
 
 	$.ajax({
