@@ -13,18 +13,20 @@
 		<span>Quantity:</span>
 		<input type="number" name="quantity" min="1" max="36" value="1">
 	</div>
-	
 
 	<span id="details-add-to-favorites" class="button-submit">Add to favorites</span>
 	<span id="details-add-to-cart" class="button-submit">Add to cart</span>
 	
 	<div id="reviews">
 		<h2>Reviews</h2>
-		<span>See what others have to say about this patricular cupcake.</span></br>
+		<span>See what others have to say about this patricular cupcake.</span>
+		</br>
+		<hr />
 		<?php foreach($reviews as $review) : ?>
-			<span>USERNAME GOES HERE</span>
+			<span><?php echo $review['user_name']; ?></span>
+			<br />
 			<p><?php echo($review['user_review']); ?></p>
-			</hr>
+			<hr />
 		<?php endforeach ?>
 	</div>
 </div>
