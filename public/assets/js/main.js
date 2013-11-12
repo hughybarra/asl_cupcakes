@@ -51,11 +51,8 @@ $('#users-signup-submit').click(function() {
 		valid = false;
 	};// end password 2 validation
 
-<<<<<<< HEAD
 	if (password != confirmPassword) {
-=======
-	if (password != confirmPass) {
->>>>>>> 93a2590927d0e04cdd7cdad12a0143073788feed
+
 		valid = false;
 		//Show the user an error
 	}
