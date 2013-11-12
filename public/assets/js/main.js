@@ -199,7 +199,7 @@ $('#cart-submit').click(function() {
 });
 
 $('#details-add-to-favorites').click(function() {
-	
+
 	$(function() {
 		$("#dialog").dialog();
 	});
