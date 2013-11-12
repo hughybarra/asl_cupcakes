@@ -6,12 +6,13 @@
 <div class="cupcake-detail-info">
 	<input id="cupcake-details-id" type="hidden" value="<?php echo $product -> id?>" />
 	<h1><?php echo $product -> name?></h1>
-	<span>$<?php echo $product -> price?></span><br>
+	<span>Price: $<?php echo $product -> price?></span><br>
 	<span><?php echo $product -> product_type?></span><br>
 	<span><?php echo $product -> product_description?></span><br>
 	<div>
 		<span>Quantity:</span>
-		<input type="number" name="quantity" min="1" max="36" value="1">
+		<!-- hugo made changes here -->
+		<input id="cart-quantity" type="number" name="quantity" min="1" max="36" value="1">
 	</div>
 
 	<span id="details-add-to-favorites" class="button-submit">Add to favorites</span>
