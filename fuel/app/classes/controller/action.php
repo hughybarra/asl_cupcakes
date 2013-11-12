@@ -138,7 +138,7 @@ class Controller_Action extends Controller_Rest {
 		}
 
 		// get product from database
-		$product = Model_Product::find_by_id(Input::get('item_id'));
+		$product = Model_Product::find_by_id(Input::post('item_id'));
 
 		if (!$product) {
 			return $this -> response(array('error' => 'product not found'));

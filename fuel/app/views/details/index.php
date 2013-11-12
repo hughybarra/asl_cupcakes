@@ -15,9 +15,9 @@
 	</div>
 	
 
-	<span id="details-add-to-favorites" class="button-submit" href="/action/addFavorite/<?php echo $product -> id ?>">Add to favorites</span>
-
-	<span id="details-add-to-cart" class="button-submit" href="#">Add to cart</span>
+	<span id="details-add-to-favorites" class="button-submit">Add to favorites</span>
+	<br />
+	<span id="details-add-to-cart" class="button-submit">Add to cart</span>
 </div>
 
 <div id="reviews">
