@@ -2,7 +2,7 @@
 <div class="shopping-cart">
 	<div>
 		<span>Total</span>
-		<span>$23.54</span>
+		<span> $ <?php echo  $total = Session::get("total"); ?> </span>
 		<a id="cart-submit" class="button-submit">Checkout</a>
 	</div>
 </div>

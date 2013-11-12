@@ -1,11 +1,3 @@
-if (_user != undefined) {
-	console.log('logged in');
-	console.log(_user);
-} else {
-	console.log('not logged in');
-	console.log(_user);
-}
-
 $('#users-signup-submit').click(function() {
 
 	var username = $('#users-signup-username').val();
@@ -51,7 +43,8 @@ $('#users-signup-submit').click(function() {
 		valid = false;
 	};// end password 2 validation
 
-	if (password != confirmPass) {
+	if (password != confirmPassword) {
+
 		valid = false;
 		//Show the user an error
 	}

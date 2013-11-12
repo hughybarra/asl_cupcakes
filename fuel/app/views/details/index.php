@@ -15,7 +15,11 @@
 		<input id="cart-quantity" type="number" name="quantity" min="1" max="36" value="1">
 	</div>
 
+
+	
 	<span id="details-add-to-favorites" class="button-submit">Add to favorites</span>
+
+
 	<span id="details-add-to-cart" class="button-submit">Add to cart</span>
 	
 	<div id="reviews">

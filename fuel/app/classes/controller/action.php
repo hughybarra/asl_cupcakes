@@ -8,8 +8,10 @@ class Controller_Action extends Controller_Rest {
 
 		/* post vars:
 		 user_review
-		 product_id
+		 product_id	 
 		 */
+		 
+
 		 
 		 // validate
 		 
