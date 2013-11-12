@@ -79,9 +79,8 @@ $('#details-add-to-cart').click(function() {
 });
 
 $('.cart-remove').click(function(e) {
-	console.log('dick');
-	//WHAT IS THE ITEM IDs
-	var item_id = $(this).closest(cart-item).val();
+
+	var item_id = $(this).closest('.cart-item').find('.cupcake-product-id').val();
 
 	$.ajax({
 		url : "/action/removeFromCart",
@@ -95,8 +94,6 @@ $('.cart-remove').click(function(e) {
 		}
 	});
 	
-	return false;
-
 });
 
 $('#cart-submit').click(function() {
