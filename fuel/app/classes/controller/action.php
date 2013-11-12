@@ -173,7 +173,7 @@ class Controller_Action extends Controller_Rest {
 		}
 
 		foreach ($cart as $key => $item) {
-			if ($item['item_id'] == Input::get('item_id')) {
+			if ($item['item_id'] == Input::post('item_id')) {
 				unset($cart[$key]);
 				break;
 			}
