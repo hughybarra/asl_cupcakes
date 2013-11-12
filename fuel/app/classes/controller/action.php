@@ -8,16 +8,10 @@ class Controller_Action extends Controller_Rest {
 
 		/* post vars:
 		 user_review
-		 product_id
-<<<<<<< HEAD
-		 */// validate
-		 
-		 
-=======
+		 product_id	 
 		 */
 		 
 		 // validate
->>>>>>> de17f97cd5857aab7f2e2967925319866b41b2b7
 		if (!Input::post('uesr_review') || !Input::post('product_id')) {
 			return $this -> response(array('error' => 'variables not set'));
 		}

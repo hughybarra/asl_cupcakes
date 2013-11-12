@@ -43,11 +43,7 @@ $('#users-signup-submit').click(function() {
 		valid = false;
 	};// end password 2 validation
 
-<<<<<<< HEAD
 	if (password != confirmPassword) {
-=======
-	if (password != confirmPass) {
->>>>>>> de17f97cd5857aab7f2e2967925319866b41b2b7
 		valid = false;
 		//Show the user an error
 	}
