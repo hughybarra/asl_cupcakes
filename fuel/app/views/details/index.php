@@ -33,10 +33,12 @@
 			<p><?php echo($review['user_review']); ?></p>
 			<hr />
 		<?php endforeach ?>
+		<a class="details-add-review"></a>
 	</div>
 </div>
 
 
-<div id="dialog" title="Basic dialog" class="hidden">
-  <p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
+<div id="dialog" title="Review of <?php echo $product -> name?>" class="hidden">
+  <textarea class="review-content">Type review here...</textarea>
+  <button>Submit Review</button>
 </div>
