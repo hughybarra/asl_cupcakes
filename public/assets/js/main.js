@@ -135,6 +135,9 @@ $('#details-add-to-cart').click(function() {
 
 });
 
+
+
+
 // Hugo added this
 // favorites added to cart 
 //===============================
@@ -159,6 +162,10 @@ $(".favorites-add-to-cart").click(function(){
 	});
 });// end favorites added to cart
 //===============================
+
+
+
+
 
 $('.cart-remove').click(function(e) {
 
