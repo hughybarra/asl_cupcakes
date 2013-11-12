@@ -97,7 +97,6 @@ $('.cart-remove').click(function(e) {
 });
 
 $('#cart-submit').click(function() {
-	console.log('poop');
 	$.ajax({
 		url : "/action/submitOrder",
 		type : "post",
