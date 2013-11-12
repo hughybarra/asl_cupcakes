@@ -1,5 +1,3 @@
-
-
 $('#users-signup-submit').click(function() {
 
 	var username = $('#users-signup-username').val();
@@ -220,6 +218,7 @@ $('#details-add-to-favorites').click(function() {
 		});
 	}
 
+
 	var product_id = $('#cupcake-details-id').val();
 
 	$.ajax({
@@ -252,4 +251,27 @@ $('.favorite-remove').click(function() {
 		}
 	});
 
+});
+
+
+$('.details-add-review').click(function(){
+	//set variables
+	var product_id = $('#cupcake-details-id')val();
+	var user_review = $('.review-content').val();
+	//validate variables
+	
+	//Ajax call
+	$.ajax({
+		url : "/action/removeFavorite",
+		type : "post",
+		dataType : "json",
+		data : {
+			'user_review' : user_review,
+	 		'product_id' : product_id
+		},
+		success : function(response) {
+			$(that).closest('.favorite-item').slideUp();
+		}
+	});
+	
 });
