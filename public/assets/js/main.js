@@ -1,3 +1,11 @@
+if (_user != undefined) {
+	console.log('logged in');
+	console.log(_user);
+} else {
+	console.log('not logged in');
+	console.log(_user);
+}
+
 $('#users-signup-submit').click(function() {
 
 	var username = $('#users-signup-username').val();
@@ -7,7 +15,6 @@ $('#users-signup-submit').click(function() {
 	// validate the variable
 	var valid = true;
 
-	
 	if (username.length == 0) {
 		valid = false;
 		// show the user an error
@@ -135,23 +142,20 @@ $('#details-add-to-cart').click(function() {
 
 });
 
-
-
-
 // Hugo added this
-// favorites added to cart 
+// favorites added to cart
 //===============================
-$(".favorites-add-to-cart").click(function(){
+$(".favorites-add-to-cart").click(function() {
 	var product_id = $(".cupcake-favorite-id").val();
 	console.log(product_id);
-	
+
 	$.ajax({
-		url:'action/addToCart',
-		type: 'post',
-		dataType: 'json', 
-		data:{
+		url : 'action/addToCart',
+		type : 'post',
+		dataType : 'json',
+		data : {
 			'item_id' : product_id
-		}, 
+		},
 		success : function(response) {
 			if (response.error) {
 				alert("There was an issue adding this item to your cart. Please refresh and try again.");
@@ -160,12 +164,9 @@ $(".favorites-add-to-cart").click(function(){
 			}
 		}
 	});
-});// end favorites added to cart
+});
+// end favorites added to cart
 //===============================
-
-
-
-
 
 $('.cart-remove').click(function(e) {
 
@@ -199,12 +200,11 @@ $('#cart-submit').click(function() {
 });
 
 $('#details-add-to-favorites').click(function() {
-	
+
 	$(function() {
-    	$( "#dialog" ).dialog();
-  	});
-	
-	
+		$("#dialog").dialog();
+	});
+
 	var product_id = $('#cupcake-details-id').val();
 
 	$.ajax({
@@ -220,8 +220,6 @@ $('#details-add-to-favorites').click(function() {
 	});
 
 });
-
-
 
 $('.favorite-remove').click(function() {
 	var product_id = $(this).closest('.favorite-item').find('.cupcake-favorite-id').val();
