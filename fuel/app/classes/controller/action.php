@@ -154,8 +154,8 @@ class Controller_Action extends Controller_Rest {
 	public function action_removeFromCart() {
 
 		/* post vars:
-		 item_id
-		 */
+			item_id
+		*/
 
 		// validate
 		if (!Input::post('item_id')) {
