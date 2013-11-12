@@ -16,6 +16,7 @@
 			<span>Type</span>
 			<span><?php echo $item['quantity']; ?></span>
 			<a class="favorite-remove">remove favorite</a>
+			<a class="favorites-add-to-cart">Add to Cart</a>
 		</div>
 	
 	</div>

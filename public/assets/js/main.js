@@ -135,6 +135,31 @@ $('#details-add-to-cart').click(function() {
 
 });
 
+// Hugo added this
+// favorites added to cart 
+//===============================
+$(".favorites-add-to-cart").click(function(){
+	var product_id = $(".cupcake-favorite-id").val();
+	console.log(product_id);
+	
+	$.ajax({
+		url:'action/addToCart',
+		type: 'post',
+		dataType: 'json', 
+		data:{
+			'item_id' : product_id
+		}, 
+		success : function(response) {
+			if (response.error) {
+				alert("There was an issue adding this item to your cart. Please refresh and try again.");
+			} else {
+				alert("Item has been added successfully!");
+			}
+		}
+	});
+});// end favorites added to cart
+//===============================
+
 $('.cart-remove').click(function(e) {
 
 	var item_id = $(this).closest('.cart-item').find('.cupcake-product-id').val();
@@ -160,7 +185,7 @@ $('#cart-submit').click(function() {
 		dataType : "json",
 		success : function(response) {
 			if (response.success) {
-				alert('Order Submitted')
+				alert('Order Submitted');
 			}
 		}
 	});
@@ -182,6 +207,8 @@ $('#details-add-to-favorites').click(function() {
 	});
 
 });
+
+
 
 $('.favorite-remove').click(function() {
 	var product_id = $(this).closest('.favorite-item').find('.cupcake-favorite-id').val();
