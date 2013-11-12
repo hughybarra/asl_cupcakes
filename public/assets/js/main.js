@@ -256,13 +256,13 @@ $('.favorite-remove').click(function() {
 
 $('.details-add-review').click(function(){
 	//set variables
-	var product_id = $('#cupcake-details-id')val();
+	var product_id = $('#cupcake-details-id').val();
 	var user_review = $('.review-content').val();
 	//validate variables
 	
 	//Ajax call
 	$.ajax({
-		url : "/action/removeFavorite",
+		url : "/action/addReview",
 		type : "post",
 		dataType : "json",
 		data : {
