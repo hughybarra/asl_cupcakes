@@ -221,7 +221,6 @@ $('#details-add-to-favorites').click(function() {
 		});
 	}
 
-
 	var product_id = $('#cupcake-details-id').val();
 
 	$.ajax({
@@ -259,8 +258,9 @@ $('.favorite-remove').click(function() {
 
 
 $('.details-add-review').click(function(){
+	
 	//set variables
-	var product_id = $('#cupcake-details-id')val();
+	var product_id = $('#cupcake-details-id').val();
 	var user_review = $('.review-content').val();
 	//validate variables
 	
