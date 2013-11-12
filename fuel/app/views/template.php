@@ -26,7 +26,6 @@
 				<a id="logo" href="/">The Cupcake Factory</a>
 				<div class="header-controls">
 					<a class="header-cart" href="/cart"><img src="/assets/img/cart-icon.png">View Cart</a>
-					<a class="header-favorites" href="/favorites"><img src="/assets/img/fave-icon.png">Favorites</a>
 					<a id="header-login" href="/users">Log In</a>
 					<!-- //With javascript send to the controller -->
 					<a id="header-login-madserv">Log In With MadServ</a>
