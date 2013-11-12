@@ -28,6 +28,7 @@
 			<p><?php echo($review['user_review']); ?></p>
 			<hr />
 		<?php endforeach ?>
+		<a class="details-add-review"></a>
 	</div>
 </div>
 

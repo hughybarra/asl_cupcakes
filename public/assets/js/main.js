@@ -206,7 +206,6 @@ $('#details-add-to-favorites').click(function() {
   		});
 	}
 	
-	
 	var product_id = $('#cupcake-details-id').val();
 
 	$.ajax({
