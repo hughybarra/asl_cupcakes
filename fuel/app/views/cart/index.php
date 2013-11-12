@@ -11,7 +11,7 @@
 	<?php foreach ($cart as $item): ?>
 		
 	<div class="cart-item">
-		<input type="hidden" class="cupcake-product-id" value="<?php echo $item['id']; ?>" />
+		<input type="hidden" class="cupcake-product-id" value="<?php echo $item['item_id']; ?>" />
 		<div class="cupcake-thumb">
 			<img src="/assets/img/cupcakes/<?php echo $item['image_path']; ?>.png">
 		</div>
