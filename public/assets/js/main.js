@@ -1,49 +1,61 @@
+if (_user != undefined) {
+	console.log('logged in');
+	console.log(_user);
+} else {
+	console.log('not logged in');
+	console.log(_user);
+}
+
 $('#users-signup-submit').click(function() {
 
-	var username 		= $('#users-signup-username').val();
-	var email 			= $('#users-signup-email').val();
-	var password 		= $('#users-signup-password').val();
+	var username = $('#users-signup-username').val();
+	var email = $('#users-signup-email').val();
+	var password = $('#users-signup-password').val();
 	var confirmPassword = $('#users-signup-confirm-password').val();
-	
+
 	// validate the variable
 	var valid = true;
-	
+
 	// hugo added this
 	//==========================
-	// regex vars 
-	var regex_email 	= /^[\w-\._\+%]+@(?:[\w-]+\.)+[\w]{2,6}$/;
-	var regex_name 		= /^[a-zA-Z]{4,10}$/;
-	var regex_pass 		= /^[a-zA-Z0-9]{4,15}$/;
-	
-	// User Name 
+	// regex vars
+	var regex_email = /^[\w-\._\+%]+@(?:[\w-]+\.)+[\w]{2,6}$/;
+	var regex_name = /^[a-zA-Z]{4,10}$/;
+	var regex_pass = /^[a-zA-Z0-9]{4,15}$/;
+
+	// User Name
 	//======================================
-	if (!regex_name.test(username)){
+	if (!regex_name.test(username)) {
 		// console.log("user name invalid");
 		valid = false;
 	};// end username validation
-	
-	// User Email 
+
+	// User Email
 	//======================================
-	if (!regex_email.test(email)){
+	if (!regex_email.test(email)) {
 		// console.log("user email invalid");
 		valid = false;
 	};// end email validation
-	
-	// Password 1 
+
+	// Password 1
 	//======================================
-	if (!regex_pass.test(password)){
+	if (!regex_pass.test(password)) {
 		// console.log("password invalid");
 		valid = false;
 	};// end password 1 validation
-	
-	// Password 2 
+
+	// Password 2
 	//======================================
-	if (!regex_pass.test(confirmPassword)){
+	if (!regex_pass.test(confirmPassword)) {
 		// console.log("password 2 invalid");
 		valid = false;
 	};// end password 2 validation
 
+<<<<<<< HEAD
 	if (password != confirmPassword) {
+=======
+	if (password != confirmPass) {
+>>>>>>> 93a2590927d0e04cdd7cdad12a0143073788feed
 		valid = false;
 		//Show the user an error
 	}
@@ -53,15 +65,15 @@ $('#users-signup-submit').click(function() {
 		$(errorHtml).appendTo('.errors');
 		return;
 	}
-	
+
 	$.ajax({
 		url : "/action/signup",
 		type : "post",
 		dataType : "json",
 		data : {
-			'username'  : username,
-			'email' 	: email,
-			'password'  : password
+			'username' : username,
+			'email' : email,
+			'password' : password
 		},
 		success : function(response) {
 			if (response.success) {
@@ -152,23 +164,20 @@ $('#details-add-to-cart').click(function() {
 
 });
 
-
-
-
 // Hugo added this
-// favorites added to cart 
+// favorites added to cart
 //===============================
-$(".favorites-add-to-cart").click(function(){
+$(".favorites-add-to-cart").click(function() {
 	var product_id = $(".cupcake-favorite-id").val();
 	console.log(product_id);
-	
+
 	$.ajax({
-		url:'action/addToCart',
-		type: 'post',
-		dataType: 'json', 
-		data:{
+		url : 'action/addToCart',
+		type : 'post',
+		dataType : 'json',
+		data : {
 			'item_id' : product_id
-		}, 
+		},
 		success : function(response) {
 			if (response.error) {
 				alert("There was an issue adding this item to your cart. Please refresh and try again.");
@@ -177,12 +186,9 @@ $(".favorites-add-to-cart").click(function(){
 			}
 		}
 	});
-});// end favorites added to cart
+});
+// end favorites added to cart
 //===============================
-
-
-
-
 
 $('.cart-remove').click(function(e) {
 
@@ -216,15 +222,13 @@ $('#cart-submit').click(function() {
 });
 
 $('#details-add-to-favorites').click(function() {
-	
-	
-	if(_user == undefined){
+
+	if (_user == undefined) {
 		$(function() {
-    		$( "#dialog" ).dialog();
-  		});
+			$("#dialog").dialog();
+		});
 	}
-	
-	
+
 	var product_id = $('#cupcake-details-id').val();
 
 	$.ajax({
@@ -240,8 +244,6 @@ $('#details-add-to-favorites').click(function() {
 	});
 
 });
-
-
 
 $('.favorite-remove').click(function() {
 	var product_id = $(this).closest('.favorite-item').find('.cupcake-favorite-id').val();
