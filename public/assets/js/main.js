@@ -20,28 +20,28 @@ $('#users-signup-submit').click(function() {
 	if (!regex_name.test(username)) {
 		// console.log("user name invalid");
 		valid = false;
-	};// end username validation
+	}// end username validation
 
 	// User Email
 	//======================================
 	if (!regex_email.test(email)) {
 		// console.log("user email invalid");
 		valid = false;
-	};// end email validation
+	}// end email validation
 
 	// Password 1
 	//======================================
 	if (!regex_pass.test(password)) {
 		// console.log("password invalid");
 		valid = false;
-	};// end password 1 validation
+	}// end password 1 validation
 
 	// Password 2
 	//======================================
 	if (!regex_pass.test(confirmPassword)) {
 		// console.log("password 2 invalid");
 		valid = false;
-	};// end password 2 validation
+	}// end password 2 validation
 
 	if (password != confirmPassword) {
 
@@ -115,8 +115,6 @@ $('#users-login-submit').click(function() {
 
 $('#header-logout').click(function() {
 
-	console.log('log out');
-
 	$.ajax({
 		url : "/action/logout",
 		type : "post",
@@ -131,6 +129,7 @@ $('#header-logout').click(function() {
 });
 
 $('#details-add-to-cart').click(function() {
+
 	var item_id = $('#cupcake-details-id').val();
 	var quantity = $("#cart-quantity").val();
 
@@ -157,8 +156,8 @@ $('#details-add-to-cart').click(function() {
 // favorites added to cart
 //===============================
 $(".favorites-add-to-cart").click(function() {
+
 	var product_id = $(".cupcake-favorite-id").val();
-	console.log(product_id);
 
 	$.ajax({
 		url : 'action/addToCart',
@@ -175,6 +174,7 @@ $(".favorites-add-to-cart").click(function() {
 			}
 		}
 	});
+
 });
 // end favorites added to cart
 //===============================
@@ -183,6 +183,7 @@ $('.cart-remove').click(function(e) {
 
 	var item_id = $(this).closest('.cart-item').find('.cupcake-product-id').val();
 	var that = this;
+
 	$.ajax({
 		url : "/action/removeFromCart",
 		type : "post",
@@ -198,6 +199,7 @@ $('.cart-remove').click(function(e) {
 });
 
 $('#cart-submit').click(function() {
+
 	$.ajax({
 		url : "/action/submitOrder",
 		type : "post",
@@ -208,6 +210,7 @@ $('#cart-submit').click(function() {
 			}
 		}
 	});
+
 });
 
 $('#details-add-to-favorites').click(function() {
@@ -217,7 +220,6 @@ $('#details-add-to-favorites').click(function() {
 			$("#dialog").dialog();
 		});
 	}
-
 
 	var product_id = $('#cupcake-details-id').val();
 
@@ -236,6 +238,7 @@ $('#details-add-to-favorites').click(function() {
 });
 
 $('.favorite-remove').click(function() {
+
 	var product_id = $(this).closest('.favorite-item').find('.cupcake-favorite-id').val();
 	var that = this;
 
@@ -255,6 +258,7 @@ $('.favorite-remove').click(function() {
 
 
 $('.details-add-review').click(function(){
+	
 	//set variables
 	var product_id = $('#cupcake-details-id').val();
 	var user_review = $('.review-content').val();
