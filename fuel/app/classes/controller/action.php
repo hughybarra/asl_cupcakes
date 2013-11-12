@@ -154,8 +154,8 @@ class Controller_Action extends Controller_Rest {
 	public function action_removeFromCart() {
 
 		/* post vars:
-		 item_id
-		 */
+			item_id
+		*/
 
 		// validate
 		if (!Input::post('item_id')) {
@@ -173,7 +173,7 @@ class Controller_Action extends Controller_Rest {
 		}
 
 		foreach ($cart as $key => $item) {
-			if ($item['item_id'] == Input::get('item_id')) {
+			if ($item['item_id'] == Input::post('item_id')) {
 				unset($cart[$key]);
 				break;
 			}
