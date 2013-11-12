@@ -154,8 +154,8 @@ class Controller_Action extends Controller_Rest {
 	public function action_removeFromCart() {
 
 		/* post vars:
-			item_id
-		*/
+		 item_id
+		 */
 
 		// validate
 		if (!Input::post('item_id')) {
@@ -201,7 +201,7 @@ class Controller_Action extends Controller_Rest {
 	}
 
 	public function action_submitOrder() {
-			
+
 		$user = Session::get('user');
 		$user_id = $user['id'];
 
@@ -228,6 +228,7 @@ class Controller_Action extends Controller_Rest {
 
 		Session::set('cart', array());
 
+		return $this -> response(array('success' => 'order submitted'));
 	}
 
 	public function action_addFavorite() {
