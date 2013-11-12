@@ -72,7 +72,11 @@ $('#details-add-to-cart').click(function() {
 			'item_id' : item_id
 		},
 		success : function(response) {
-			console.log(response);
+			if(response.error){
+				alert("There was an issue adding this item to your cart. Please refresh and try again.");
+			}else{
+				alert("Item has been added successfully!");
+			}
 		}
 	});
 
@@ -81,7 +85,7 @@ $('#details-add-to-cart').click(function() {
 $('.cart-remove').click(function(e) {
 
 	var item_id = $(this).closest('.cart-item').find('.cupcake-product-id').val();
-
+	var that = this;
 	$.ajax({
 		url : "/action/removeFromCart",
 		type : "post",
@@ -90,7 +94,7 @@ $('.cart-remove').click(function(e) {
 			'item_id' : item_id
 		},
 		success : function(response) {
-			console.log(response);
+			$(that).closest('.cart-item').remove();
 		}
 	});
 	
@@ -103,7 +107,7 @@ $('#cart-submit').click(function() {
 		dataType : "json",
 		success : function(response) {
 			if(response.success){
-				alert('It\'s a party');
+				alert('shit dick')
 			}
 		}
 	});
