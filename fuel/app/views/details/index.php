@@ -4,6 +4,7 @@
 
 
 <div class="cupcake-detail-info">
+	<input id="cupcake-details-id" type="hidden" value="<?php echo $product -> id?>" />
 	<h1><?php echo $product -> name?></h1>
 	<span>$<?php echo $product -> price?></span><br>
 	<span><?php echo $product -> product_type?></span><br>

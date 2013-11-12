@@ -62,11 +62,7 @@ $('#header-logout').click(function() {
 });
 
 $('#details-add-to-cart').click(function() {
-
-	console.log('add to cart');
-	return;
-	//WHAT IS THE ITEM ID
-	var item_id = $('').val();
+	var item_id = $('#cupcake-details-id').val();
 
 	$.ajax({
 		url : "/action/addToCart",
