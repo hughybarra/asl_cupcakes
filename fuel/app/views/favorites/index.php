@@ -14,7 +14,7 @@
 			<span>Price</span>
 			<span>$<?php echo $item['price']; ?></span>
 			<span>Type</span>
-			<span><?php echo $item['quantity']; ?></span>
+			<span><?php echo $item['product_type']; ?></span>
 			<a class="favorite-remove">remove favorite</a>
 			<a class="favorites-add-to-cart">Add to Cart</a>
 		</div>
