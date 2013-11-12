@@ -6,12 +6,13 @@
 <div class="cupcake-detail-info">
 	<input id="cupcake-details-id" type="hidden" value="<?php echo $product -> id?>" />
 	<h1><?php echo $product -> name?></h1>
-	<span>$<?php echo $product -> price?></span><br>
+	<span>Price: $<?php echo $product -> price?></span><br>
 	<span><?php echo $product -> product_type?></span><br>
 	<span><?php echo $product -> product_description?></span><br>
 	<div>
 		<span>Quantity:</span>
-		<input type="number" name="quantity" min="1" max="36" value="1">
+		<!-- hugo made changes here -->
+		<input id="cart-quantity" type="number" name="quantity" min="1" max="36" value="1">
 	</div>
 
 	<span id="details-add-to-favorites" class="button-submit">Add to favorites</span>
@@ -33,6 +34,7 @@
 </div>
 
 
-<div id="dialog" title="Basic dialog" class="hidden">
-  <p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
+<div id="dialog" title="Review of <?php echo $product -> name?>" class="hidden">
+  <textarea class="review-content">Type review here...</textarea>
+  <button>Submit Review</button>
 </div>
