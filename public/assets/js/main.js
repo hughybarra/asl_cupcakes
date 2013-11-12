@@ -3,6 +3,40 @@ $('#users-signup-submit').click(function() {
 	var username = $('#users-signup-username').val();
 	var email = $('#users-signup-email').val();
 	var password = $('#users-signup-password').val();
+	var confirmPassword = $('#users-signup-confirm-password').val();
+	// validate the variable
+	var valid = true;
+
+	
+	if (username.length == 0) {
+		valid = false;
+		// show the user an error
+	}
+	if (email.length == 0) {
+		valid = false;
+		// show the user an error
+	}
+	if (password.length > 0 && pass.length < 6) {
+		valid = false;
+		// show the user an error
+	}
+	if (confirmPass.length > 0 && confirmPass.length < 6) {
+		valid = false;
+		var errorHtml = '<span class="error-signup">Password must be at least 6 characters long.</br></span>';
+		$(errorHtml).appendTo('.errors');
+		return;
+	}
+
+	if (pass != confirmPass) {
+		valid = false;
+		//Show the user an error
+	}
+
+	if (!valid) {
+		var errorHtml = '<span class="error-signup">Please fill out the form completely.</br></span>';
+		$(errorHtml).appendTo('.errors');
+		return;
+	}
 
 	$.ajax({
 		url : "/action/signup",
@@ -14,7 +48,7 @@ $('#users-signup-submit').click(function() {
 			'password' : password
 		},
 		success : function(response) {
-			if(response.success){
+			if (response.success) {
 				window.location = document.referrer;
 			}
 		}
@@ -26,6 +60,25 @@ $('#users-login-submit').click(function() {
 
 	var username = $('#users-login-username').val();
 	var password = $('#users-login-password').val();
+
+	var valid = true;
+
+	if (username.length == 0) {
+		valid = false;
+		// show the user an error
+	}
+
+	if (password.length < 6) {
+		valid = false;
+		// show the user an error
+	}
+
+	if (!valid) {
+		var errorHtml = '<span class="error-login">Incorrect username or password.</br></span>';
+		$(errorHtml).insertAfter('.login');
+
+		return;
+	}
 
 	$.ajax({
 		url : "/action/login",
@@ -72,9 +125,9 @@ $('#details-add-to-cart').click(function() {
 			'item_id' : item_id
 		},
 		success : function(response) {
-			if(response.error){
+			if (response.error) {
 				alert("There was an issue adding this item to your cart. Please refresh and try again.");
-			}else{
+			} else {
 				alert("Item has been added successfully!");
 			}
 		}
@@ -97,7 +150,7 @@ $('.cart-remove').click(function(e) {
 			$(that).closest('.cart-item').slideUp();
 		}
 	});
-	
+
 });
 
 $('#cart-submit').click(function() {
@@ -106,7 +159,7 @@ $('#cart-submit').click(function() {
 		type : "post",
 		dataType : "json",
 		success : function(response) {
-			if(response.success){
+			if (response.success) {
 				alert('Order Submitted')
 			}
 		}
@@ -128,14 +181,12 @@ $('#details-add-to-favorites').click(function() {
 		}
 	});
 
-}); 
-
-
+});
 
 $('.favorite-remove').click(function() {
 	var product_id = $(this).closest('.favorite-item').find('.cupcake-favorite-id').val();
 	var that = this;
-	
+
 	$.ajax({
 		url : "/action/removeFavorite",
 		type : "post",
