@@ -43,7 +43,11 @@ $('#users-signup-submit').click(function() {
 		valid = false;
 	};// end password 2 validation
 
+<<<<<<< HEAD
 	if (password != confirmPassword) {
+=======
+	if (password != confirmPass) {
+>>>>>>> de17f97cd5857aab7f2e2967925319866b41b2b7
 		valid = false;
 		//Show the user an error
 	}
@@ -69,7 +73,6 @@ $('#users-signup-submit').click(function() {
 			}
 		}
 	});
-
 });
 
 $('#users-login-submit').click(function() {
@@ -153,6 +156,9 @@ $('#details-add-to-cart').click(function() {
 
 });
 
+
+
+
 // Hugo added this
 // favorites added to cart 
 //===============================
@@ -177,6 +183,10 @@ $(".favorites-add-to-cart").click(function(){
 	});
 });// end favorites added to cart
 //===============================
+
+
+
+
 
 $('.cart-remove').click(function(e) {
 
@@ -211,9 +221,12 @@ $('#cart-submit').click(function() {
 
 $('#details-add-to-favorites').click(function() {
 	
-	$(function() {
-    	$( "#dialog" ).dialog();
-  	});
+	
+	if(_user == undefined){
+		$(function() {
+    		$( "#dialog" ).dialog();
+  		});
+	}
 	
 	
 	var product_id = $('#cupcake-details-id').val();

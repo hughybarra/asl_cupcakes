@@ -5,6 +5,18 @@
 		<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 		<?php echo Asset::css('main.css'); ?>
 		<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+
+		<?php $user = Session::get('user'); ?>
+		
+		<?php if($user): ?>
+			<script>
+				var _user = <?php echo json_encode(array(
+					'id' => $user['id'],
+					'username' => $user['user_name']
+				)); ?>;
+			</script>
+		<?php endif; ?>
+		
 	</head>
 	<body>
 		
@@ -18,7 +30,7 @@
 					<a class="header-cart" href="/cart"><img src="/assets/img/cart-icon.png">View Cart</a>
 					<a class="header-favorites" href="/favorites"><img src="/assets/img/fave-icon.png">Favorites</a>
 					<a id="header-logout">Log Out</a>
-					<a id="header-signup" href="/users">Welcome, <?php echo $user['user_name']?></a>
+					<span id="header-signup" href="/users">Welcome, <?php echo $user['user_name']?></span>
 				</div>
 			</header>
 		<?php else: ?>
