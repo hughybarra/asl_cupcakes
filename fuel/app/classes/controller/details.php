@@ -1,6 +1,6 @@
 <?php
 
-class Controller_Details extends Controller_Template {
+class Controller_Details extends Controller/*_Template */{
 
 	public function action_index($product_id) {
 
@@ -16,7 +16,14 @@ class Controller_Details extends Controller_Template {
 		// pull in all product reviews 
 		$data['reviews'] = Model_Review::find_all_by_product_id($product_id);
 		
-		$this -> template -> content = View::forge('details/index', $data);
+		// echo $data["reviews"][4]["user_id"];
+		
+		// grab the user names for each review
+		$user = Model_User::find_by_id($data["reviews"][4]["user_id"]);
+		
+		echo $user["user_name"];
+			
+		// $this -> template -> content = View::forge('details/index', $data);
 	}
 
 }
