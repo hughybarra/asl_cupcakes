@@ -20,27 +20,25 @@
 	<?php if (Session::get("user") ){ ?>
 	<span id="details-add-to-favorites" class="button-submit">Add to favorites</span>
 	
-	<? }?>
+	<? } ?>
 	<!-- END CONDITIONAL -->
 	<span id="details-add-to-cart" class="button-submit">Add to cart</span>
 	
 	<div id="reviews">
 		<h2>Reviews</h2>
-		<span>See what others have to say about this patricular cupcake.</span>
+		<span>See what others have to say about this patricular cupcake and share your thoughts.</span>
 		</br>
-		<hr />
+		
+		<div>
+ 			<textarea class="review-content">Type review here...</textarea>
+  			<button class="details-add-review">Submit Review</button>
+		</div>
+		
 		<?php foreach($reviews as $review) : ?>
 			<span><?php echo $review['user_name']; ?></span>
 			<br />
 			<p><?php echo($review['user_review']); ?></p>
 			<hr />
 		<?php endforeach ?>
-		<a class="details-add-review"></a>
 	</div>
-</div>
-
-
-<div id="dialog" title="Review of <?php echo $product -> name?>" class="hidden">
-  <textarea class="review-content">Type review here...</textarea>
-  <button>Submit Review</button>
 </div>

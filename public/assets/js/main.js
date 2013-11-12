@@ -215,12 +215,6 @@ $('#cart-submit').click(function() {
 
 $('#details-add-to-favorites').click(function() {
 
-	if (_user == undefined) {
-		$(function() {
-			$("#dialog").dialog();
-		});
-	}
-
 	var product_id = $('#cupcake-details-id').val();
 
 	$.ajax({
@@ -258,6 +252,10 @@ $('.favorite-remove').click(function() {
 
 
 $('.details-add-review').click(function(){
+	
+	$(function() {
+		$("#dialog").dialog();
+	});
 	
 	//set variables
 	var product_id = $('#cupcake-details-id').val();

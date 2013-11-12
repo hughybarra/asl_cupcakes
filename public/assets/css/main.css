@@ -266,6 +266,10 @@ font-size: 26px;
 	clear: both;
 }
 
+.review-content{
+	width: 100%;
+}
+
 .signup {
 	float: left;
 	display: block;
