@@ -16,6 +16,11 @@ class Controller_Details extends Controller_Template {
 		// pull in all product reviews 
 		$data['reviews'] = Model_Review::find_all_by_product_id($product_id);
 		
+		foreach ($data['reviews'] as $key => $review) {
+			$user = Model_User::find_by_id($review["user_id"]);
+			$data['reviews'][$key]['user_name'] = $user['user_name'];
+		}
+		
 		$this -> template -> content = View::forge('details/index', $data);
 	}
 
