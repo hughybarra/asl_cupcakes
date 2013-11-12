@@ -1,21 +1,9 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+/* http://meyerweb.com/eric/tools/css/reset/
+ v2.0 | 20110126
+ License: none (public domain)
+ */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -24,8 +12,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
@@ -37,8 +24,7 @@ ol, ul {
 blockquote, q {
 	quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
+blockquote:before, blockquote:after, q:before, q:after {
 	content: '';
 	content: none;
 }
@@ -52,14 +38,6 @@ table {
 /* ------------------------ END RESET ----------------------- */
 /* ---------------------------------------------------------- */
 /* ---------------------------------------------------------- */
-
-
-
-
-
-
-
-
 
 #ad_slot {
 	width: 960px;
@@ -82,14 +60,13 @@ h1, h2 {
 	font-family: 'Pacifico';
 }
 
-h1{
+h1 {
 	font-size: 2em;
 }
 
-h2{
+h2 {
 	font-size: 1.5em;
 }
-
 
 header {
 	background: #FF4F6C;
@@ -219,7 +196,7 @@ header a img {
 }
 
 .cupcake-detail-name,  {
-	font-size: 26px;
+font-size: 26px;
 }
 
 .cupcake-info {
@@ -260,22 +237,22 @@ header a img {
 	margin: 20px 20px;
 }
 
-#details-add-to-cart{
+#details-add-to-cart {
 	float: right;
 }
 
-#details-add-to-favorites{
+#details-add-to-favorites {
 	float: left;
 }
 
-#details-add-to-cart, #details-add-to-cart{
+#details-add-to-cart, #details-add-to-cart {
 	clear: both;
 }
 
-.favorite-item{
+.favorite-item {
 	float: left;
 	clear: both;
-	margin: 20px 0;	
+	margin: 20px 0;
 }
 
 .login {
@@ -284,7 +261,7 @@ header a img {
 	width: 380px;
 }
 
-#reviews{
+#reviews {
 	clear: both;
 }
 
@@ -350,4 +327,8 @@ header a img {
 	margin-left: -600px;
 	width: 1200px;
 	z-index: -1;
+}
+
+.hidden {
+	display: none;
 }

@@ -34,7 +34,7 @@ $('#users-signup-submit').click(function() {
 		return;
 	}
 
-	if (pass != confirmPass) {
+	if (password != confirmPass) {
 		valid = false;
 		//Show the user an error
 	}
@@ -60,7 +60,6 @@ $('#users-signup-submit').click(function() {
 			}
 		}
 	});
-
 });
 
 $('#users-login-submit').click(function() {
@@ -200,7 +199,7 @@ $('#cart-submit').click(function() {
 });
 
 $('#details-add-to-favorites').click(function() {
-
+	
 	$(function() {
 		$("#dialog").dialog();
 	});
