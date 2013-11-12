@@ -132,12 +132,12 @@ $('#details-add-to-favorites').click(function() {
 
 
 
-$('#favorite-remove').click(function() {
-	var product_id = $('#cupcake-favorite-id').val();
+$('.favorite-remove').click(function() {
+	var product_id = $(this).closest('.favorite-item').find('.cupcake-favorite-id').val();
 	var that = this;
 	
 	$.ajax({
-		url : "/action/addFavorite",
+		url : "/action/removeFavorite",
 		type : "post",
 		dataType : "json",
 		data : {

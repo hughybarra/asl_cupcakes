@@ -5,7 +5,7 @@
 	<?php foreach ($favorites as $item): ?>
 		
 	<div class="favorite-item">
-		<input id="cupcake-favorite-id" type="hidden" value="<?php echo $item -> id?>" />
+		<input class="cupcake-favorite-id" type="hidden" value="<?php echo $item -> id?>" />
 		<div class="cupcake-thumb">
 			<img src="/assets/img/cupcakes/<?php echo $item['image_path']; ?>.png">
 		</div>
@@ -15,7 +15,7 @@
 			<span>$<?php echo $item['price']; ?></span>
 			<span>Type</span>
 			<span><?php echo $item['quantity']; ?></span>
-			<a id="favorite-remove"<? echo $item["id"] ?>">remove favorite</a>
+			<a class="favorite-remove">remove favorite</a>
 		</div>
 	
 	</div>
