@@ -272,7 +272,7 @@ $('.details-add-review').click(function(){
 	 		'product_id' : product_id
 		},
 		success : function(response) {
-			
+			window.location.reload();
 		}
 	});
 	
