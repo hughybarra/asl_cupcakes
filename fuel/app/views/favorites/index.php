@@ -10,13 +10,13 @@
 			<img src="/assets/img/cupcakes/<?php echo $item['image_path']; ?>.png">
 		</div>
 		<div class="cupcake-favorite-info">
-			<span class="cupcake-name"><?php echo $item['name']; ?></span>
-			<span>Price</span>
-			<span>$<?php echo $item['price']; ?></span>
-			<span>Type</span>
-			<span><?php echo $item['product_type']; ?></span>
-			<a class="favorite-remove">remove favorite</a>
-			<a class="favorites-add-to-cart">Add to Cart</a>
+			<span class="cupcake-name"><?php echo $item['name']; ?></span><br/>
+			<span>Price</span><br/>
+			<span>$<?php echo $item['price']; ?></span><br/>
+			<span>Type</span><br/>
+			<span><?php echo $item['product_type']; ?></span><br/>
+			<a class="favorite-remove">Remove From Favorites</a><br/>
+			<a class="favorites-add-to-cart">Add To Cart</a><br/>
 		</div>
 	
 	</div>

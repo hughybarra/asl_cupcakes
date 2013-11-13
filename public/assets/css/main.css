@@ -33,6 +33,10 @@ table {
 	border-spacing: 0;
 }
 
+a{
+	cursor: pointer;
+}
+
 
 /* ---------------------------------------------------------- */
 /* ---------------------------------------------------------- */
@@ -155,6 +159,10 @@ header a img {
 	margin: 10px 0;
 }
 
+.clear-fix{
+	clear: both;
+}
+
 .cupcake-cart-info {
 	float: right;
 	width: 350px;
@@ -248,6 +256,11 @@ font-size: 26px;
 }
 
 #details-add-to-cart, #details-add-to-cart {
+	clear: both;
+}
+
+.details-add-review{
+	float: right;
 	clear: both;
 }
 
