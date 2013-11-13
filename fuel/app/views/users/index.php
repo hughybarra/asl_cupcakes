@@ -4,6 +4,7 @@
 <div class="login">
 	<h1>Already a member?</h1>
 	<span>Great! Sign in here.</span>
+	<p class="login-errors"></p>
 	<div>
 		<label for="users-login-username">Username</label>
 		<input name="users-login-username" id="users-login-username" type="text" placeholder="ex: JohnDoe1234">
@@ -24,6 +25,7 @@
 <div class="signup">
 	<h1>Sign up with The Cupcake Factory.</h1>
 	<p>An account with The Cupcake Factory will allow you to add items to a favorites list and allow you to place online orders. Best of all, it's free!</p>
+	<p class="signup-errors"></p>	
 		<div>
 			<label for="users-signup-username">Username</label>
 			<input name="username" id="users-signup-username" type="text" placeholder="ex: John">
