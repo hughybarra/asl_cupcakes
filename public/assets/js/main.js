@@ -15,45 +15,27 @@ $('#users-signup-submit').click(function() {
 	var regex_name = /^[a-zA-Z]{4,10}$/;
 	var regex_pass = /^[a-zA-Z0-9]{4,15}$/;
 
-	// User Name
-	//======================================
 	if (!regex_name.test(username)) {
-		// console.log("user name invalid");
 		valid = false;
-	}// end username validation
-
-	// User Email
-	//======================================
-	if (!regex_email.test(email)) {
-		// console.log("user email invalid");
-		valid = false;
-	}// end email validation
-
-	// Password 1
-	//======================================
-	if (!regex_pass.test(password)) {
-		// console.log("password invalid");
-		valid = false;
-	}// end password 1 validation
-
-	// Password 2
-	//======================================
-	if (!regex_pass.test(confirmPassword)) {
-		// console.log("password 2 invalid");
-		valid = false;
-	}// end password 2 validation
-
-	if (password != confirmPassword) {
-
-		valid = false;
-		//Show the user an error
 	}
-
+	if (!regex_email.test(email)) {
+		valid = false;
+	}
+	if (!regex_pass.test(password)) {
+		valid = false;
+	}
+	if (!regex_pass.test(confirmPassword)) {
+		valid = false;
+	}
+	if (password != confirmPassword) {
+		valid = false;
+	}
 	if (!valid) {
-		var errorHtml = '<span class="error-signup">Please fill out the form completely and correctly. Be sure the check the hints in each field!</br></span>';
+		var errorHtml = 'Please fill out the form completely and correctly. Be sure the check the hints in each field!</br>';
 		$(errorHtml).appendTo('.signup-errors');
 		return;
 	}
+
 
 	$.ajax({
 		url : "/action/signup",
@@ -86,20 +68,17 @@ $('#users-login-submit').click(function() {
 
 	if (!regex_name.test(username)) {
 		valid = false;
-		// show the user an error
 	}
-
 	if (!regex_pass.test(password)) {
 		valid = false;
-		// show the user an error
 	}
-
 	if (!valid) {
-		var errorHtml = '<span class="error-login">Incorrect username or password. Please Try again.</br></span>';
+		var errorHtml = 'Incorrect username or password. Please Try again.</br>';
 		$(errorHtml).appendTo('.login-errors');
 
 		return;
 	}
+
 
 	$.ajax({
 		url : "/action/login",
