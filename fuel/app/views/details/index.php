@@ -31,7 +31,7 @@
 		
 		<div>
  			<textarea class="review-content" placeholder="Type review here..."></textarea>
-  			<button class="details-add-review">Submit Review</button>
+  			<button class="details-add-review button-submit">Submit Review</button>
 		</div>
 		
 		<?php foreach($reviews as $review) : ?>
