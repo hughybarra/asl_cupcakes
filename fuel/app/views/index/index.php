@@ -6,7 +6,7 @@
 		</a>
 	</div>
 	<div class="cupcake-info">
-		<span class="cupcake-name"><?php echo $item -> name ?> </span>
+		<h2><?php echo $item -> name ?> </h2>
 		<span>$<?php echo $item -> price ?></span>
 		<span><?php echo $item -> product_type ?></span>
 	</div>
