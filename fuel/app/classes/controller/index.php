@@ -32,7 +32,7 @@ class Controller_Index extends Controller {
 				//values interpreted for you already
 				$username = $data_array[0];
 				$name = $data_array[1];
-				$email = $data_array[2];
+				$email = strtolower($data_array[2]);
 
 				$user = Model_User::find_by_user_emai($email);
 				
