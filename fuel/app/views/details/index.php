@@ -30,7 +30,7 @@
 		</br>
 		
 		<div>
- 			<textarea class="review-content">Type review here...</textarea>
+ 			<textarea class="review-content" placeholder="Type review here..."></textarea>
   			<button class="details-add-review">Submit Review</button>
 		</div>
 		
