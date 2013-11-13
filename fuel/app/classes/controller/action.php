@@ -8,18 +8,21 @@ class Controller_Action extends Controller_Rest {
 
 		/* post vars:
 		 user_review
-		 product_id	 
+		 product_id
 		 */
-		 
 
-		 
-		 // validate
-		 
+		// validate
+
 		if (!Input::post('user_review') || !Input::post('product_id')) {
 			return $this -> response(array('error' => 'variables not set'));
 		}
 
 		$user = Session::get('user');
+
+		if (!$user) {
+			return $this -> response(array('error' => 'user not set'));
+		}
+
 		$user_id = $user['id'];
 
 		// setting function vars
@@ -39,7 +42,7 @@ class Controller_Action extends Controller_Rest {
 	}
 
 	public function action_signup() {
-		
+
 		/*	post vars:
 		 username
 		 password
@@ -203,6 +206,11 @@ class Controller_Action extends Controller_Rest {
 	public function action_submitOrder() {
 
 		$user = Session::get('user');
+
+		if (!$user) {
+			return $this -> response(array('error' => 'user not set'));
+		}
+
 		$user_id = $user['id'];
 
 		$price = 0;
@@ -233,25 +241,25 @@ class Controller_Action extends Controller_Rest {
 
 	public function action_addFavorite() {
 
-
 		/* post vars:
 		 product_id
 		 */
-		
-		// session validation 
+
+		// session validation
 		$user = Session::get('user');
-		if( !$user){
+
+		if (!$user) {
 			return $this -> response(array('error' => 'please log in'));
 		}
+
+		$user_id = $user['id'];
 
 		//validate
 		if (!Input::post('product_id')) {
 			return $this -> response(array('error' => 'variables not set'));
 		}
-		$product_id = Input::post('product_id');
 
-		$user = Session::get('user');
-		$user_id = $user['id'];
+		$product_id = Input::post('product_id');
 
 		// create new model
 		$favorite = Model_Favorite::forge(array('user_id' => $user_id, 'product_id' => $product_id));
@@ -281,6 +289,11 @@ class Controller_Action extends Controller_Rest {
 		$product_id = Input::post('product_id');
 
 		$user = Session::get('user');
+		
+		if (!$user) {
+			return $this -> response(array('error' => 'user not set'));
+		}
+		
 		$user_id = $user['id'];
 
 		// create new model
