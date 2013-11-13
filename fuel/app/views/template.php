@@ -38,11 +38,11 @@
 			<header>
 				<a id="logo" href="/">The Cupcake Factory</a>
 				<div class="header-controls">
+					<a id="header-signup" href="/users">New here? Sign up!</a>
 					<a class="header-cart" href="/cart"><img src="/assets/img/cart-icon.png">View Cart</a>
 					<a id="header-login" href="/users">Log In</a>
 					<!-- //With javascript send to the controller -->
 					<a id="header-login-madserv" href="/madserv/login">Log In With MadServ</a>
-					<a id="header-signup" href="/users">New here? Sign up!</a>
 				</div>
 			</header>
 		<?php endif; ?>
@@ -64,4 +64,7 @@
 		<?php echo Asset::js('main.js'); ?>
 		<!-- ======================================== -->
 	</body>
+	<footer>
+		<span>Group Project: The Cupcake Factory. ASL1311. Susan Brown, Hugo Ybarra, Jeremy McGraw. &copy;2013</span>
+	</footer>
 </html>

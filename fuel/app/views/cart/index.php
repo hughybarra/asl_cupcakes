@@ -1,9 +1,9 @@
 <h1>Shopping Cart</h1>
 <div class="shopping-cart">
-	<div>
-		<span>Total</span>
-		<span> $ <?php echo  $total = Session::get("total"); ?> </span>
-		<a id="cart-submit" class="button-submit">Checkout</a>
+	<div id="cart">
+		<span>Total</span><br/>
+		<span> $ <?php echo  $total = Session::get("total"); ?> </span><br/>
+		<button id="cart-submit" class="button-submit">Checkout</button>
 	</div>
 </div>
 <div class="cart-items">
@@ -24,7 +24,7 @@
 			<span>Quantity</span>
 			<input type="number" name="quantity" min="1" max="36" value="<?php echo $item['quantity']; ?>">
 			<br />
-			<a class="cart-remove">Remove From Cart</a>
+			<button class="cart-remove">Remove From Cart</button>
 		</div>
 	</div>
 	

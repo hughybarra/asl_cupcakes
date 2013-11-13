@@ -189,6 +189,8 @@ $('#cart-submit').click(function() {
 		success : function(response) {
 			if (response.success) {
 				alert('Order Submitted');
+			}else{
+				alert('There was an error submitting your cart. Please refresh and try again. Hint: Make sure that you are signed in to your The Cupcake Factory or MadServ account.');
 			}
 		}
 	});
@@ -207,7 +209,11 @@ $('#details-add-to-favorites').click(function() {
 			'product_id' : product_id
 		},
 		success : function(response) {
-			alert("Item has been succesfully added to favorites");
+			if(response.success){
+				alert("Item has been succesfully added to favorites");
+			}else{
+				alert("There was an error adding to favorites. Please refresh and try again.");
+			}
 		}
 	});
 

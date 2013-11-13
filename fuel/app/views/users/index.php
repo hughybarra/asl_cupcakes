@@ -42,10 +42,6 @@
 			<label for="users-signup-confirm-password">Confirm Password</label>
 			<input type="password" name="users-signup-confirm-password" id="users-signup-confirm-password" type="text">
 		</div>
-		<div>
-			<input id="users-signup-terms" name="users-signup-confirm-terms" value="I agree to the terms and conditions." type="checkbox">
-			<label for="users-signup-terms">I agree to the terms and conditions.</label>
-		</div>
 		<button id="users-signup-submit" class="button-submit">
 			Sign Up
 		</button>
