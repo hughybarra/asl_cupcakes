@@ -10,12 +10,7 @@ class Model_Product extends Model
             'product_type',
             'product_description',
             'price',
-            'image_path',
-            'quantity',
-            'product_reviews',
-            'product_likes',
-            'created_at',
-            'updated_at',
+            'image_path'
         );
 
         protected static $_observers = array(
