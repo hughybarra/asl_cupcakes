@@ -4,6 +4,8 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 		<?php echo Asset::css('main.css'); ?>
+		<?php echo Asset::css('vendor/skeleton/stylesheets/skeleton.css'); ?>
+		<?php echo Asset::css('vendor/skeleton/stylesheets/layout.css'); ?>
 		<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 
 		<?php $user = Session::get('user'); ?>
@@ -25,8 +27,8 @@
 		<?php $user = Session::get('user'); ?>
 		<?php if($user && $user['id']):?>
 			<header>
-				<a id="logo" href="/">The Cupcake Factory</a>
-				<div class="header-controls">
+				<a id="logo" class="five columns column alpha"href="/">The Cupcake Factory</a>
+				<div class="header-controls eight columns">
 					<a class="header-cart" href="/cart"><img src="/assets/img/cart-icon.png">View Cart</a>
 					<a class="header-favorites" href="/favorites"><img src="/assets/img/fave-icon.png">Favorites</a>
 					<a id="header-logout">Log Out</a>
@@ -37,7 +39,7 @@
 			<header>
 				<a id="logo" href="/">The Cupcake Factory</a>
 				<div class="header-controls">
-					<a id="header-signup" href="/users">New here? Sign up!</a>
+					<a id="header-signup" href="/users#signup">New here? Sign up!</a>
 					<a class="header-cart" href="/cart"><img src="/assets/img/cart-icon.png">View Cart</a>
 					<a id="header-login" href="/users">Log In</a>
 					<!-- //With javascript send to the controller -->
@@ -46,7 +48,7 @@
 			</header>
 		<?php endif; ?>
 		
-		<div class="main">
+		<div class="container">
 		<div id="ad_slot"><img src="http://www.madserv.us/index.php/adserv/postpic/7b2cdade"></div>
 		
 		<?php echo $content; ?>

@@ -6,10 +6,10 @@
 		
 	<div class="favorite-item">
 		<input class="cupcake-favorite-id" type="hidden" value="<?php echo $item -> id?>" />
-		<div class="cupcake-thumb">
+		<div class="cupcake-thumb column alpha">
 			<img src="/assets/img/cupcakes/<?php echo $item['image_path']; ?>.png">
 		</div>
-		<div class="cupcake-favorite-info">
+		<div class="cupcake-favorite-info twelve columns column omega">
 			<h2><?php echo $item['name']; ?></h2><br/>
 			<span>Price</span><br/>
 			<span>$<?php echo $item['price']; ?></span><br/>

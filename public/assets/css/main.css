@@ -49,6 +49,7 @@ a:hover{
 /* ---------------------------------------------------------- */
 /* ---------------------------------------------------------- */
 
+
 #ad_slot {
 	width: 960px;
 	height: 100px;
@@ -93,7 +94,7 @@ header {
 	top: 0;
 	right: 0;
 	box-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
-	min-width: 700px;
+	/*min-width: 700px;*/
 }
 
 header a {
@@ -108,10 +109,9 @@ header a img {
 }
 
 .header-controls {
-	display: block;
+	display: inline-block;
 	float: right;
 	margin-top: 5px;
-	width: 450px;
 	margin-right: 5px;
 }
 
@@ -135,7 +135,7 @@ header a img {
 }
 
 .button-cta, .button-submit, #header-logout, #header-login {
-	min-width: 60px;
+	width: 100px;
 	color: #111;
 	padding: 5px;
 	display: inline-block;
@@ -174,20 +174,20 @@ header a img {
 #header-logout, #header-login {
 	position: absolute;
 }
-.main {
-	width: 960px;
-	margin: 0 auto;
-	margin-bottom: 20px;
-}
 
 .cart-item {
-	width: 600px;
+	/*width: 600px;*/
 	float: left;
 	margin: 10px 0;
 }
 
 #cart{
 	text-align: center;
+}
+
+#cart-total{
+	font-size: 3em;
+	font-weight: lighter;
 }
 
 .clear-fix{
@@ -252,16 +252,15 @@ font-size: 26px;
 	background: -o-radial-gradient(center, ellipse cover,  #fffcfc 38%,#fcf2e3 100%); /* Opera 12+ */
 	background: -ms-radial-gradient(center, ellipse cover,  #fffcfc 38%,#fcf2e3 100%); /* IE10+ */
 	background: radial-gradient(ellipse at center,  #fffcfc 38%,#fcf2e3 100%); /* W3C */
-	height: 390px;
-	width: 390px;
+	height: 390px;s
 	box-shadow: 0 0 .5em rgba(0, 0, 0, 0.3);
 	display: inline-block;
 	float: left;
 }
 
 .cupcake-detail-img img {
-	width: 310px;
-	height: 380px;
+	width: 80%;
+	height: 90%;
 	margin-left: 40px;
 	margin-top: 10px;
 }
@@ -304,12 +303,6 @@ footer{
 	margin: 20px 0; 
 }
 
-.login {
-	float: right;
-	display: block;
-	width: 380px;
-}
-
 #reviews {
 	clear: both;
 }
@@ -318,13 +311,7 @@ footer{
 	width: 100%;
 }
 
-.signup {
-	float: left;
-	display: block;
-	width: 470px;
-}
-
-.signup, .login {
+#signup, #login {
 	background: #fff;
 	padding: 20px;
 	border-radius: 3px;
@@ -332,12 +319,11 @@ footer{
 	margin-top: 20px;
 }
 
-.signup label {
+#signup label {
 	display: inline-block;
-	width: 450px;
 }
 
-.signup input, .login input {
+#signup input, #login input {
 	width: 100%;
 	padding: 5px;
 	border: 1px solid #e6e6e6;
@@ -345,29 +331,22 @@ footer{
 	border-radius: 3px;
 }
 
-.signup input:focus, .login input:focus {
+#signup input:focus, #login input:focus {
 	outline: none;
 	border: 1px solid #969696;
 	border-top: 2px solid #969696;
 }
 
-#terms {
-	width: 20px;
-}
-
-.signup div, .login div {
+#signup div, #login div {
 	margin: 20px auto;
 }
 
-.login label {
+#login label {
 	display: block;
-	width: 350px;
+	/*width: 350px;*/
 }
 
 .shopping-cart {
-	float: right;
-	clear: both;
-	width: 270px;
 	background: #fff;
 	padding: 10px;
 	box-shadow: 0 0 .5em rgba(0, 0, 0, 0.3);

@@ -1,9 +1,9 @@
-<div class="cupcake-detail-img">
+<div class="cupcake-detail-img seven columns column alpha row">
 	<img src="/assets/img/cupcakes/<?php echo $product -> image_path?>.png">
 </div>
 
 
-<div class="cupcake-detail-info">
+<div class="cupcake-detail-info nine columns column omega">
 	<input id="cupcake-details-id" type="hidden" value="<?php echo $product -> id?>" />
 	<h1><?php echo $product -> name?></h1>
 	<span>Price: $<?php echo $product -> price?></span><br>
