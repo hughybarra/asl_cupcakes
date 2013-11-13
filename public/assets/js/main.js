@@ -50,8 +50,8 @@ $('#users-signup-submit').click(function() {
 	}
 
 	if (!valid) {
-		var errorHtml = '<span class="error-signup">Please fill out the form completely.</br></span>';
-		$(errorHtml).appendTo('.errors');
+		var errorHtml = '<span class="error-signup">Please fill out the form completely and correctly. Be sure the check the hints in each field!</br></span>';
+		$(errorHtml).appendTo('.signup-errors');
 		return;
 	}
 
@@ -76,22 +76,27 @@ $('#users-login-submit').click(function() {
 
 	var username = $('#users-login-username').val();
 	var password = $('#users-login-password').val();
+	
+	
+	var regex_email = /^[\w-\._\+%]+@(?:[\w-]+\.)+[\w]{2,6}$/;
+	var regex_name = /^[a-zA-Z]{4,10}$/;
+	var regex_pass = /^[a-zA-Z0-9]{4,15}$/;
 
 	var valid = true;
 
-	if (username.length == 0) {
+	if (!regex_name.test(username)) {
 		valid = false;
 		// show the user an error
 	}
 
-	if (password.length < 6) {
+	if (!regex_pass.test(password)) {
 		valid = false;
 		// show the user an error
 	}
 
 	if (!valid) {
-		var errorHtml = '<span class="error-login">Incorrect username or password.</br></span>';
-		$(errorHtml).insertAfter('.login');
+		var errorHtml = '<span class="error-login">Incorrect username or password. Please Try again.</br></span>';
+		$(errorHtml).appendTo('.login-errors');
 
 		return;
 	}
