@@ -34,7 +34,7 @@ class Controller_Index extends Controller {
 				$name = $data_array[1];
 				$email = strtolower($data_array[2]);
 
-				$user = Model_User::find_by_user_emai($email);
+				$user = Model_User::find_by_user_email($email);
 				
 				// if the user is not created create them
 				if(!$user){
