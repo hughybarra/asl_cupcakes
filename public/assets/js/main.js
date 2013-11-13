@@ -8,8 +8,6 @@ $('#users-signup-submit').click(function() {
 	// validate the variable
 	var valid = true;
 
-	// hugo added this
-	//==========================
 	// regex vars
 	var regex_email = /^[\w-\._\+%]+@(?:[\w-]+\.)+[\w]{2,6}$/;
 	var regex_name = /^[a-zA-Z]{4,10}$/;
