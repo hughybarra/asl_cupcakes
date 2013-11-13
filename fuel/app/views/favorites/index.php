@@ -10,7 +10,7 @@
 			<img src="/assets/img/cupcakes/<?php echo $item['image_path']; ?>.png">
 		</div>
 		<div class="cupcake-favorite-info">
-			<span class="cupcake-name"><?php echo $item['name']; ?></span><br/>
+			<h2><?php echo $item['name']; ?></h2><br/>
 			<span>Price</span><br/>
 			<span>$<?php echo $item['price']; ?></span><br/>
 			<span>Type</span><br/>

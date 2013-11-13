@@ -194,6 +194,7 @@ header a img {
 }
 
 .cupcake-cart-info {
+	margin-top: 20px;
 	float: right;
 	width: 350px;
 	display: inline-block;
@@ -227,12 +228,6 @@ header a img {
 	width: 178px;
 	margin-left: 30px;
 	margin-top: 5px;
-}
-
-.cupcake-name {
-	color: #FF4F6C;
-	font-family: 'Pacifico';
-	font-size: 16px;
 }
 
 .cupcake-detail-name,  {

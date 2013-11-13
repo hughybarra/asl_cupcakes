@@ -1,7 +1,7 @@
 <h1>Shopping Cart</h1>
 <div class="shopping-cart">
 	<div id="cart">
-		<span>Total</span><br/>
+		<h2>Total</h2><br/>
 		<span> $ <?php echo  $total = Session::get("total"); ?> </span><br/>
 		<button id="cart-submit" class="button-cta">Checkout</button>
 	</div>
@@ -16,7 +16,7 @@
 			<img src="/assets/img/cupcakes/<?php echo $item['image_path']; ?>.png">
 		</div>
 		<div class="cupcake-cart-info">
-			<span class="cupcake-name"><?php echo $item['name']; ?></span>
+			<h2><?php echo $item['name']; ?></h2>
 			<br />
 			<span>Price</span>
 			<span>$<?php echo $item['price']; ?></span>
