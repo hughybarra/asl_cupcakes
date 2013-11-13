@@ -34,7 +34,7 @@ class Controller_Index extends Controller_Template {
 				$name = $data_array[1];
 				$email = strtolower($data_array[2]);
 
-				$user = Model_User::find_by_user_email($email);
+				$user = Model_User::find_by_user_name($username);
 				
 				// if the user is not created create them
 				if(!$user){
@@ -45,8 +45,7 @@ class Controller_Index extends Controller_Template {
 						'user_email' => $email
 					));
 					
-					// TEMP
-					//$user -> save();
+					$user -> save();
 					
 				}
 				
