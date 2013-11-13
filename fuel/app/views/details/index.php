@@ -18,11 +18,11 @@
 	<!-- LOGGED IN CHECK CONDITION HERE -->
 	<!-- ============================= -->
 	<?php if (Session::get("user") ){ ?>
-	<span id="details-add-to-favorites" class="button-submit">Add to favorites</span>
+	<button id="details-add-to-favorites" class="button-submit">Add to favorites</button>
 	
 	<? } ?>
 	<!-- END CONDITIONAL -->
-	<span id="details-add-to-cart" class="button-submit">Add to cart</span>
+	<button id="details-add-to-cart" class="button-cta">Add to cart</button>
 	
 	<div id="reviews">
 		<h2>Reviews</h2>

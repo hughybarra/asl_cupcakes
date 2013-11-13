@@ -3,7 +3,7 @@
 	<div id="cart">
 		<span>Total</span><br/>
 		<span> $ <?php echo  $total = Session::get("total"); ?> </span><br/>
-		<button id="cart-submit" class="button-submit">Checkout</button>
+		<button id="cart-submit" class="button-cta">Checkout</button>
 	</div>
 </div>
 <div class="cart-items">
@@ -24,7 +24,7 @@
 			<span>Quantity</span>
 			<input type="number" name="quantity" min="1" max="36" value="<?php echo $item['quantity']; ?>">
 			<br />
-			<button class="cart-remove">Remove From Cart</button>
+			<button class="cart-remove button-submit">Remove From Cart</button>
 		</div>
 	</div>
 	

@@ -15,8 +15,8 @@
 			<span>$<?php echo $item['price']; ?></span><br/>
 			<span>Type</span><br/>
 			<span><?php echo $item['product_type']; ?></span><br/>
-			<a class="favorite-remove">Remove From Favorites</a><br/>
-			<a class="favorites-add-to-cart">Add To Cart</a><br/>
+			<button class="favorite-remove button-submit">Remove From Favorites</button><br/>
+			<button class="favorites-add-to-cart button-cta">Add To Cart</button><br/>
 		</div>
 	
 	</div>
