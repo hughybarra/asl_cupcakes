@@ -1,6 +1,6 @@
 <?php
 
-class Controller_Index extends Controller {
+class Controller_Index extends Controller_Template {
 
 	public function action_index() {
 
@@ -34,7 +34,7 @@ class Controller_Index extends Controller {
 				$name = $data_array[1];
 				$email = strtolower($data_array[2]);
 
-				$user = Model_User::find_by_user_emai($email);
+				$user = Model_User::find_by_user_email($email);
 				
 				// if the user is not created create them
 				if(!$user){
@@ -44,6 +44,9 @@ class Controller_Index extends Controller {
 						'user_pass' => '', 
 						'user_email' => $email
 					));
+					
+					// TEMP
+					//$user -> save();
 					
 				}
 				
