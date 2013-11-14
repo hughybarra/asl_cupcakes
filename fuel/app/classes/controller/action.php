@@ -79,7 +79,7 @@ class Controller_Action extends Controller_Rest {
 	}
 
 	public function action_login() {
-		// done
+
 		/* post vars :
 		 username
 		 password
@@ -122,7 +122,7 @@ class Controller_Action extends Controller_Rest {
 
 		/* post vars:
 		 item_id
-		 * quantity
+		 quantity
 		 */
 
 		// validate
@@ -145,12 +145,27 @@ class Controller_Action extends Controller_Rest {
 			return $this -> response(array('error' => 'product not found'));
 		}
 
-		// push new product into cart
-		array_push($cart, array('quantity' => Input::post('quantity'), 'item_id' => $product -> id, 'name' => $product -> name, 'price' => $product -> price));
+		$cart_update = array();
 
-		Session::set('cart', $cart);
+		$in_cart = false;
 
-		return $this -> response($cart);
+		foreach ($cart as $item) {
+			if ($item['item_id'] == Input::post('item_id')) {
+				$item['quantity'] += Input::post('quantity');
+				$in_cart = true;
+			}
+
+			array_push($cart_update, $item);
+		}
+
+		if (!$in_cart) {
+			// push new product into cart if it wasnt in the cart already
+			array_push($cart_update, array('quantity' => Input::post('quantity'), 'item_id' => $product -> id, 'name' => $product -> name, 'price' => $product -> price));
+		}
+
+		Session::set('cart', $cart_update);
+
+		return $this -> response($cart_update);
 
 	}
 
@@ -191,16 +206,37 @@ class Controller_Action extends Controller_Rest {
 	public function action_quantity() {
 
 		/* post vars:
+		 item_id
 		 quantity
 		 */
 
 		// validate
-
-		if (!Input::post('quantity')) {
+		if (!Input::post('item_id') || !Input::post('quantity')) {
 			return $this -> response(array('error' => 'variables not set'));
 		}
 
-		Session::set('cart') -> quantity = Input::post('quantity');
+		$cart = Session::get('cart');
+
+		if (!$cart) {
+			Session::set('cart', array());
+			$cart = Session::get('cart');
+			return $this -> response($cart);
+		}
+		
+		$cart_update = array();
+		
+		foreach ($cart as $item) {
+			if ($item['item_id'] == Input::post('item_id')) {
+				$item['quantity'] = Input::post('quantity');
+				break;
+			}
+
+			array_push($cart_update, $item);
+		}
+
+		Session::set('cart', $cart_update);
+		
+		return $this -> response($cart_update);
 	}
 
 	public function action_submitOrder() {
@@ -277,6 +313,7 @@ class Controller_Action extends Controller_Rest {
 	}
 
 	public function action_removeFavorite() {
+
 		/* post vars:
 		 product_id
 		 */
@@ -289,11 +326,11 @@ class Controller_Action extends Controller_Rest {
 		$product_id = Input::post('product_id');
 
 		$user = Session::get('user');
-		
+
 		if (!$user) {
 			return $this -> response(array('error' => 'user not set'));
 		}
-		
+
 		$user_id = $user['id'];
 
 		// create new model

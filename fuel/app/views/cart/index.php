@@ -29,7 +29,7 @@
 <div class="shopping-cart four columns column omega">
 	<div id="cart">
 		<h2>Total</h2><br/>
-		<span id="cart-total"> $ <?php echo  $total = Session::get("total"); ?> </span><br/><br/>
+		<span id="cart-total"> $ <?php echo $total; ?> </span><br/><br/>
 		<button id="cart-submit" class="button-cta">Checkout</button>
 	</div>
 </div>
