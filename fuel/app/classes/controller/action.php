@@ -211,12 +211,32 @@ class Controller_Action extends Controller_Rest {
 		 */
 
 		// validate
-
 		if (!Input::post('item_id') || !Input::post('quantity')) {
 			return $this -> response(array('error' => 'variables not set'));
 		}
 
-		Session::set('cart') -> quantity = Input::post('quantity');
+		$cart = Session::get('cart');
+
+		if (!$cart) {
+			Session::set('cart', array());
+			$cart = Session::get('cart');
+			return $this -> response($cart);
+		}
+		
+		$cart_update = array();
+		
+		foreach ($cart as $item) {
+			if ($item['item_id'] == Input::post('item_id')) {
+				$item['quantity'] = Input::post('quantity');
+				break;
+			}
+
+			array_push($cart_update, $item);
+		}
+
+		Session::set('cart', $cart_update);
+		
+		return $this -> response($cart_update);
 	}
 
 	public function action_submitOrder() {
