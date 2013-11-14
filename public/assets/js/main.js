@@ -306,6 +306,13 @@ $('.cart-quantity-stepper').change(function(){
 		data : {
 			'quantity' : quantity,
 	 		'item_id' : item_id
+		},
+		success : function(response){
+			if(response.total){
+				$('#cart-total').html('$'+response.total);
+			}else{
+				alert('There was an error updating your cart. Please refresh and try again.');
+			}
 		}
 	});
 	
