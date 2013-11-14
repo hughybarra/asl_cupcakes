@@ -15,6 +15,7 @@
 		<input id="cart-quantity" type="number" name="quantity" min="1" max="36" value="1">
 	</div>
 
+	<div>
 	<!-- LOGGED IN CHECK CONDITION HERE -->
 	<!-- ============================= -->
 	<?php if (Session::get("user") ){ ?>
@@ -23,6 +24,7 @@
 	<? } ?>
 	<!-- END CONDITIONAL -->
 	<button id="details-add-to-cart" class="button-cta">Add to cart</button>
+	</div>
 	
 	<div id="reviews">
 		<h2>Reviews</h2>
