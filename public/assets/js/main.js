@@ -300,7 +300,7 @@ $('.cart-quantity-stepper').change(function(){
 	
 
 	$.ajax({
-		url : "/action/cartUpdate",
+		url : "/action/quantityUpdate",
 		type : "post",
 		dataType : "json",
 		data : {
