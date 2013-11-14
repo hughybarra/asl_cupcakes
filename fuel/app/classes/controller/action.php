@@ -221,20 +221,26 @@ class Controller_Action extends Controller_Rest {
 			Session::set('cart', array());
 			$cart = Session::get('cart');
 		}
-		
+
 		$cart_update = array();
-		
+
+		$price = 0;
+
 		foreach ($cart as $item) {
 			if ($item['item_id'] == Input::post('item_id')) {
 				$item['quantity'] = Input::post('quantity');
 			}
-			
+
+			$price += $item['price'] * $item['quantity'];
+
 			array_push($cart_update, $item);
 		}
-		
+
 		Session::set('cart', $cart_update);
-		
-		return $this -> response($cart_update);
+
+		$json = array('total' => $price, 'cart' => $cart_update);
+
+		return $this -> response($json);
 	}
 
 	public function action_submitOrder() {
@@ -256,7 +262,7 @@ class Controller_Action extends Controller_Rest {
 		}
 
 		foreach ($cart as $item) {
-			$price += $item['price'];
+			$price += $item['price'] * $item['quantity'];
 		}
 
 		$order = Model_Order::forge(array('user_id' => $user_id, 'order_total' => $price));
