@@ -27,7 +27,7 @@
 		<?php $user = Session::get('user'); ?>
 		<?php if($user && $user['id']):?>
 			<header>
-				<a id="logo" class="five columns column alpha"href="/">The Cupcake Factory</a>
+				<a id="logo" class="five columns column alpha" href="/">The Cupcake Factory</a>
 				<div class="header-controls eight columns">
 					<a class="header-cart" href="/cart"><img src="/assets/img/cart-icon.png">View Cart</a>
 					<a class="header-favorites" href="/favorites"><img src="/assets/img/fave-icon.png">Favorites</a>
@@ -37,8 +37,8 @@
 			</header>
 		<?php else: ?>
 			<header>
-				<a id="logo" href="/">The Cupcake Factory</a>
-				<div class="header-controls">
+				<a id="logo" class="five columns column alpha" href="/">The Cupcake Factory</a>
+				<div class="header-controls eight columns">
 					<a id="header-signup" href="/users#signup">New here? Sign up!</a>
 					<a class="header-cart" href="/cart"><img src="/assets/img/cart-icon.png">View Cart</a>
 					<a id="header-login" href="/users">Log In</a>
