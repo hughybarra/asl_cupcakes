@@ -15,7 +15,7 @@
 			<span>$<?php echo $item['price']; ?></span>
 			<br />
 			<span>Quantity</span>
-			<input type="number" name="quantity" min="1" max="36" value="<?php echo $item['quantity']; ?>">
+			<input class="cart-quantity-stepper" type="number" name="quantity" min="1" max="36" value="<?php echo $item['quantity']; ?>">
 			<br />
 			<button class="cart-remove button-submit">Remove Item</button>
 		</div>
@@ -30,7 +30,6 @@
 	<div id="cart">
 		<h2>Total</h2><br/>
 		<span id="cart-total"> $ <?php echo  $total = Session::get("total"); ?> </span><br/><br/>
-		<button id="cart-update" class="button-submit">Update Cart</button>
 		<button id="cart-submit" class="button-cta">Checkout</button>
 	</div>
 </div>

@@ -5,10 +5,8 @@ $('#users-signup-submit').click(function() {
 	var password = $('#users-signup-password').val();
 	var confirmPassword = $('#users-signup-confirm-password').val();
 
-	// validate the variable
 	var valid = true;
 
-	// regex vars
 	var regex_email = /^[\w-\._\+%]+@(?:[\w-]+\.)+[\w]{2,6}$/;
 	var regex_name = /^[a-zA-Z]{4,10}$/;
 	var regex_pass = /^[a-zA-Z0-9]{4,15}$/;
@@ -134,9 +132,8 @@ $('#details-add-to-cart').click(function() {
 
 });
 
-// Hugo added this
-// favorites added to cart
-//===============================
+
+
 $(".favorites-add-to-cart").click(function() {
 
 	var product_id = $(".cupcake-favorite-id").val();
@@ -158,8 +155,8 @@ $(".favorites-add-to-cart").click(function() {
 	});
 
 });
-// end favorites added to cart
-//===============================
+
+
 
 $('.cart-remove').click(function(e) {
 
@@ -241,16 +238,9 @@ $('.favorite-remove').click(function() {
 
 $('.details-add-review').click(function(){
 	
-	$(function() {
-		$("#dialog").dialog();
-	});
-	
-	//set variables
 	var product_id = $('#cupcake-details-id').val();
 	var user_review = $('.review-content').val();
-	//validate variables
 	
-	//Ajax call
 	$.ajax({
 		url : "/action/addReview",
 		type : "post",
@@ -261,6 +251,61 @@ $('.details-add-review').click(function(){
 		},
 		success : function(response) {
 			window.location.reload();
+		}
+	});
+	
+});
+
+
+
+$('.details-add-review').click(function(){
+	
+	//set variables
+	var product_id = $('#cupcake-details-id').val();
+	var user_review = $('.review-content').val();
+
+	var valid = true;
+	
+	if(user_review != 0){
+		valid = false;
+	}
+	if(!valid){
+		return;
+	}
+	
+	
+	$.ajax({
+		url : "/action/addReview",
+		type : "post",
+		dataType : "json",
+		data : {
+			'user_review' : user_review,
+	 		'product_id' : product_id
+		},
+		success : function(response) {
+			if(response.success){
+				window.location.reload();
+			}else{
+				alert('There was an error submitting your review. Please refresh and try again.');
+			}
+		}
+	});
+	
+});
+
+$('.cart-quantity-stepper').change(function(){
+	
+	var item_id = $(this).closest('.cart-item').find('.cupcake-product-id').val();
+	var quantity = $(this).val();
+	
+
+	$.ajax({
+		url : "/action/cartUpdate",
+		type : "post",
+		dataType : "json",
+		data : {
+			'quantity' : quantity,
+	 		'item_id' : item_id
 		}
 	});
 	
