@@ -203,7 +203,7 @@ class Controller_Action extends Controller_Rest {
 
 	}
 
-	public function action_quantity() {
+	public function action_quantityUpdate() {
 
 		/* post vars:
 		 item_id
