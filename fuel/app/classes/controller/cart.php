@@ -14,11 +14,7 @@ class Controller_Cart extends Controller_Template {
 		
 		$data['cart'] = array();
 		
-		// manually setting this because the quantity being pulled from the database is incorrect. 
-		// maybe we can refine this but for now this is what I have.
-		$counter  = 0;
-		$cart_total = 0;
-		
+		$data['total'] = 0;
 		
 		foreach ($cart as $item) {
 		
@@ -36,17 +32,10 @@ class Controller_Cart extends Controller_Template {
 	            'quantity' => $item['quantity']
 			));
 			
-			// this increments the cart quantity var 
-			$counter += 1;
-			
 			// calcualte the total
-			// echo $product['price'] * $product['quantity'];
-			$cart_total += $product['price'] * $product['quantity'];
+			$data['total'] += $product['price'] * $item['quantity'];
 			
 		}
-		
-		// echo $tota;
-		$cart_total = Session::set('total', $cart_total);
 		
 		$this -> template -> content = View::forge('cart/index', $data);
 	}
