@@ -309,7 +309,7 @@ $('.cart-quantity-stepper').change(function(){
 		},
 		success : function(response){
 			if(response.total){
-				$('#cart-total').html('$'+response.total);
+				$('#cart-total').html('$ '+response.total);
 			}else{
 				alert('There was an error updating your cart. Please refresh and try again.');
 			}
